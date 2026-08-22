@@ -402,11 +402,9 @@ Ideas, data sources, bug reports — **all welcome!** 🙌
 
 ---
 
-## 📜 License & Citation
+## 📜 License
 
-Data licence: **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** — credit *"Source: FireSight"* with a link.
-
-> FireSight (2026). *Archive of wildfires detected by satellite and verified witnesses* [dataset]. Accessed YYYY-MM-DD.
+[MIT](LICENSE) — free to use, learn from, and build on.
 
 ---
 
