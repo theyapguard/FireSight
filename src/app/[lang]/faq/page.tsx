@@ -13,35 +13,35 @@ const FAQ: Record<Lang, { title: string; intro: string; items: QA[] }> = {
   fr: {
     title: "Questions fréquentes",
     intro:
-      "Tout ce qu'il faut savoir sur kanari, la carte gratuite des départs de feu en temps réel.",
+      "Tout ce qu'il faut savoir sur FireSight, la carte gratuite des départs de feu en temps réel.",
     items: [
       {
         q: "Comment savoir s'il y a un feu de forêt près de chez moi en ce moment ?",
-        a: "Ouvrez kanari.io : la carte se centre automatiquement sur votre région et affiche les départs de feu détectés par satellite au cours des dernières heures, ainsi que les signalements citoyens vérifiés. Utilisez la recherche de ville ou le bouton « Ma position » pour vérifier une zone précise. Chaque flamme est colorée selon l'âge du dernier signal : rouge pour un feu actif il y a moins de 3 heures.",
+        a: "Ouvrez firesight.io : la carte se centre automatiquement sur votre région et affiche les départs de feu détectés par satellite au cours des dernières heures, ainsi que les signalements citoyens vérifiés. Utilisez la recherche de ville ou le bouton « Ma position » pour vérifier une zone précise. Chaque flamme est colorée selon l'âge du dernier signal : rouge pour un feu actif il y a moins de 3 heures.",
       },
       {
-        q: "La carte des feux de kanari est-elle vraiment en temps réel ?",
+        q: "La carte des feux de FireSight est-elle vraiment en temps réel ?",
         a: "La carte se rafraîchit environ toutes les 2 à 3 minutes. Les détections proviennent des satellites NASA FIRMS (VIIRS, résolution 375 m), GOES pour les Amériques et Meteosat MTG pour l'Europe et l'Afrique (rafraîchi toutes les 10 minutes), complétées par des témoignages citoyens publiés sur les réseaux sociaux. Un feu peut donc apparaître quelques minutes à quelques dizaines de minutes après son départ réel.",
       },
       {
-        q: "D'où viennent les données de kanari ?",
+        q: "D'où viennent les données de FireSight ?",
         a: "Des sources publiques et vérifiables : NASA FIRMS (satellites VIIRS NOAA-20/21), NOAA GOES, EUMETSAT Meteosat MTG (détection active des feux), la presse via GDELT, Bluesky et Telegram pour les témoignages. Chaque signalement citoyen est trié par une IA (deux jugements indépendants) avant d'être affiché, pour éliminer les faux positifs.",
       },
       {
-        q: "Peut-on suivre les Canadair et bombardiers d'eau en direct sur kanari ?",
-        a: "Oui. kanari affiche en quasi temps réel la position des moyens aériens de lutte anti-incendie qui émettent en ADS-B : Canadair CL-415 et CL-215, Dash 8 « Milan » et Canadair « Pélican » de la Sécurité Civile française, Air Tractor Fire Boss, DC-10 Air Tanker, hélicoptères bombardiers d'eau (S-64 Air Crane, Chinook, Firehawk). Cliquez sur un appareil pour voir son modèle, sa nationalité, sa vitesse et son altitude. Les appareils ne volant que de jour, la carte en montre peu la nuit.",
+        q: "Peut-on suivre les Canadair et bombardiers d'eau en direct sur FireSight ?",
+        a: "Oui. FireSight affiche en quasi temps réel la position des moyens aériens de lutte anti-incendie qui émettent en ADS-B : Canadair CL-415 et CL-215, Dash 8 « Milan » et Canadair « Pélican » de la Sécurité Civile française, Air Tractor Fire Boss, DC-10 Air Tanker, hélicoptères bombardiers d'eau (S-64 Air Crane, Chinook, Firehawk). Cliquez sur un appareil pour voir son modèle, sa nationalité, sa vitesse et son altitude. Les appareils ne volant que de jour, la carte en montre peu la nuit.",
       },
       {
         q: "Que faire si je suis témoin d'un départ de feu ?",
-        a: "Appelez d'abord les secours : 112 partout en Europe, 18 en France. C'est le seul canal d'alerte officiel. Ensuite, vous pouvez utiliser le bouton « Signaler un feu » de kanari pour marquer votre position et aider les autres à voir le départ de feu au plus tôt.",
+        a: "Appelez d'abord les secours : 112 partout en Europe, 18 en France. C'est le seul canal d'alerte officiel. Ensuite, vous pouvez utiliser le bouton « Signaler un feu » de FireSight pour marquer votre position et aider les autres à voir le départ de feu au plus tôt.",
       },
       {
-        q: "kanari est-il gratuit ?",
-        a: "Oui, entièrement gratuit et sans création de compte. kanari est un projet à mission : aider les citoyens, les secours, les élus et les médias à voir les départs de feu le plus tôt possible. La carte mondiale restera gratuite.",
+        q: "FireSight est-il gratuit ?",
+        a: "Oui, entièrement gratuit et sans création de compte. FireSight est un projet à mission : aider les citoyens, les secours, les élus et les médias à voir les départs de feu le plus tôt possible. La carte mondiale restera gratuite.",
       },
       {
-        q: "kanari remplace-t-il les alertes officielles ?",
-        a: "Non. kanari est un service d'information indépendant, pas un canal d'urgence officiel. Les décisions d'évacuation et d'intervention relèvent des autorités (préfectures, pompiers, sécurité civile). En cas d'urgence, appelez le 112 ou le 18.",
+        q: "FireSight remplace-t-il les alertes officielles ?",
+        a: "Non. FireSight est un service d'information indépendant, pas un canal d'urgence officiel. Les décisions d'évacuation et d'intervention relèvent des autorités (préfectures, pompiers, sécurité civile). En cas d'urgence, appelez le 112 ou le 18.",
       },
       {
         q: "Pourquoi un feu que je vois n'apparaît-il pas sur la carte ?",
@@ -52,42 +52,42 @@ const FAQ: Record<Lang, { title: string; intro: string; items: QA[] }> = {
         a: "Via la page Contribuer : idée, donnée à intégrer, bug, partenariat — tout retour est bienvenu et étudié. Les contributions pertinentes sont intégrées en continu à l'application.",
       },
       {
-        q: "Qui est derrière kanari ?",
-        a: "kanari est développé en France par VRIA, en indépendant, avec une communauté croissante de contributeurs (pompiers, élus, développeurs, citoyens). Le nom vient du canari dans la mine : celui qui chante avant que le danger ne soit visible.",
+        q: "Qui est derrière FireSight ?",
+        a: "FireSight est développé par l'équipe theyapguard, en indépendant, avec une communauté croissante de contributeurs (pompiers, élus, développeurs, citoyens). Le nom dit tout : la vue sur le feu — chaque départ de feu en ligne de mire, avant qu'il ne devienne visible.",
       },
     ],
   },
   en: {
     title: "Frequently asked questions",
-    intro: "Everything about kanari, the free real-time wildfire ignition map.",
+    intro: "Everything about FireSight, the free real-time wildfire ignition map.",
     items: [
       {
         q: "How do I know if there is a wildfire near me right now?",
-        a: "Open kanari.io: the map centers on your region and shows satellite-detected fire starts from the last hours, plus verified citizen reports. Use city search or “My position” to check a specific area. Each flame is colored by the age of the last signal: red means active within the last 3 hours.",
+        a: "Open firesight.io: the map centers on your region and shows satellite-detected fire starts from the last hours, plus verified citizen reports. Use city search or “My position” to check a specific area. Each flame is colored by the age of the last signal: red means active within the last 3 hours.",
       },
       {
-        q: "Is the kanari fire map really real-time?",
+        q: "Is the FireSight fire map really real-time?",
         a: "The map refreshes about every 2–3 minutes. Detections come from NASA FIRMS (VIIRS, 375 m resolution), GOES for the Americas and Meteosat MTG for Europe and Africa (10-minute refresh), plus citizen reports from social networks. A fire can appear within minutes to a few dozen minutes of its actual start.",
       },
       {
-        q: "Where does kanari data come from?",
+        q: "Where does FireSight data come from?",
         a: "Public, verifiable sources: NASA FIRMS (VIIRS NOAA-20/21), NOAA GOES, EUMETSAT Meteosat MTG active fire detection, press via GDELT, Bluesky and Telegram for witness reports. Every citizen report is AI-triaged (two independent judgments) before display, to eliminate false positives.",
       },
       {
-        q: "Can I track Canadair water bombers live on kanari?",
-        a: "Yes. kanari shows near real-time positions of firefighting aircraft broadcasting ADS-B: Canadair CL-415/CL-215, the French Sécurité Civile “Pélican” and Dash 8 “Milan” fleet, Air Tractor Fire Boss, DC-10 Air Tankers, and firefighting helicopters (S-64 Air Crane, Chinook, Firehawk). Click an aircraft to see its model, nationality, speed and altitude. They fly in daylight only, so the map shows few at night.",
+        q: "Can I track Canadair water bombers live on FireSight?",
+        a: "Yes. FireSight shows near real-time positions of firefighting aircraft broadcasting ADS-B: Canadair CL-415/CL-215, the French Sécurité Civile “Pélican” and Dash 8 “Milan” fleet, Air Tractor Fire Boss, DC-10 Air Tankers, and firefighting helicopters (S-64 Air Crane, Chinook, Firehawk). Click an aircraft to see its model, nationality, speed and altitude. They fly in daylight only, so the map shows few at night.",
       },
       {
         q: "What should I do if I witness a fire starting?",
-        a: "Call emergency services first: 112 in Europe, 911 in North America. That is the only official alert channel. Then you can use kanari's “Report a fire” button to mark your position and help others see the ignition as early as possible.",
+        a: "Call emergency services first: 112 in Europe, 911 in North America. That is the only official alert channel. Then you can use FireSight's “Report a fire” button to mark your position and help others see the ignition as early as possible.",
       },
       {
-        q: "Is kanari free?",
-        a: "Yes, completely free, no account needed. kanari is a mission-driven project: helping citizens, responders, officials and media see fire starts as early as possible. The world map will stay free.",
+        q: "Is FireSight free?",
+        a: "Yes, completely free, no account needed. FireSight is a mission-driven project: helping citizens, responders, officials and media see fire starts as early as possible. The world map will stay free.",
       },
       {
-        q: "Does kanari replace official alerts?",
-        a: "No. kanari is an independent information service, not an official emergency channel. Evacuation and response decisions belong to the authorities. In an emergency, call 112 or your local emergency number.",
+        q: "Does FireSight replace official alerts?",
+        a: "No. FireSight is an independent information service, not an official emergency channel. Evacuation and response decisions belong to the authorities. In an emergency, call 112 or your local emergency number.",
       },
       {
         q: "Why doesn't a fire I can see appear on the map?",
@@ -98,42 +98,42 @@ const FAQ: Record<Lang, { title: string; intro: string; items: QA[] }> = {
         a: "Via the Contribute page: ideas, data sources, bugs, partnerships — every input is welcome and reviewed. Relevant improvements are shipped continuously.",
       },
       {
-        q: "Who is behind kanari?",
-        a: "kanari is built in France by VRIA, independently, with a growing community of contributors (firefighters, officials, developers, citizens). The name comes from the canary in the coal mine: the one that sings before danger becomes visible.",
+        q: "Who is behind FireSight?",
+        a: "FireSight is built by the theyapguard team, independently, with a growing community of contributors (firefighters, officials, developers, citizens). The name says it all: sight of fire — every ignition in sight, before it becomes visible.",
       },
     ],
   },
   es: {
     title: "Preguntas frecuentes",
-    intro: "Todo sobre kanari, el mapa gratuito de focos de incendio en tiempo real.",
+    intro: "Todo sobre FireSight, el mapa gratuito de focos de incendio en tiempo real.",
     items: [
       {
         q: "¿Cómo sé si hay un incendio forestal cerca de mí ahora mismo?",
-        a: "Abre kanari.io: el mapa se centra en tu región y muestra los focos detectados por satélite en las últimas horas, más los reportes ciudadanos verificados. Usa el buscador de ciudades o el botón « Mi posición » para revisar una zona precisa. Cada llama está coloreada según la antigüedad de la última señal: rojo significa activo hace menos de 3 horas.",
+        a: "Abre firesight.io: el mapa se centra en tu región y muestra los focos detectados por satélite en las últimas horas, más los reportes ciudadanos verificados. Usa el buscador de ciudades o el botón « Mi posición » para revisar una zona precisa. Cada llama está coloreada según la antigüedad de la última señal: rojo significa activo hace menos de 3 horas.",
       },
       {
-        q: "¿El mapa de incendios de kanari es realmente en tiempo real?",
+        q: "¿El mapa de incendios de FireSight es realmente en tiempo real?",
         a: "El mapa se actualiza cada 2 a 3 minutos. Las detecciones vienen de los satélites NASA FIRMS (VIIRS, resolución de 375 m), GOES para las Américas y Meteosat MTG para Europa y África (refresco cada 10 minutos), completadas con testimonios ciudadanos publicados en redes sociales. Un incendio puede aparecer entre unos minutos y algunas decenas de minutos después de su inicio real.",
       },
       {
-        q: "¿De dónde vienen los datos de kanari?",
+        q: "¿De dónde vienen los datos de FireSight?",
         a: "De fuentes públicas y verificables: NASA FIRMS (satélites VIIRS NOAA-20/21), NOAA GOES, EUMETSAT Meteosat MTG (detección activa de incendios), la prensa vía GDELT, Bluesky y Telegram para los testimonios. Cada reporte ciudadano pasa por un triaje de IA (dos juicios independientes) antes de mostrarse, para eliminar falsos positivos.",
       },
       {
-        q: "¿Se pueden seguir los aviones cisterna en vivo en kanari?",
-        a: "Sí. kanari muestra en casi tiempo real la posición de los medios aéreos contra incendios que emiten ADS-B: Canadair CL-415 y CL-215, Air Tractor Fire Boss, DC-10 Air Tanker, helicópteros (S-64 Air Crane, Chinook, Firehawk). Haz clic en una aeronave para ver su modelo, nacionalidad, velocidad y altitud. Como vuelan solo de día, el mapa muestra pocas de noche.",
+        q: "¿Se pueden seguir los aviones cisterna en vivo en FireSight?",
+        a: "Sí. FireSight muestra en casi tiempo real la posición de los medios aéreos contra incendios que emiten ADS-B: Canadair CL-415 y CL-215, Air Tractor Fire Boss, DC-10 Air Tanker, helicópteros (S-64 Air Crane, Chinook, Firehawk). Haz clic en una aeronave para ver su modelo, nacionalidad, velocidad y altitud. Como vuelan solo de día, el mapa muestra pocas de noche.",
       },
       {
         q: "¿Qué hago si soy testigo de un foco de incendio?",
-        a: "Llama primero a emergencias: 911 en la mayor parte de América, 112 en España y Europa. Es el único canal de alerta oficial. Después puedes usar el botón « Reportar un incendio » de kanari para marcar tu posición y ayudar a que otros vean el foco lo antes posible.",
+        a: "Llama primero a emergencias: 911 en la mayor parte de América, 112 en España y Europa. Es el único canal de alerta oficial. Después puedes usar el botón « Reportar un incendio » de FireSight para marcar tu posición y ayudar a que otros vean el foco lo antes posible.",
       },
       {
-        q: "¿kanari es gratuito?",
-        a: "Sí, totalmente gratuito y sin crear cuenta. kanari es un proyecto con misión: ayudar a la ciudadanía, los servicios de emergencia, las autoridades y los medios a ver los focos de incendio lo antes posible. El mapa mundial seguirá siendo gratuito.",
+        q: "¿FireSight es gratuito?",
+        a: "Sí, totalmente gratuito y sin crear cuenta. FireSight es un proyecto con misión: ayudar a la ciudadanía, los servicios de emergencia, las autoridades y los medios a ver los focos de incendio lo antes posible. El mapa mundial seguirá siendo gratuito.",
       },
       {
-        q: "¿kanari reemplaza las alertas oficiales?",
-        a: "No. kanari es un servicio de información independiente, no un canal de emergencia oficial. Las decisiones de evacuación e intervención corresponden a las autoridades (protección civil, bomberos). En una emergencia, llama al 911 o al 112.",
+        q: "¿FireSight reemplaza las alertas oficiales?",
+        a: "No. FireSight es un servicio de información independiente, no un canal de emergencia oficial. Las decisiones de evacuación e intervención corresponden a las autoridades (protección civil, bomberos). En una emergencia, llama al 911 o al 112.",
       },
       {
         q: "¿Por qué un incendio que estoy viendo no aparece en el mapa?",
@@ -144,42 +144,42 @@ const FAQ: Record<Lang, { title: string; intro: string; items: QA[] }> = {
         a: "A través de la página Contribuir: ideas, fuentes de datos, errores, alianzas — todo aporte es bienvenido y estudiado. Las mejoras pertinentes se integran de forma continua.",
       },
       {
-        q: "¿Quién está detrás de kanari?",
-        a: "kanari se desarrolla en Francia por VRIA, de forma independiente, con una comunidad creciente de contribuidores (bomberos, autoridades, desarrolladores, ciudadanos). El nombre viene del canario en la mina: el que canta antes de que el peligro sea visible.",
+        q: "¿Quién está detrás de FireSight?",
+        a: "FireSight es desarrollado por el equipo theyapguard, de forma independiente, con una comunidad creciente de contribuidores (bomberos, autoridades, desarrolladores, ciudadanos). El nombre lo dice todo: la vista sobre el fuego — cada ignición a la vista, antes de que se haga visible.",
       },
     ],
   },
   pt: {
     title: "Perguntas frequentes",
-    intro: "Tudo sobre o kanari, o mapa gratuito de focos de incêndio em tempo real.",
+    intro: "Tudo sobre o FireSight, o mapa gratuito de focos de incêndio em tempo real.",
     items: [
       {
         q: "Como sei se há um incêndio florestal perto de mim agora?",
-        a: "Abra kanari.io: o mapa se centraliza na sua região e mostra os focos detectados por satélite nas últimas horas, além dos relatos de moradores verificados. Use a busca de cidades ou o botão « Minha posição » para checar uma zona precisa. Cada chama é colorida pela idade do último sinal: vermelho significa ativo há menos de 3 horas.",
+        a: "Abra firesight.io: o mapa se centraliza na sua região e mostra os focos detectados por satélite nas últimas horas, além dos relatos de moradores verificados. Use a busca de cidades ou o botão « Minha posição » para checar uma zona precisa. Cada chama é colorida pela idade do último sinal: vermelho significa ativo há menos de 3 horas.",
       },
       {
-        q: "O mapa de incêndios do kanari é mesmo em tempo real?",
+        q: "O mapa de incêndios do FireSight é mesmo em tempo real?",
         a: "O mapa se atualiza a cada 2 a 3 minutos. As detecções vêm dos satélites NASA FIRMS (VIIRS, resolução de 375 m), GOES para as Américas e Meteosat MTG para Europa e África (atualização a cada 10 minutos), completadas por relatos publicados nas redes sociais. Um incêndio pode aparecer de alguns minutos a algumas dezenas de minutos depois do início real.",
       },
       {
-        q: "De onde vêm os dados do kanari?",
+        q: "De onde vêm os dados do FireSight?",
         a: "De fontes públicas e verificáveis: NASA FIRMS (satélites VIIRS NOAA-20/21), NOAA GOES, EUMETSAT Meteosat MTG (detecção ativa de incêndios), a imprensa via GDELT, Bluesky e Telegram para os relatos. Cada relato de morador passa por uma triagem de IA (dois julgamentos independentes) antes de aparecer, para eliminar falsos positivos.",
       },
       {
-        q: "Dá para acompanhar os aviões-tanque ao vivo no kanari?",
-        a: "Sim. O kanari mostra em quase tempo real a posição dos meios aéreos de combate a incêndios que emitem ADS-B: Canadair CL-415 e CL-215, Air Tractor Fire Boss, DC-10 Air Tanker, helicópteros (S-64 Air Crane, Chinook, Firehawk). Clique numa aeronave para ver modelo, nacionalidade, velocidade e altitude. Como voam só de dia, o mapa mostra poucas à noite.",
+        q: "Dá para acompanhar os aviões-tanque ao vivo no FireSight?",
+        a: "Sim. O FireSight mostra em quase tempo real a posição dos meios aéreos de combate a incêndios que emitem ADS-B: Canadair CL-415 e CL-215, Air Tractor Fire Boss, DC-10 Air Tanker, helicópteros (S-64 Air Crane, Chinook, Firehawk). Clique numa aeronave para ver modelo, nacionalidade, velocidade e altitude. Como voam só de dia, o mapa mostra poucas à noite.",
       },
       {
         q: "O que faço se presenciar um foco de incêndio?",
-        a: "Ligue primeiro para a emergência: 193 (Corpo de Bombeiros) no Brasil, 112 em Portugal e na Europa. É o único canal de alerta oficial. Depois você pode usar o botão « Reportar um incêndio » do kanari para marcar sua posição e ajudar outras pessoas a verem o foco o quanto antes.",
+        a: "Ligue primeiro para a emergência: 193 (Corpo de Bombeiros) no Brasil, 112 em Portugal e na Europa. É o único canal de alerta oficial. Depois você pode usar o botão « Reportar um incêndio » do FireSight para marcar sua posição e ajudar outras pessoas a verem o foco o quanto antes.",
       },
       {
-        q: "O kanari é gratuito?",
-        a: "Sim, totalmente gratuito e sem criar conta. O kanari é um projeto com missão: ajudar cidadãos, equipes de emergência, autoridades e a imprensa a verem os focos de incêndio o mais cedo possível. O mapa mundial continuará gratuito.",
+        q: "O FireSight é gratuito?",
+        a: "Sim, totalmente gratuito e sem criar conta. O FireSight é um projeto com missão: ajudar cidadãos, equipes de emergência, autoridades e a imprensa a verem os focos de incêndio o mais cedo possível. O mapa mundial continuará gratuito.",
       },
       {
-        q: "O kanari substitui os alertas oficiais?",
-        a: "Não. O kanari é um serviço de informação independente, não um canal de emergência oficial. As decisões de evacuação e de combate cabem às autoridades (Defesa Civil, bombeiros). Numa emergência, ligue 193 no Brasil ou 112 em Portugal.",
+        q: "O FireSight substitui os alertas oficiais?",
+        a: "Não. O FireSight é um serviço de informação independente, não um canal de emergência oficial. As decisões de evacuação e de combate cabem às autoridades (Defesa Civil, bombeiros). Numa emergência, ligue 193 no Brasil ou 112 em Portugal.",
       },
       {
         q: "Por que um incêndio que estou vendo não aparece no mapa?",
@@ -190,8 +190,8 @@ const FAQ: Record<Lang, { title: string; intro: string; items: QA[] }> = {
         a: "Pela página Contribuir: ideias, fontes de dados, bugs, parcerias — todo retorno é bem-vindo e estudado. As melhorias pertinentes são integradas continuamente.",
       },
       {
-        q: "Quem está por trás do kanari?",
-        a: "O kanari é desenvolvido na França pela VRIA, de forma independente, com uma comunidade crescente de contribuidores (bombeiros, autoridades, desenvolvedores, cidadãos). O nome vem do canário na mina: o que canta antes de o perigo ficar visível.",
+        q: "Quem está por trás do FireSight?",
+        a: "O FireSight é desenvolvido pela equipe theyapguard, de forma independente, com uma comunidade crescente de contribuidores (bombeiros, autoridades, desenvolvedores, cidadãos). O nome diz tudo: a visão do fogo — cada ignição à vista, antes de se tornar visível.",
       },
     ],
   },
@@ -206,24 +206,24 @@ export async function generateMetadata({
   const l: Lang = isValidLang(lang) ? lang : "en";
   const META: Record<Lang, { title: string; description: string }> = {
     fr: {
-      title: "FAQ — carte des feux en temps réel, Canadair en direct | kanari",
+      title: "FAQ — carte des feux en temps réel, Canadair en direct | FireSight",
       description:
-        "Comment savoir s'il y a un feu près de chez vous, suivre les Canadair en direct, comprendre les données satellites : les réponses aux questions les plus fréquentes sur kanari.",
+        "Comment savoir s'il y a un feu près de chez vous, suivre les Canadair en direct, comprendre les données satellites : les réponses aux questions les plus fréquentes sur firesight.",
     },
     en: {
-      title: "FAQ — live wildfire map, water bomber tracking | kanari",
+      title: "FAQ — live wildfire map, water bomber tracking | FireSight",
       description:
-        "How to know if there is a fire near you, track water bombers live, understand satellite data: answers to the most asked questions about kanari.",
+        "How to know if there is a fire near you, track water bombers live, understand satellite data: answers to the most asked questions about firesight.",
     },
     es: {
-      title: "Preguntas frecuentes — mapa de incendios en tiempo real | kanari",
+      title: "Preguntas frecuentes — mapa de incendios en tiempo real | FireSight",
       description:
-        "Cómo saber si hay un incendio cerca de ti, seguir los aviones cisterna en vivo, entender los datos satelitales: las respuestas a las preguntas más frecuentes sobre kanari.",
+        "Cómo saber si hay un incendio cerca de ti, seguir los aviones cisterna en vivo, entender los datos satelitales: las respuestas a las preguntas más frecuentes sobre firesight.",
     },
     pt: {
-      title: "Perguntas frequentes — mapa de incêndios em tempo real | kanari",
+      title: "Perguntas frequentes — mapa de incêndios em tempo real | FireSight",
       description:
-        "Como saber se há um incêndio perto de você, acompanhar os aviões-tanque ao vivo, entender os dados de satélite: as respostas às perguntas mais frequentes sobre o kanari.",
+        "Como saber se há um incêndio perto de você, acompanhar os aviões-tanque ao vivo, entender os dados de satélite: as respostas às perguntas mais frequentes sobre o firesight.",
     },
   };
   return {

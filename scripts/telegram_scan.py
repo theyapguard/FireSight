@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Veille Telegram Kanari — exécutée par GitHub Actions toutes les 10 min.
+"""Veille Telegram FireSight — exécutée par GitHub Actions toutes les 10 min.
 
 Recherche globale des messages publics récents mentionnant un feu de forêt
-(multilingue), puis POST vers l'API Kanari qui les stocke sur Blob.
+(multilingue), puis POST vers l'API FireSight qui les stocke sur Blob.
 Env requis : TELEGRAM_API_ID, TELEGRAM_API_HASH, TELEGRAM_SESSION, CRON_SECRET.
 """
 
@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from telethon import TelegramClient, errors
 from telethon.sessions import StringSession
 
-INGEST_URL = "https://vria-fire-detect.vercel.app/api/ingest/telegram"
+INGEST_URL = "https://firesight.vercel.app/api/ingest/telegram"
 
 # La recherche globale MTProto est bridée sur ce compte (résultats vides) :
 # on lit une liste de canaux publics vérifiés — protections civiles, pompiers,

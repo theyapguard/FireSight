@@ -23,7 +23,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "que-faire-feu-de-foret",
     title: "Que faire en cas de feu de forêt ? Les bons réflexes",
-    metaTitle: "Que faire en cas de feu de forêt ? Les bons réflexes | kanari",
+    metaTitle: "Que faire en cas de feu de forêt ? Les bons réflexes | FireSight",
     metaDesc:
       "Témoin d'un départ de feu, habitation menacée, fumée au loin : les bons réflexes validés par les consignes de la Sécurité Civile, étape par étape.",
     imageAlt:
@@ -37,14 +37,14 @@ export const GUIDES: Guide[] = [
         paras: [
           "Appelez immédiatement le 18 ou le 112 (numéro d'urgence européen, gratuit, qui fonctionne même sans réseau de votre opérateur). Donnez la localisation la plus précise possible : commune, lieu-dit, route la plus proche, et ce que vous voyez — fumée blanche ou noire, flammes visibles ou non, largeur du front. Ne raccrochez que quand l'opérateur vous le dit.",
           "N'essayez d'éteindre vous-même qu'un feu naissant de très petite taille (moins d'un mètre), avec de la terre, du sable ou de l'eau, et toujours en gardant une voie de repli. Au moindre doute, éloignez-vous : un feu de végétation peut avancer plus vite qu'un homme qui court.",
-          "Une fois les secours prévenus, vous pouvez signaler le départ sur kanari (bouton « Signaler un feu ») : votre signalement, horodaté et géolocalisé, aide les habitants du secteur à voir le danger au plus tôt.",
+          "Une fois les secours prévenus, vous pouvez signaler le départ sur FireSight (bouton « Signaler un feu ») : votre signalement, horodaté et géolocalisé, aide les habitants du secteur à voir le danger au plus tôt.",
         ],
       },
       {
         h2: "Votre habitation est menacée",
         paras: [
           "Contrairement à l'intuition, une maison en dur bien préparée est souvent l'abri le plus sûr : fermez volets, fenêtres et aérations, arrosez les abords si vous en avez le temps, rentrez les bouteilles de gaz et véhicules, habillez-vous en coton couvrant. Ne partez en voiture que si les autorités l'ordonnent — la majorité des victimes de feux de forêt sont surprises sur les routes, dans la fumée.",
-          "Écoutez les consignes officielles : FR-Alert (notification sur votre téléphone), la mairie, la préfecture, France Bleu. Elles priment sur toute autre information, y compris kanari.",
+          "Écoutez les consignes officielles : FR-Alert (notification sur votre téléphone), la mairie, la préfecture, France Bleu. Elles priment sur toute autre information, y compris firesight.",
         ],
       },
       {
@@ -57,7 +57,7 @@ export const GUIDES: Guide[] = [
       {
         h2: "Surveiller le risque en temps réel",
         paras: [
-          "La carte kanari affiche les départs de feu détectés par satellite et les signalements citoyens vérifiés, en continu et gratuitement. Les pages par département indiquent aussi le risque météo du jour. En période à risque, un coup d'œil le matin et le soir suffit pour savoir ce qui se passe autour de chez vous.",
+          "La carte FireSight affiche les départs de feu détectés par satellite et les signalements citoyens vérifiés, en continu et gratuitement. Les pages par département indiquent aussi le risque météo du jour. En période à risque, un coup d'œil le matin et le soir suffit pour savoir ce qui se passe autour de chez vous.",
         ],
       },
     ],
@@ -79,7 +79,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "comment-fonctionne-un-canadair",
     title: "Comment fonctionne un Canadair ?",
-    metaTitle: "Comment fonctionne un Canadair ? Écopage, largage, flotte | kanari",
+    metaTitle: "Comment fonctionne un Canadair ? Écopage, largage, flotte | FireSight",
     metaDesc:
       "6 000 litres écopés en 12 secondes, largage à 30 mètres du sol : comment le Canadair CL-415 combat les feux, et comment suivre les Pélican français en direct.",
     imageAlt:
@@ -112,7 +112,7 @@ export const GUIDES: Guide[] = [
       {
         h2: "Suivre les Canadair en direct",
         paras: [
-          "Comme les avions de ligne, la plupart des bombardiers d'eau diffusent leur position par transpondeur ADS-B. kanari agrège ces signaux et affiche en temps réel les Canadair, Fire Boss, tankers lourds et hélicoptères bombardiers en vol dans le monde, superposés à la carte des feux. Un appareil qui tourne en noria au-dessus d'un massif, c'est la signature visible d'un feu en cours de traitement.",
+          "Comme les avions de ligne, la plupart des bombardiers d'eau diffusent leur position par transpondeur ADS-B. FireSight agrège ces signaux et affiche en temps réel les Canadair, Fire Boss, tankers lourds et hélicoptères bombardiers en vol dans le monde, superposés à la carte des feux. Un appareil qui tourne en noria au-dessus d'un massif, c'est la signature visible d'un feu en cours de traitement.",
         ],
       },
     ],
@@ -134,13 +134,13 @@ export const GUIDES: Guide[] = [
   {
     slug: "detection-feux-satellite",
     title: "Comment les satellites détectent-ils les feux de forêt ?",
-    metaTitle: "Détecter les feux de forêt par satellite : VIIRS, GOES, MTG | kanari",
+    metaTitle: "Détecter les feux de forêt par satellite : VIIRS, GOES, MTG | FireSight",
     metaDesc:
       "Anomalies thermiques, résolution 375 m, rafraîchissement 10 minutes : comment les satellites VIIRS, GOES et Meteosat MTG repèrent les départs de feu, et leurs limites.",
     imageAlt:
       "Schéma des deux familles de satellites de détection des feux : défilant VIIRS à 830 km (pixel 375 m, 2 passages par jour) et géostationnaire GOES/Meteosat à 36 000 km (re-scan toutes les 10 minutes)",
     intro:
-      "Un feu émet un rayonnement infrarouge très différent de son environnement. Depuis l'orbite, des capteurs spécialisés repèrent ces « anomalies thermiques » — c'est la colonne vertébrale de toute carte de feux en temps réel, kanari compris.",
+      "Un feu émet un rayonnement infrarouge très différent de son environnement. Depuis l'orbite, des capteurs spécialisés repèrent ces « anomalies thermiques » — c'est la colonne vertébrale de toute carte de feux en temps réel, FireSight compris.",
     updated: "2026-08-03",
     sections: [
       {
@@ -154,21 +154,21 @@ export const GUIDES: Guide[] = [
         h2: "Du pixel chaud à l'alerte",
         paras: [
           "Les algorithmes comparent chaque pixel à ses voisins et à son historique : un point anormalement chaud en infrarouge moyen, de nuit ou par contraste avec son environnement, devient une « détection active ». Chaque détection porte une position, une puissance radiative (en mégawatts) et un niveau de confiance.",
-          "kanari agrège ces détections (NASA FIRMS, GOES, MTG), les regroupe en foyers, les croise avec les témoignages citoyens vérifiés par IA, et les affiche en 2 à 3 minutes. Le croisement satellite + témoin humain est la clé : le satellite confirme le témoin, le témoin devance parfois le satellite.",
+          "FireSight agrège ces détections (NASA FIRMS, GOES, MTG), les regroupe en foyers, les croise avec les témoignages citoyens vérifiés par IA, et les affiche en 2 à 3 minutes. Le croisement satellite + témoin humain est la clé : le satellite confirme le témoin, le témoin devance parfois le satellite.",
         ],
       },
       {
         h2: "Ce que les satellites ne voient pas",
         paras: [
           "Un feu très petit ou naissant peut passer entre deux passages de satellite défilant (jusqu'à 12 heures d'écart aux latitudes moyennes). Les nuages épais, la fumée dense ou la canopée peuvent masquer le signal. Un pixel chaud n'est pas toujours un feu de forêt : torchères industrielles, brûlages agricoles et même toits métalliques surchauffés génèrent des faux positifs, que les algorithmes filtrent en partie.",
-          "C'est pour combler ces angles morts que le signalement humain compte : sur kanari, un témoignage géolocalisé publié en ligne peut faire apparaître un départ de feu avant la première détection satellite.",
+          "C'est pour combler ces angles morts que le signalement humain compte : sur FireSight, un témoignage géolocalisé publié en ligne peut faire apparaître un départ de feu avant la première détection satellite.",
         ],
       },
     ],
     faq: [
       {
         q: "En combien de temps un satellite détecte-t-il un feu de forêt ?",
-        a: "Les satellites géostationnaires (GOES, Meteosat MTG) re-scannent leur zone toutes les 10 minutes avec des pixels de 2 à 4 km. Les satellites défilants (VIIRS, 375 m de résolution) passent environ deux fois par jour et par satellite. kanari affiche les détections publiées en 2 à 3 minutes.",
+        a: "Les satellites géostationnaires (GOES, Meteosat MTG) re-scannent leur zone toutes les 10 minutes avec des pixels de 2 à 4 km. Les satellites défilants (VIIRS, 375 m de résolution) passent environ deux fois par jour et par satellite. FireSight affiche les détections publiées en 2 à 3 minutes.",
       },
       {
         q: "Quelle taille de feu un satellite peut-il repérer ?",
@@ -176,14 +176,14 @@ export const GUIDES: Guide[] = [
       },
       {
         q: "Les détections satellite peuvent-elles être de faux positifs ?",
-        a: "Oui : torchères industrielles, brûlages agricoles ou toits métalliques surchauffés génèrent des pixels chauds sans feu de forêt. Les algorithmes en filtrent une partie, et kanari croise les détections avec des témoignages humains vérifiés par IA pour consolider la confiance.",
+        a: "Oui : torchères industrielles, brûlages agricoles ou toits métalliques surchauffés génèrent des pixels chauds sans feu de forêt. Les algorithmes en filtrent une partie, et FireSight croise les détections avec des témoignages humains vérifiés par IA pour consolider la confiance.",
       },
     ],
   },
   {
     slug: "meteo-des-forets",
     title: "Comprendre la météo des forêts et le risque incendie",
-    metaTitle: "Météo des forêts : comprendre le risque incendie du jour | kanari",
+    metaTitle: "Météo des forêts : comprendre le risque incendie du jour | FireSight",
     metaDesc:
       "Sécheresse, vent, humidité de l'air : comment se calcule le risque de feu de forêt, ce que signifient les niveaux vert à rouge, et où consulter le risque en temps réel.",
     imageAlt:
@@ -203,7 +203,7 @@ export const GUIDES: Guide[] = [
         h2: "La météo des forêts officielle",
         paras: [
           "Depuis 2023, Météo-France publie chaque jour en été la « météo des forêts » : une carte par département, du vert (risque faible) au rouge (risque très élevé), calculée à partir de l'indice forêt-météo (IFM), qui intègre pluie récente, température, humidité et vent. En risque rouge, l'accès à certains massifs est interdit par arrêté préfectoral.",
-          "kanari affiche sur chaque page départementale un risque météo estimé, calculé en continu à partir des mêmes ingrédients (indice de Chandler : température, humidité, vent, pluie récente). Il donne la tendance en temps réel, sans remplacer la carte officielle qui fait foi réglementairement.",
+          "FireSight affiche sur chaque page départementale un risque météo estimé, calculé en continu à partir des mêmes ingrédients (indice de Chandler : température, humidité, vent, pluie récente). Il donne la tendance en temps réel, sans remplacer la carte officielle qui fait foi réglementairement.",
         ],
       },
       {
@@ -221,7 +221,7 @@ export const GUIDES: Guide[] = [
       },
       {
         q: "Où consulter le risque incendie du jour ?",
-        a: "Météo-France publie chaque jour en été la « météo des forêts », carte officielle par département du vert au rouge. kanari affiche en complément un risque estimé en continu sur chaque page départementale, calculé à partir des mêmes ingrédients (température, humidité, vent, pluie récente).",
+        a: "Météo-France publie chaque jour en été la « météo des forêts », carte officielle par département du vert au rouge. FireSight affiche en complément un risque estimé en continu sur chaque page départementale, calculé à partir des mêmes ingrédients (température, humidité, vent, pluie récente).",
       },
       {
         q: "Qu'est-ce qui est interdit les jours à risque très élevé ?",
@@ -232,7 +232,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "odeur-de-fumee-que-faire",
     title: "Odeur de fumée dehors : comment savoir s'il y a un feu près de chez vous ?",
-    metaTitle: "Odeur de fumée dehors : y a-t-il un feu près de chez moi ? | kanari",
+    metaTitle: "Odeur de fumée dehors : y a-t-il un feu près de chez moi ? | FireSight",
     metaDesc:
       "Ça sent la fumée ou le brûlé dehors ? Les causes possibles, comment vérifier en 2 minutes s'il y a un feu autour de vous (carte satellite gratuite), et quand appeler le 18.",
     imageAlt:
@@ -251,7 +251,7 @@ export const GUIDES: Guide[] = [
       {
         h2: "Vérifier en deux minutes s'il y a un feu autour de vous",
         paras: [
-          "Ouvrez la carte kanari (gratuite, sans compte) et centrez-la sur votre position : les départs de feu détectés par satellite (mise à jour toutes les 10 minutes en Europe) et les signalements citoyens vérifiés y apparaissent en continu. La liste nationale des incendies en cours en France est aussi consultable d'un coup d'œil.",
+          "Ouvrez la carte FireSight (gratuite, sans compte) et centrez-la sur votre position : les départs de feu détectés par satellite (mise à jour toutes les 10 minutes en Europe) et les signalements citoyens vérifiés y apparaissent en continu. La liste nationale des incendies en cours en France est aussi consultable d'un coup d'œil.",
           "Regardez ensuite le sens du vent, affiché sur la carte : une odeur de fumée arrive TOUJOURS du côté d'où souffle le vent. Si le vent vient du sud-ouest, la source est au sud-ouest — cherchez les foyers dans cette direction, y compris loin : un feu puissant à 100 km sous le vent se sent parfaitement.",
           "Croisez avec les autres signaux : sirènes, rotations d'avions ou d'hélicoptères (la carte suit les Canadair en direct), publications de la préfecture ou des pompiers sur les réseaux sociaux, et l'indice de qualité de l'air de votre région (ATMO) qui grimpe quand un panache passe.",
         ],
@@ -266,7 +266,7 @@ export const GUIDES: Guide[] = [
       {
         h2: "Suivre l'évolution sans y penser",
         paras: [
-          "Sur la carte kanari, touchez « M'alerter sur cette zone » : vous recevrez une notification si un nouveau foyer significatif est détecté autour de chez vous. C'est gratuit, sans compte, et cela fonctionne sur téléphone comme sur ordinateur — le moyen le plus simple de dormir tranquille les soirs où « ça sent la fumée ».",
+          "Sur la carte FireSight, touchez « M'alerter sur cette zone » : vous recevrez une notification si un nouveau foyer significatif est détecté autour de chez vous. C'est gratuit, sans compte, et cela fonctionne sur téléphone comme sur ordinateur — le moyen le plus simple de dormir tranquille les soirs où « ça sent la fumée ».",
         ],
       },
     ],
@@ -277,7 +277,7 @@ export const GUIDES: Guide[] = [
       },
       {
         q: "Comment vérifier s'il y a un feu près de chez moi en ce moment ?",
-        a: "Ouvrez une carte de détection en temps réel comme kanari.io (satellites rafraîchis toutes les 10 minutes en Europe, témoignages vérifiés par IA) et regardez le sens du vent : une odeur de fumée arrive toujours du côté d'où souffle le vent. Croisez avec les sirènes, les rotations d'avions et l'indice de qualité de l'air.",
+        a: "Ouvrez une carte de détection en temps réel comme firesight.io (satellites rafraîchis toutes les 10 minutes en Europe, témoignages vérifiés par IA) et regardez le sens du vent : une odeur de fumée arrive toujours du côté d'où souffle le vent. Croisez avec les sirènes, les rotations d'avions et l'indice de qualité de l'air.",
       },
       {
         q: "Quand appeler les pompiers pour une odeur de fumée ?",

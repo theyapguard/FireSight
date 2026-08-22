@@ -12,23 +12,23 @@ import { KIT, BADGE_HTML } from "@/lib/widget-kit-i18n";
 // locale repart avec SA carte en 20 secondes.
 const T = {
   fr: {
-    metaTitle: "Intégrer la carte des feux kanari sur votre site (widget gratuit)",
+    metaTitle: "Intégrer la carte des feux FireSight sur votre site (widget gratuit)",
     metaDesc:
-      "Médias, mairies, sites météo : intégrez gratuitement la carte des feux en temps réel de kanari, centrée sur votre département ou votre pays. Générateur de code, 4 langues, mise à jour continue.",
+      "Médias, mairies, sites météo : intégrez gratuitement la carte des feux en temps réel de FireSight, centrée sur votre département ou votre pays. Générateur de code, 4 langues, mise à jour continue.",
     h1: "Intégrez la carte des feux sur votre site",
     intro:
-      "Média, mairie, site météo, blog : la carte kanari (feux en temps réel, Canadair en direct, fumée) est intégrable gratuitement, centrée sur la zone de votre choix. Une seule condition : conserver le lien d'attribution vers kanari.io.",
+      "Média, mairie, site météo, blog : la carte FireSight (feux en temps réel, Canadair en direct, fumée) est intégrable gratuitement, centrée sur la zone de votre choix. Une seule condition : conserver le lien d'attribution vers firesight.io.",
     pressTitle: "Pour les rédactions",
     press: [
       "Le widget est libre d'utilisation dans vos articles et pages en direct, y compris en couverture d'un incendie en cours.",
-      "Les chiffres de kanari (feux actifs, détections, chronologies) sont citables librement : données ouvertes CC BY 4.0, mention « kanari.io ».",
-      "Besoin d'une carte sur mesure, d'un export, d'un commentaire ou d'une chronologie précise pendant un épisode : contact@kanari.io — réponse rapide en période de feux.",
+      "Les chiffres de FireSight (feux actifs, détections, chronologies) sont citables librement : données ouvertes CC BY 4.0, mention « firesight.io ».",
+      "Besoin d'une carte sur mesure, d'un export, d'un commentaire ou d'une chronologie précise pendant un épisode : contact@firesight.io — réponse rapide en période de feux.",
     ],
     faqTitle: "Questions fréquentes",
     faq: [
       {
         q: "Le widget est-il vraiment gratuit ?",
-        a: "Oui, sans limite de trafic ni de durée. La seule condition est l'attribution : le lien vers kanari.io sous la carte.",
+        a: "Oui, sans limite de trafic ni de durée. La seule condition est l'attribution : le lien vers firesight.io sous la carte.",
       },
       {
         q: "Puis-je centrer la carte sur ma commune ?",
@@ -36,28 +36,28 @@ const T = {
       },
       {
         q: "Les données sont-elles à jour pendant un incendie ?",
-        a: "La carte embarquée est la même que kanari.io : détections satellite rafraîchies en continu (toutes les 10 minutes pour les satellites géostationnaires), avions en vol, signalements vérifiés.",
+        a: "La carte embarquée est la même que firesight.io : détections satellite rafraîchies en continu (toutes les 10 minutes pour les satellites géostationnaires), avions en vol, signalements vérifiés.",
       },
     ],
   },
   en: {
-    metaTitle: "Embed the kanari wildfire map on your site (free widget)",
+    metaTitle: "Embed the FireSight wildfire map on your site (free widget)",
     metaDesc:
-      "Newsrooms, municipalities, weather sites: embed kanari's real-time wildfire map for free, centered on your country or area. Code generator, 4 languages, continuously updated.",
+      "Newsrooms, municipalities, weather sites: embed FireSight's real-time wildfire map for free, centered on your country or area. Code generator, 4 languages, continuously updated.",
     h1: "Embed the wildfire map on your site",
     intro:
-      "Newsroom, municipality, weather site, blog: the kanari map (real-time fires, water bombers, smoke) can be embedded for free, centered on the area of your choice. One condition: keep the attribution link to kanari.io.",
+      "Newsroom, municipality, weather site, blog: the FireSight map (real-time fires, water bombers, smoke) can be embedded for free, centered on the area of your choice. One condition: keep the attribution link to firesight.io.",
     pressTitle: "For newsrooms",
     press: [
       "The widget is free to use in your articles and live pages, including live coverage of an ongoing wildfire.",
-      "kanari's figures (active fires, detections, timelines) are freely quotable: open data CC BY 4.0, attribution “kanari.io”.",
-      "Need a custom map, an export, a quote or a precise timeline during an event: contact@kanari.io — fast replies during fire season.",
+      "FireSight's figures (active fires, detections, timelines) are freely quotable: open data CC BY 4.0, attribution “firesight.io”.",
+      "Need a custom map, an export, a quote or a precise timeline during an event: contact@firesight.io — fast replies during fire season.",
     ],
     faqTitle: "Frequently asked questions",
     faq: [
       {
         q: "Is the widget really free?",
-        a: "Yes, with no traffic or time limit. The only condition is attribution: the link to kanari.io below the map.",
+        a: "Yes, with no traffic or time limit. The only condition is attribution: the link to firesight.io below the map.",
       },
       {
         q: "Can I center the map on my town?",
@@ -65,28 +65,28 @@ const T = {
       },
       {
         q: "Is the data current during a wildfire?",
-        a: "The embedded map is the same as kanari.io: satellite detections refreshed continuously (every 10 minutes for geostationary satellites), aircraft in flight, verified reports.",
+        a: "The embedded map is the same as firesight.io: satellite detections refreshed continuously (every 10 minutes for geostationary satellites), aircraft in flight, verified reports.",
       },
     ],
   },
   es: {
-    metaTitle: "Insertar el mapa de incendios kanari en tu sitio (widget gratuito)",
+    metaTitle: "Insertar el mapa de incendios FireSight en tu sitio (widget gratuito)",
     metaDesc:
-      "Medios, municipios, sitios de clima: inserten gratis el mapa de incendios en tiempo real de kanari, centrado en su país o zona. Generador de código, 4 idiomas, actualización continua.",
+      "Medios, municipios, sitios de clima: inserten gratis el mapa de incendios en tiempo real de FireSight, centrado en su país o zona. Generador de código, 4 idiomas, actualización continua.",
     h1: "Inserta el mapa de incendios en tu sitio",
     intro:
-      "Medio, municipio, sitio de clima, blog: el mapa kanari (incendios en tiempo real, aviones cisterna, humo) se puede insertar gratis, centrado en la zona que elijas. Una sola condición: conservar el enlace de atribución a kanari.io.",
+      "Medio, municipio, sitio de clima, blog: el mapa FireSight (incendios en tiempo real, aviones cisterna, humo) se puede insertar gratis, centrado en la zona que elijas. Una sola condición: conservar el enlace de atribución a firesight.io.",
     pressTitle: "Para las redacciones",
     press: [
       "El widget es de uso libre en sus artículos y coberturas en directo, incluida la cobertura de un incendio en curso.",
-      "Las cifras de kanari (incendios activos, detecciones, cronologías) son citables libremente: datos abiertos CC BY 4.0, mención « kanari.io ».",
-      "¿Necesitan un mapa a medida, un export, una cita o una cronología precisa durante un episodio? contact@kanari.io — respuesta rápida en temporada de incendios.",
+      "Las cifras de FireSight (incendios activos, detecciones, cronologías) son citables libremente: datos abiertos CC BY 4.0, mención « firesight.io ».",
+      "¿Necesitan un mapa a medida, un export, una cita o una cronología precisa durante un episodio? contact@firesight.io — respuesta rápida en temporada de incendios.",
     ],
     faqTitle: "Preguntas frecuentes",
     faq: [
       {
         q: "¿El widget es realmente gratuito?",
-        a: "Sí, sin límite de tráfico ni de tiempo. La única condición es la atribución: el enlace a kanari.io debajo del mapa.",
+        a: "Sí, sin límite de tráfico ni de tiempo. La única condición es la atribución: el enlace a firesight.io debajo del mapa.",
       },
       {
         q: "¿Puedo centrar el mapa en mi ciudad?",
@@ -94,28 +94,28 @@ const T = {
       },
       {
         q: "¿Los datos están al día durante un incendio?",
-        a: "El mapa insertado es el mismo que kanari.io: detecciones satelitales refrescadas de forma continua (cada 10 minutos para los satélites geoestacionarios), aeronaves en vuelo, reportes verificados.",
+        a: "El mapa insertado es el mismo que firesight.io: detecciones satelitales refrescadas de forma continua (cada 10 minutos para los satélites geoestacionarios), aeronaves en vuelo, reportes verificados.",
       },
     ],
   },
   pt: {
-    metaTitle: "Inserir o mapa de incêndios kanari no seu site (widget gratuito)",
+    metaTitle: "Inserir o mapa de incêndios FireSight no seu site (widget gratuito)",
     metaDesc:
-      "Redações, prefeituras, sites de clima: insiram grátis o mapa de incêndios em tempo real do kanari, centrado no seu país ou zona. Gerador de código, 4 línguas, atualização contínua.",
+      "Redações, prefeituras, sites de clima: insiram grátis o mapa de incêndios em tempo real do FireSight, centrado no seu país ou zona. Gerador de código, 4 línguas, atualização contínua.",
     h1: "Insira o mapa de incêndios no seu site",
     intro:
-      "Redação, prefeitura, site de clima, blog: o mapa kanari (incêndios em tempo real, aviões-tanque, fumaça) pode ser inserido gratuitamente, centrado na zona da sua escolha. Uma única condição: manter o link de atribuição para kanari.io.",
+      "Redação, prefeitura, site de clima, blog: o mapa FireSight (incêndios em tempo real, aviões-tanque, fumaça) pode ser inserido gratuitamente, centrado na zona da sua escolha. Uma única condição: manter o link de atribuição para firesight.io.",
     pressTitle: "Para as redações",
     press: [
       "O widget é de uso livre em seus artigos e coberturas ao vivo, inclusive na cobertura de um incêndio em curso.",
-      "Os números do kanari (incêndios ativos, detecções, cronologias) são citáveis livremente: dados abertos CC BY 4.0, menção « kanari.io ».",
-      "Precisa de um mapa sob medida, um export, uma citação ou uma cronologia precisa durante um episódio? contact@kanari.io — resposta rápida na temporada de incêndios.",
+      "Os números do FireSight (incêndios ativos, detecções, cronologias) são citáveis livremente: dados abertos CC BY 4.0, menção « firesight.io ».",
+      "Precisa de um mapa sob medida, um export, uma citação ou uma cronologia precisa durante um episódio? contact@firesight.io — resposta rápida na temporada de incêndios.",
     ],
     faqTitle: "Perguntas frequentes",
     faq: [
       {
         q: "O widget é mesmo gratuito?",
-        a: "Sim, sem limite de tráfego nem de tempo. A única condição é a atribuição: o link para kanari.io abaixo do mapa.",
+        a: "Sim, sem limite de tráfego nem de tempo. A única condição é a atribuição: o link para firesight.io abaixo do mapa.",
       },
       {
         q: "Posso centrar o mapa na minha cidade?",
@@ -123,7 +123,7 @@ const T = {
       },
       {
         q: "Os dados ficam atualizados durante um incêndio?",
-        a: "O mapa inserido é o mesmo de kanari.io: detecções por satélite atualizadas continuamente (a cada 10 minutos para os satélites geoestacionários), aeronaves em voo, relatos verificados.",
+        a: "O mapa inserido é o mesmo de firesight.io: detecções por satélite atualizadas continuamente (a cada 10 minutos para os satélites geoestacionários), aeronaves em voo, relatos verificados.",
       },
     ],
   },
@@ -214,10 +214,10 @@ export default async function WidgetPage({ params }: { params: Promise<{ lang: s
                 <h2 className="mb-2 text-[19px] font-semibold" style={h2}>{k.beyondTitle}</h2>
                 <p className="mb-2">{k.beyondIntro}</p>
                 <ul className="flex flex-col gap-2">
-                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.apiLabel}</span><pre style={code}>GET https://kanari.io/api/events?hours=24</pre></li>
-                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.mcpLabel}</span><pre style={code}>{`{ "mcpServers": { "kanari": { "url": "https://kanari.io/api/mcp" } } }`}</pre></li>
-                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.csvLabel}</span><pre style={code}>https://kanari.io/opendata/feux.csv</pre></li>
-                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.rssLabel}</span><pre style={code}>https://kanari.io/feed.xml</pre></li>
+                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.apiLabel}</span><pre style={code}>GET https://firesight.io/api/events?hours=24</pre></li>
+                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.mcpLabel}</span><pre style={code}>{`{ "mcpServers": { "FireSight": { "url": "https://firesight.io/api/mcp" } } }`}</pre></li>
+                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.csvLabel}</span><pre style={code}>https://firesight.io/opendata/feux.csv</pre></li>
+                  <li><span className="font-semibold" style={{ color: "var(--ink)" }}>{k.rssLabel}</span><pre style={code}>https://firesight.io/feed.xml</pre></li>
                 </ul>
               </section>
 
@@ -226,15 +226,15 @@ export default async function WidgetPage({ params }: { params: Promise<{ lang: s
                 <p className="mb-3">{k.badgeText}</p>
                 <p className="mb-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/brand/badge-kanari-${lang === "fr" ? "fr" : "en"}.svg`} alt={lang === "fr" ? "Données : kanari.io" : "Data: kanari.io"} height={28} />
+                  <img src={`/brand/badge-firesight-${lang === "fr" ? "fr" : "en"}.svg`} alt={lang === "fr" ? "Données : firesight.io" : "Data: firesight.io"} height={28} />
                 </p>
                 <p className="mb-1 font-semibold" style={{ color: "var(--ink)" }}>{k.badgeHtmlLabel}</p>
                 <pre style={code}>{BADGE_HTML(lang)}</pre>
                 <p className="mt-3">
                   <span className="font-semibold" style={{ color: "var(--ink)" }}>{k.logosLabel} : </span>
-                  <a href="/brand/kanari.svg" style={{ color: "var(--link)" }}>kanari.svg</a>{" · "}
-                  <a href="/brand/kanari-noir.svg" style={{ color: "var(--link)" }}>kanari-noir.svg</a>{" · "}
-                  <a href="/brand/kanari-blanc.svg" style={{ color: "var(--link)" }}>kanari-blanc.svg</a>{" · "}
+                  <a href="/brand/firesight.svg" style={{ color: "var(--link)" }}>firesight.svg</a>{" · "}
+                  <a href="/brand/firesight-noir.svg" style={{ color: "var(--link)" }}>firesight-noir.svg</a>{" · "}
+                  <a href="/brand/firesight-blanc.svg" style={{ color: "var(--link)" }}>firesight-blanc.svg</a>{" · "}
                   <a href="/brand/logo-symbole.svg" style={{ color: "var(--link)" }}>logo-symbole.svg</a>
                 </p>
                 <p className="mt-3">{k.contact}</p>

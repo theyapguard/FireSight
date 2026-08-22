@@ -9,9 +9,9 @@ import { GUIDES_PT } from "@/lib/guides-pt";
 
 const T = {
   fr: {
-    metaTitle: "Guides feux de forêt : réflexes, Canadair, satellites | kanari",
+    metaTitle: "Guides feux de forêt : réflexes, Canadair, satellites | FireSight",
     metaDesc:
-      "Les guides kanari pour tout comprendre des feux de forêt : bons réflexes en cas de départ de feu, fonctionnement des Canadair, détection satellite, météo des forêts.",
+      "Les guides FireSight pour tout comprendre des feux de forêt : bons réflexes en cas de départ de feu, fonctionnement des Canadair, détection satellite, météo des forêts.",
     h1: "Guides feux de forêt",
     intro:
       "Comprendre les feux de forêt pour mieux s'en protéger : les réflexes qui sauvent, les coulisses de la lutte aérienne et de la détection satellite.",
@@ -19,9 +19,9 @@ const T = {
     faq: "FAQ",
   },
   en: {
-    metaTitle: "Wildfire guides: reflexes, water bombers, satellites | kanari",
+    metaTitle: "Wildfire guides: reflexes, water bombers, satellites | FireSight",
     metaDesc:
-      "kanari's guides to understand wildfires: the right reflexes during an ignition, how Canadair water bombers work, satellite detection, fire weather.",
+      "FireSight's guides to understand wildfires: the right reflexes during an ignition, how Canadair water bombers work, satellite detection, fire weather.",
     h1: "Wildfire guides",
     intro:
       "Understanding wildfires to better protect yourself: the reflexes that save lives, and the inner workings of aerial firefighting and satellite detection.",
@@ -29,9 +29,9 @@ const T = {
     faq: "FAQ",
   },
   es: {
-    metaTitle: "Guías sobre incendios forestales: reflejos, satélites, humo | kanari",
+    metaTitle: "Guías sobre incendios forestales: reflejos, satélites, humo | FireSight",
     metaDesc:
-      "Las guías de kanari para entender los incendios forestales: los reflejos correctos ante un foco, la detección satelital y qué hacer cuando huele a humo.",
+      "Las guías de FireSight para entender los incendios forestales: los reflejos correctos ante un foco, la detección satelital y qué hacer cuando huele a humo.",
     h1: "Guías sobre incendios forestales",
     intro:
       "Entender los incendios forestales para protegerse mejor: los reflejos que salvan vidas, la detección satelital por dentro y qué hacer cuando huele a humo.",
@@ -39,9 +39,9 @@ const T = {
     faq: "Preguntas frecuentes",
   },
   pt: {
-    metaTitle: "Guias sobre incêndios florestais: reflexos, satélites, fumaça | kanari",
+    metaTitle: "Guias sobre incêndios florestais: reflexos, satélites, fumaça | FireSight",
     metaDesc:
-      "Os guias do kanari para entender os incêndios florestais: os reflexos certos diante de um foco, a detecção por satélite e o que fazer quando há cheiro de fumaça.",
+      "Os guias do FireSight para entender os incêndios florestais: os reflexos certos diante de um foco, a detecção por satélite e o que fazer quando há cheiro de fumaça.",
     h1: "Guias sobre incêndios florestais",
     intro:
       "Entender os incêndios florestais para se proteger melhor: os reflexos que salvam vidas, os bastidores da detecção por satélite e o que fazer quando há cheiro de fumaça.",

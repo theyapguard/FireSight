@@ -96,7 +96,7 @@ export async function generateMetadata({
         ? "Incendies en cours en France aujourd'hui : aucun foyer actif"
         : `Incendies en cours en France aujourd'hui : ${count} foyer${count > 1 ? "s" : ""} actif${count > 1 ? "s" : ""}`;
   return {
-    title: `${lead} | kanari`,
+    title: `${lead} | FireSight`,
     description:
       "La liste des feux de forêt en cours en France, mise à jour en continu : lieu, département, heure de première détection satellite, dernier signal. Détections NASA FIRMS, GOES et Meteosat MTG, témoignages vérifiés.",
     alternates: { canonical: "/fr/feux-en-cours" },
@@ -124,9 +124,9 @@ export default async function FeuxEnCours({ params }: { params: Promise<{ lang: 
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: "https://kanari.io/fr" },
-      { "@type": "ListItem", position: 2, name: "Feux en France", item: "https://kanari.io/fr/feux" },
-      { "@type": "ListItem", position: 3, name: "Incendies en cours", item: "https://kanari.io/fr/feux-en-cours" },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: "https://firesight.io/fr" },
+      { "@type": "ListItem", position: 2, name: "Feux en France", item: "https://firesight.io/fr/feux" },
+      { "@type": "ListItem", position: 3, name: "Incendies en cours", item: "https://firesight.io/fr/feux-en-cours" },
     ],
   };
   // FAQ (reflète mot pour mot la section méthodologie visible plus bas).
@@ -139,7 +139,7 @@ export default async function FeuxEnCours({ params }: { params: Promise<{ lang: 
         name: "Comment cette liste des incendies en cours est-elle établie ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Chaque foyer provient d'une détection thermique satellite (VIIRS ~375 m, GOES et Meteosat MTG toutes les 10 minutes) ou d'un témoignage public vérifié deux fois par IA. Les heures affichées sont celles des passages satellites, fournies par la NASA et EUMETSAT. Source : kanari.io.",
+          text: "Chaque foyer provient d'une détection thermique satellite (VIIRS ~375 m, GOES et Meteosat MTG toutes les 10 minutes) ou d'un témoignage public vérifié deux fois par IA. Les heures affichées sont celles des passages satellites, fournies par la NASA et EUMETSAT. Source : firesight.io.",
         },
       },
       {
@@ -162,7 +162,7 @@ export default async function FeuxEnCours({ params }: { params: Promise<{ lang: 
           "@type": "ListItem",
           position: i + 1,
           name: `${r.place ? `Feu près de ${r.place}` : "Détection satellite"}${r.dept ? ` (${r.dept.name})` : ""}`,
-          url: `https://kanari.io${r.href}`,
+          url: `https://firesight.io${r.href}`,
         })),
       }
     : null;

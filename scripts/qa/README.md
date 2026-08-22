@@ -1,10 +1,10 @@
-# QA Kanari — programme de vérification complet
+# QA FireSight — programme de vérification complet
 
 À lancer **avant chaque commit**. Sort en erreur (code 1) dès qu'une
 vérification échoue : toute régression est détectée immédiatement.
 
 ```bash
-npm run qa          # audite la production (kanari.io)
+npm run qa          # audite la production (firesight.io)
 npm run qa:local    # audite le serveur de dev (localhost:3100)
 ```
 

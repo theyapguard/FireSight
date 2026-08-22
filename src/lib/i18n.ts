@@ -1,4 +1,4 @@
-// Internationalisation Kanari — FR (pays francophones), EN (défaut monde),
+// Internationalisation FireSight — FR (pays francophones), EN (défaut monde),
 // ES (Espagne + Amérique hispanophone), PT (Brésil + Portugal). La langue est
 // portée par l'URL (/fr, /en, /es, /pt) : indispensable au SEO (hreflang) et
 // au référencement dans les LLM. L'Amérique latine est le plus gros gisement
@@ -33,7 +33,7 @@ export function localize<
   return (dict[lang] ?? dict.en) as D["fr"] | D["en"];
 }
 
-// Numéro d'urgence selon le pays du visiteur (cookie kanari-geo posé par le
+// Numéro d'urgence selon le pays du visiteur (cookie firesight-geo posé par le
 // middleware). Le 112 (norme GSM) fonctionne dans la plupart des pays : il
 // sert de repli — sauf en anglais sans géo, où l'audience est majoritairement
 // nord-américaine (911).
@@ -84,7 +84,7 @@ const fr = {
   viewPlan: "Plan",
   // Titre = requête principale d'abord (« carte des feux… temps réel »),
   // marque ensuite : c'est la requête tapée, pas la marque, qui amène le SEO.
-  metaTitle: "Carte des feux de forêt en direct — kanari, l'alerte avant la sirène",
+  metaTitle: "Carte des feux de forêt en direct — FireSight, l'alerte avant la sirène",
   metaDescription:
     "Carte mondiale en temps quasi réel des départs de feu de forêt : détection satellite (NASA FIRMS, Meteosat), témoignages citoyens vérifiés par IA, alertes gratuites par zone. Le canari chante avant la sirène.",
 
@@ -102,13 +102,13 @@ const fr = {
   legendCitizen: "Signalement citoyen · satellite à proximité",
   legendUnverified: "Signalement à vérifier · pas encore de satellite",
   legendSize: "Taille de la flamme = nombre de détections",
-  analyzing: "kanari analyse les signaux…",
+  analyzing: "FireSight analyse les signaux…",
   errFirmsKey: "Clé NASA FIRMS manquante ou invalide (variable FIRMS_MAP_KEY).",
   errData: "Données satellite momentanément indisponibles — nouvel essai dans 2 min.",
 
   // Flux
   live: "En direct",
-  listening: "kanari écoute",
+  listening: "FireSight écoute",
   tabAll: "Tout",
   tabUrgent: "Urgents",
   bucketNow: "À l'instant",
@@ -116,7 +116,7 @@ const fr = {
   bucketEarlier: "Plus tôt",
   loadingFeed: "Récupération des satellites et analyse IA des signaux…",
   emptyAll:
-    "Rien à signaler dans la vue affichée. kanari écoute — déplace la carte ou élargis la période.",
+    "Rien à signaler dans la vue affichée. FireSight écoute — déplace la carte ou élargis la période.",
   emptyUrgent:
     "Aucun départ de feu (1er signal < 2 h) dans la vue affichée. Élargis la carte : la couverture la plus rapide vient de GOES (Amériques), Meteosat (Europe/Afrique) et des témoignages citoyens.",
   urgentBanner: (n: number) =>
@@ -137,7 +137,7 @@ const fr = {
 
   // CTA alertes
   ctaOff: "M'alerter sur cette zone",
-  ctaOn: "Zone sous alerte — kanari veille ✓",
+  ctaOn: "Zone sous alerte — FireSight veille ✓",
   ctaBusy: "Activation…",
   alertNotSupported: "Notifications non supportées par ce navigateur.",
   alertAllow: "Autorise les notifications pour activer les alertes.",
@@ -184,8 +184,8 @@ const fr = {
   positionNote: "Position = centre de la commune citée, pas du feu",
   share: "Partager",
   linkCopied: "Lien copié ✓",
-  shareSignal: (place: string) => `kanari — signalement à ${place}`,
-  shareEvent: (place: string) => `kanari — foyer ${place}`,
+  shareSignal: (place: string) => `FireSight — signalement à ${place}`,
+  shareEvent: (place: string) => `FireSight — foyer ${place}`,
   signalFootnote:
     "Témoignage non confirmé par satellite : soit le feu est trop petit ou trop récent pour être vu (précocité !), soit il ne s'agit pas d'un feu de forêt.",
   beforePress: (d: string) => `détecté ${d} avant la presse`,
@@ -250,7 +250,7 @@ const en: typeof fr = {
   minimize: "Minimize",
   viewSatellite: "Satellite",
   viewPlan: "Map",
-  metaTitle: "Live wildfire map, real-time fire alerts — kanari",
+  metaTitle: "Live wildfire map, real-time fire alerts — FireSight",
   metaDescription:
     "Near real-time world map of wildfire ignitions: satellite detection (NASA FIRMS, Meteosat), AI-verified citizen reports, free area alerts. The canary sings before the siren.",
 
@@ -267,12 +267,12 @@ const en: typeof fr = {
   legendCitizen: "Citizen report · satellite nearby",
   legendUnverified: "Report being verified · no satellite yet",
   legendSize: "Flame size = number of detections",
-  analyzing: "kanari is analyzing signals…",
+  analyzing: "FireSight is analyzing signals…",
   errFirmsKey: "NASA FIRMS key missing or invalid (FIRMS_MAP_KEY variable).",
   errData: "Satellite data temporarily unavailable — retrying in 2 min.",
 
   live: "Live",
-  listening: "kanari is listening",
+  listening: "FireSight is listening",
   tabAll: "All",
   tabUrgent: "Urgent",
   bucketNow: "Just now",
@@ -280,7 +280,7 @@ const en: typeof fr = {
   bucketEarlier: "Earlier",
   loadingFeed: "Fetching satellites and running AI signal analysis…",
   emptyAll:
-    "Nothing to report in the current view. kanari is listening — move the map or widen the period.",
+    "Nothing to report in the current view. FireSight is listening — move the map or widen the period.",
   emptyUrgent:
     "No fire start (first signal < 2 h) in the current view. Widen the map: the fastest coverage comes from GOES (Americas), Meteosat (Europe/Africa) and citizen reports.",
   urgentBanner: (n: number) => `${n} fire start${n > 1 ? "s" : ""} reported less than 20 min ago`,
@@ -299,7 +299,7 @@ const en: typeof fr = {
   refreshNow: "Refresh now",
 
   ctaOff: "Alert me on this area",
-  ctaOn: "Area under watch — kanari is on it ✓",
+  ctaOn: "Area under watch — FireSight is on it ✓",
   ctaBusy: "Activating…",
   alertNotSupported: "Notifications are not supported by this browser.",
   alertAllow: "Allow notifications to enable alerts.",
@@ -342,8 +342,8 @@ const en: typeof fr = {
   positionNote: "Position = center of the mentioned town, not the fire",
   share: "Share",
   linkCopied: "Link copied ✓",
-  shareSignal: (place: string) => `kanari — report near ${place}`,
-  shareEvent: (place: string) => `kanari — fire ${place}`,
+  shareSignal: (place: string) => `FireSight — report near ${place}`,
+  shareEvent: (place: string) => `FireSight — fire ${place}`,
   signalFootnote:
     "Report not yet confirmed by satellite: either the fire is too small or too recent to be seen (earliness!), or it is not a wildfire.",
   beforePress: (d: string) => `detected ${d} before the press`,
@@ -406,7 +406,7 @@ const es: typeof fr = {
   minimize: "Minimizar",
   viewSatellite: "Satélite",
   viewPlan: "Mapa",
-  metaTitle: "Mapa de incendios forestales en tiempo real — kanari",
+  metaTitle: "Mapa de incendios forestales en tiempo real — FireSight",
   metaDescription:
     "Mapa mundial casi en tiempo real de los focos de incendio forestal: detección satelital (NASA FIRMS, Meteosat, GOES), reportes ciudadanos verificados por IA, alertas gratuitas por zona. El canario canta antes que la sirena.",
 
@@ -423,12 +423,12 @@ const es: typeof fr = {
   legendCitizen: "Reporte ciudadano · satélite cercano",
   legendUnverified: "Reporte por verificar · aún sin satélite",
   legendSize: "Tamaño de la llama = número de detecciones",
-  analyzing: "kanari está analizando las señales…",
+  analyzing: "FireSight está analizando las señales…",
   errFirmsKey: "Clave NASA FIRMS ausente o inválida (variable FIRMS_MAP_KEY).",
   errData: "Datos satelitales momentáneamente no disponibles — reintento en 2 min.",
 
   live: "En vivo",
-  listening: "kanari está escuchando",
+  listening: "FireSight está escuchando",
   tabAll: "Todo",
   tabUrgent: "Urgentes",
   bucketNow: "Ahora mismo",
@@ -436,7 +436,7 @@ const es: typeof fr = {
   bucketEarlier: "Antes",
   loadingFeed: "Consultando satélites y analizando señales con IA…",
   emptyAll:
-    "Nada que señalar en la vista actual. kanari está escuchando — mueve el mapa o amplía el período.",
+    "Nada que señalar en la vista actual. FireSight está escuchando — mueve el mapa o amplía el período.",
   emptyUrgent:
     "Ningún foco nuevo (primera señal < 2 h) en la vista actual. Amplía el mapa: la cobertura más rápida viene de GOES (Américas), Meteosat (Europa/África) y los reportes ciudadanos.",
   urgentBanner: (n: number) => `${n} foco${n > 1 ? "s" : ""} señalado${n > 1 ? "s" : ""} hace menos de 20 min`,
@@ -455,7 +455,7 @@ const es: typeof fr = {
   refreshNow: "Actualizar ahora",
 
   ctaOff: "Alertarme en esta zona",
-  ctaOn: "Zona bajo vigilancia — kanari está atento ✓",
+  ctaOn: "Zona bajo vigilancia — FireSight está atento ✓",
   ctaBusy: "Activando…",
   alertNotSupported: "Este navegador no soporta notificaciones.",
   alertAllow: "Permite las notificaciones para activar las alertas.",
@@ -498,8 +498,8 @@ const es: typeof fr = {
   positionNote: "Posición = centro del municipio citado, no del fuego",
   share: "Compartir",
   linkCopied: "Enlace copiado ✓",
-  shareSignal: (place: string) => `kanari — reporte cerca de ${place}`,
-  shareEvent: (place: string) => `kanari — foco ${place}`,
+  shareSignal: (place: string) => `FireSight — reporte cerca de ${place}`,
+  shareEvent: (place: string) => `FireSight — foco ${place}`,
   signalFootnote:
     "Testimonio aún no confirmado por satélite: o el fuego es demasiado pequeño o reciente para ser visto (¡precocidad!), o no es un incendio forestal.",
   beforePress: (d: string) => `detectado ${d} antes que la prensa`,
@@ -562,7 +562,7 @@ const pt: typeof fr = {
   minimize: "Minimizar",
   viewSatellite: "Satélite",
   viewPlan: "Mapa",
-  metaTitle: "Mapa de incêndios florestais e queimadas em tempo real — kanari",
+  metaTitle: "Mapa de incêndios florestais e queimadas em tempo real — FireSight",
   metaDescription:
     "Mapa mundial quase em tempo real dos focos de incêndio florestal e queimadas: detecção por satélite (NASA FIRMS, GOES, Meteosat), relatos cidadãos verificados por IA, alertas gratuitos por zona. O canário canta antes da sirene.",
 
@@ -579,12 +579,12 @@ const pt: typeof fr = {
   legendCitizen: "Relato cidadão · satélite próximo",
   legendUnverified: "Relato em verificação · ainda sem satélite",
   legendSize: "Tamanho da chama = número de detecções",
-  analyzing: "kanari está analisando os sinais…",
+  analyzing: "FireSight está analisando os sinais…",
   errFirmsKey: "Chave NASA FIRMS ausente ou inválida (variável FIRMS_MAP_KEY).",
   errData: "Dados de satélite momentaneamente indisponíveis — nova tentativa em 2 min.",
 
   live: "Ao vivo",
-  listening: "kanari está escutando",
+  listening: "FireSight está escutando",
   tabAll: "Tudo",
   tabUrgent: "Urgentes",
   bucketNow: "Agora mesmo",
@@ -592,7 +592,7 @@ const pt: typeof fr = {
   bucketEarlier: "Antes",
   loadingFeed: "Consultando satélites e analisando sinais com IA…",
   emptyAll:
-    "Nada a relatar na vista atual. kanari está escutando — mova o mapa ou amplie o período.",
+    "Nada a relatar na vista atual. FireSight está escutando — mova o mapa ou amplie o período.",
   emptyUrgent:
     "Nenhum foco novo (primeiro sinal < 2 h) na vista atual. Amplie o mapa: a cobertura mais rápida vem do GOES (Américas), Meteosat (Europa/África) e dos relatos cidadãos.",
   urgentBanner: (n: number) => `${n} foco${n > 1 ? "s" : ""} relatado${n > 1 ? "s" : ""} há menos de 20 min`,
@@ -611,7 +611,7 @@ const pt: typeof fr = {
   refreshNow: "Atualizar agora",
 
   ctaOff: "Alertar-me nesta área",
-  ctaOn: "Área sob vigilância — kanari está de olho ✓",
+  ctaOn: "Área sob vigilância — FireSight está de olho ✓",
   ctaBusy: "Ativando…",
   alertNotSupported: "Este navegador não suporta notificações.",
   alertAllow: "Permita as notificações para ativar os alertas.",
@@ -654,8 +654,8 @@ const pt: typeof fr = {
   positionNote: "Posição = centro do município citado, não do fogo",
   share: "Compartilhar",
   linkCopied: "Link copiado ✓",
-  shareSignal: (place: string) => `kanari — relato perto de ${place}`,
-  shareEvent: (place: string) => `kanari — foco ${place}`,
+  shareSignal: (place: string) => `FireSight — relato perto de ${place}`,
+  shareEvent: (place: string) => `FireSight — foco ${place}`,
   signalFootnote:
     "Relato ainda não confirmado por satélite: ou o fogo é pequeno ou recente demais para ser visto (precocidade!), ou não é um incêndio florestal.",
   beforePress: (d: string) => `detectado ${d} antes da imprensa`,

@@ -1,4 +1,4 @@
-Bouton principal Kanari : pill arrondi, jaune canari par défaut — utiliser pour toute action ; `alert` (braise) réservé aux CTA d'urgence.
+Bouton principal FireSight : pill arrondi, jaune canari par défaut — utiliser pour toute action ; `alert` (braise) réservé aux CTA d'urgence.
 
 ```jsx
 <Button variant="primary" size="l">Protéger ma zone</Button>

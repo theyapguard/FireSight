@@ -12,52 +12,52 @@ export const dynamic = "force-dynamic";
 
 const T = {
   en: {
-    metaTitle: "Wildfires today by country: live world fire map | kanari",
+    metaTitle: "Wildfires today by country: live world fire map | FireSight",
     metaDesc:
       "Where are the wildfires right now? Live country-by-country view of fire ignitions detected by satellite and verified witnesses: United States, Canada, Greece, Spain, Australia and more.",
     h1: "Wildfires today, country by country",
     intro:
-      "Significant fires detected over the last 7 days by satellites (NASA FIRMS, GOES, Meteosat MTG) and AI-verified witnesses, archived continuously by kanari.",
+      "Significant fires detected over the last 7 days by satellites (NASA FIRMS, GOES, Meteosat MTG) and AI-verified witnesses, archived continuously by firesight.",
     cta: "Open the live world map →",
     hot: "Most affected this week",
     fires: (n: number) => `${n} fire${n > 1 ? "s" : ""}`,
     all: "All countries",
     states: "United States, state by state",
-    note: "kanari is a free, independent information service — not an official alert channel. See also:",
+    note: "FireSight is a free, independent information service — not an official alert channel. See also:",
     canadair: "water bombers live",
     faq: "FAQ",
     openData: "open data (CSV)",
   },
   es: {
-    metaTitle: "Incendios forestales hoy por país: mapa mundial en vivo | kanari",
+    metaTitle: "Incendios forestales hoy por país: mapa mundial en vivo | FireSight",
     metaDesc:
       "¿Dónde hay incendios forestales ahora mismo? Vista en vivo país por país de los focos detectados por satélite y testigos verificados: Chile, Argentina, España, México, Bolivia y más.",
     h1: "Incendios forestales hoy, país por país",
     intro:
-      "Focos significativos detectados en los últimos 7 días por satélites (NASA FIRMS, GOES, Meteosat MTG) y testigos verificados por IA, archivados de forma continua por kanari.",
+      "Focos significativos detectados en los últimos 7 días por satélites (NASA FIRMS, GOES, Meteosat MTG) y testigos verificados por IA, archivados de forma continua por firesight.",
     cta: "Abrir el mapa mundial en vivo →",
     hot: "Los más afectados esta semana",
     fires: (n: number) => `${n} incendio${n > 1 ? "s" : ""}`,
     all: "Todos los países",
     states: "Estados Unidos, estado por estado",
-    note: "kanari es un servicio de información independiente y gratuito, no un canal de alerta oficial. Ver también:",
+    note: "FireSight es un servicio de información independiente y gratuito, no un canal de alerta oficial. Ver también:",
     canadair: "aviones cisterna en vivo",
     faq: "preguntas frecuentes",
     openData: "datos abiertos (CSV)",
   },
   pt: {
-    metaTitle: "Incêndios florestais hoje por país: mapa mundial ao vivo | kanari",
+    metaTitle: "Incêndios florestais hoje por país: mapa mundial ao vivo | FireSight",
     metaDesc:
       "Onde há incêndios florestais agora? Visão ao vivo país por país dos focos detectados por satélite e testemunhas verificadas: Brasil, Portugal, Chile, Argentina, Bolívia e mais.",
     h1: "Incêndios florestais hoje, país por país",
     intro:
-      "Focos significativos detectados nos últimos 7 dias por satélites (NASA FIRMS, GOES, Meteosat MTG) e testemunhas verificadas por IA, arquivados continuamente pelo kanari.",
+      "Focos significativos detectados nos últimos 7 dias por satélites (NASA FIRMS, GOES, Meteosat MTG) e testemunhas verificadas por IA, arquivados continuamente pelo firesight.",
     cta: "Abrir o mapa mundial ao vivo →",
     hot: "Os mais afetados nesta semana",
     fires: (n: number) => `${n} incêndio${n > 1 ? "s" : ""}`,
     all: "Todos os países",
     states: "Estados Unidos, estado por estado",
-    note: "O kanari é um serviço de informação independente e gratuito, não um canal de alerta oficial. Ver também:",
+    note: "O FireSight é um serviço de informação independente e gratuito, não um canal de alerta oficial. Ver também:",
     canadair: "aviões-tanque ao vivo",
     faq: "perguntas frequentes",
     openData: "dados abertos (CSV)",

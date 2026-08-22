@@ -53,7 +53,7 @@ export function isValidEmail(e: string): boolean {
 
 // On ne stocke jamais l'IP brute : un hash tronqué suffit pour l'anti-abus.
 export function hashIp(ip: string): string {
-  return createHash("sha256").update(`${ip}::kanari-contrib`).digest("hex").slice(0, 16);
+  return createHash("sha256").update(`${ip}::firesight-contrib`).digest("hex").slice(0, 16);
 }
 
 function supabaseCreds(): { url: string; key: string } | null {

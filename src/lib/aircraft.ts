@@ -28,7 +28,7 @@ const PROVIDERS = [
   "https://opendata.adsb.fi/api/v2",
 ];
 const TYPE_PATH = `/type/CL2T,CL4T,CL21,AT8T,S2T,DC10,CVLT,S64,MD87,RJ85,B461,B462,B463,OV10,K126,DH8D,L382,H47,H60`;
-const UA = "kanari.io wildfire map (+https://kanari.io)";
+const UA = "firesight.io wildfire map (+https://firesight.io)";
 const CACHE_MS = 15_000; // un appel amont toutes les 15 s au maximum
 
 // Flotte française de bombardiers d'eau (hors hélicos Dragon). hex -> libellé.

@@ -14,7 +14,7 @@ function Switch({ current }: { current: Lang }) {
 
   const go = (lang: Lang) => {
     if (lang === current) return;
-    document.cookie = `kanari-lang=${lang};path=/;max-age=31536000;samesite=lax`;
+    document.cookie = `firesight-lang=${lang};path=/;max-age=31536000;samesite=lax`;
     const rest = pathname.replace(/^\/(fr|en|es|pt)/, "");
     const qs = search.toString();
     router.push(`/${lang}${rest}${qs ? `?${qs}` : ""}`);

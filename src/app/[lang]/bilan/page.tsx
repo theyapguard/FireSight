@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   await params;
   return {
-    title: "Bilans quotidiens des feux de forêt en France | kanari",
+    title: "Bilans quotidiens des feux de forêt en France | FireSight",
     description:
       "Jour par jour, le bilan automatique des feux de forêt détectés dans le monde et en France : nombre de départs, foyers les plus puissants, moyens aériens engagés.",
     alternates: { canonical: "/fr/bilan" },
@@ -58,7 +58,7 @@ export default async function BilanHub({ params }: { params: Promise<{ lang: str
           Bilans quotidiens des feux de forêt
         </h1>
         <p className="mb-8 text-[15px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
-          Chaque jour, kanari archive les départs de feu significatifs détectés dans le monde.
+          Chaque jour, FireSight archive les départs de feu significatifs détectés dans le monde.
           Le bilan est généré automatiquement, en continu.
         </p>
         <div className="flex flex-col gap-2">

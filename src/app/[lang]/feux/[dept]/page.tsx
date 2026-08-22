@@ -72,7 +72,7 @@ export async function generateMetadata({
   const d = DEPT_BY_SLUG.get(dept);
   if (!d) return {};
   return {
-    title: `Incendie ${d.name} aujourd'hui : carte en direct | kanari`,
+    title: `Incendie ${d.name} aujourd'hui : carte en direct | FireSight`,
     description: `Y a-t-il un feu de forêt en ${d.name} (${d.code}) en ce moment ? Carte des départs de feu en temps réel, risque incendie du jour et Canadair en direct. Gratuit.`,
     alternates: { canonical: `/fr/feux/${d.slug}` },
   };
@@ -106,9 +106,9 @@ export default async function DeptPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: "https://kanari.io/fr" },
-      { "@type": "ListItem", position: 2, name: "Feux en France", item: "https://kanari.io/fr/feux" },
-      { "@type": "ListItem", position: 3, name: d.name, item: `https://kanari.io/fr/feux/${d.slug}` },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: "https://firesight.io/fr" },
+      { "@type": "ListItem", position: 2, name: "Feux en France", item: "https://firesight.io/fr/feux" },
+      { "@type": "ListItem", position: 3, name: d.name, item: `https://firesight.io/fr/feux/${d.slug}` },
     ],
   };
 
@@ -208,7 +208,7 @@ export default async function DeptPage({
             Comment savoir s'il y a un feu en {d.name} en ce moment ?
           </h2>
           <p className="mb-3">
-            kanari croise en continu les détections thermiques des satellites (VIIRS 375 m environ
+            FireSight croise en continu les détections thermiques des satellites (VIIRS 375 m environ
             toutes les 12 h, Meteosat MTG toutes les 10 min) avec les témoignages publiés sur les
             réseaux sociaux, vérifiés deux fois par IA avant affichage. Un départ de feu en {d.name} peut
             ainsi apparaître sur la carte quelques minutes après ses premiers signaux, souvent avant
@@ -233,7 +233,7 @@ export default async function DeptPage({
               La mémoire des feux en {d.name}
             </h2>
             <p className="mb-3 text-[14.5px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
-              Depuis le 3 août 2026, kanari a archivé <strong>{archived.length >= 12 ? "12+" : archived.length} feu{archived.length > 1 ? "x" : ""} significatif{archived.length > 1 ? "s" : ""}</strong> en {d.name}
+              Depuis le 3 août 2026, FireSight a archivé <strong>{archived.length >= 12 ? "12+" : archived.length} feu{archived.length > 1 ? "x" : ""} significatif{archived.length > 1 ? "s" : ""}</strong> en {d.name}
               {archived[0] ? <> — le plus puissant : {Math.round(Math.max(...archived.map((f) => f.max_frp)))} MW</> : null}.
               Chaque feu garde une page permanente avec sa chronologie complète.
             </p>
@@ -282,7 +282,7 @@ export default async function DeptPage({
         </section>
 
         <p className="mt-8 border-t pt-4 text-[12.5px]" style={{ borderColor: "var(--line)", color: "var(--ink-3)" }}>
-          kanari est un service d'information indépendant et gratuit, pas un canal d'alerte
+          FireSight est un service d'information indépendant et gratuit, pas un canal d'alerte
           officiel. En cas d'urgence : 18 ou 112. Données : NASA FIRMS, NOAA GOES, EUMETSAT MTG,
           témoignages vérifiés.
         </p>

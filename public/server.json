@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.vria-consulting/kanari-wildfires",
-  "title": "kanari wildfires",
+  "name": "io.github.theyapguard/FireSight",
+  "title": "FireSight wildfires",
   "description": "Live worldwide wildfire detections, fire archive, citable stats, aircraft. Free, CC BY 4.0.",
-  "websiteUrl": "https://kanari.io/en/api",
+  "websiteUrl": "https://firesight.io/en/api",
   "repository": {
-    "url": "https://github.com/vria-consulting/vria-fire-detect",
+    "url": "https://github.com/theyapguard/FireSight",
     "source": "github"
   },
   "version": "1.0.0",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://kanari.io/api/mcp"
+      "url": "https://firesight.io/api/mcp"
     }
   ]
 }

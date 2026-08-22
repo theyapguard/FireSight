@@ -10,10 +10,10 @@ import { listFiresLite } from "@/lib/firearchive";
 export const revalidate = 600;
 
 const H1 = {
-  fr: "kanari — carte mondiale des feux de forêt en temps quasi réel et alertes de départs de feu",
-  en: "kanari — near real-time world wildfire map and fire start alerts",
-  es: "kanari — mapa mundial de incendios forestales en tiempo casi real y alertas de focos",
-  pt: "kanari — mapa mundial de incêndios florestais em tempo quase real e alertas de focos",
+  fr: "FireSight — carte mondiale des feux de forêt en temps quasi réel et alertes de départs de feu",
+  en: "FireSight — near real-time world wildfire map and fire start alerts",
+  es: "FireSight — mapa mundial de incendios forestales en tiempo casi real y alertas de focos",
+  pt: "FireSight — mapa mundial de incêndios florestais em tempo quase real e alertas de focos",
 } as const;
 
 async function topHotspots(): Promise<Hotspot[]> {

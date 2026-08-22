@@ -4,12 +4,12 @@ import "../globals.css";
 
 // Root layout autonome du widget intégrable : la carte seule, sans header —
 // pensé pour l'iframe des médias et collectivités. Non indexé (la valeur SEO
-// est le backlink vers kanari.io, pas la page embed elle-même).
+// est le backlink vers firesight.io, pas la page embed elle-même).
 const fredoka = Fredoka({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-display" });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "kanari — carte des feux intégrable",
+  title: "FireSight — carte des feux intégrable",
   robots: { index: false, follow: true },
 };
 

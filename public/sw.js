@@ -1,14 +1,14 @@
-// Service worker Kanari : réception des notifications push d'alerte feu.
+// Service worker FireSight : réception des notifications push d'alerte feu.
 
 self.addEventListener("push", (event) => {
   let data = {};
   try {
     data = event.data ? event.data.json() : {};
   } catch {
-    data = { title: "Kanari", body: event.data ? event.data.text() : "" };
+    data = { title: "FireSight", body: event.data ? event.data.text() : "" };
   }
   event.waitUntil(
-    self.registration.showNotification(data.title || "🔥 Kanari", {
+    self.registration.showNotification(data.title || "🔥 FireSight", {
       body: data.body || "Nouveau foyer détecté dans votre zone.",
       data: { url: data.url || "/" },
       badge: "/icon.png",

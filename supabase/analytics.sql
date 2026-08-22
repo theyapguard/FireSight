@@ -1,6 +1,6 @@
 -- ============================================================
--- kanari — Veille d'audience (cookieless / RGPD) + enrichissement contributions
--- A exécuter dans le SQL editor Supabase (projet kanari).
+-- FireSight — Veille d'audience (cookieless / RGPD) + enrichissement contributions
+-- A exécuter dans le SQL editor Supabase (projet FireSight).
 -- Idempotent : peut être rejoué sans risque.
 -- ============================================================
 

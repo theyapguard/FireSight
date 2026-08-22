@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 // Image de partage par feu : mosaïque satellite NASA GIBS (vraie couleur,
-// jour de la première détection) centrée sur le foyer + bandeau kanari.
+// jour de la première détection) centrée sur le foyer + bandeau firesight.
 // Sert à la fois d'og:image et d'image d'article (exigence Google Discover :
 // grande image unique par page). Hors /api et exempté du proxy i18n.
 
@@ -137,7 +137,7 @@ export async function GET(
             fontWeight: 700,
           }}
         >
-          kanari.io
+          firesight.io
         </div>
         <div
           style={{

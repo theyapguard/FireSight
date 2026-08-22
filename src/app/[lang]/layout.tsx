@@ -9,7 +9,7 @@ import { EmergencyButton } from "@/components/EmergencyButton";
 import { Tracker } from "@/components/Tracker";
 import "../globals.css";
 
-// Charte Kanari : Fredoka (titres) + DM Sans (corps) — jamais d'autres familles.
+// Charte FireSight : Fredoka (titres) + DM Sans (corps) — jamais d'autres familles.
 const fredoka = Fredoka({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -34,7 +34,7 @@ export async function generateMetadata({
   const l: Lang = isValidLang(lang) ? lang : "en";
   const t = DICT[l];
   return {
-    metadataBase: new URL("https://kanari.io"),
+    metadataBase: new URL("https://firesight.io"),
     title: t.metaTitle,
     description: t.metaDescription,
     keywords:
@@ -44,17 +44,17 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${l}`,
       languages: { fr: "/fr", en: "/en", es: "/es", pt: "/pt", "x-default": "/" },
-      types: { "application/rss+xml": "https://kanari.io/feed.xml" },
+      types: { "application/rss+xml": "https://firesight.io/feed.xml" },
     },
     openGraph: {
       type: "website",
-      url: `https://kanari.io/${l}`,
-      siteName: "kanari",
+      url: `https://firesight.io/${l}`,
+      siteName: "FireSight",
       title: t.metaTitle,
       description: t.metaDescription,
       locale: l === "fr" ? "fr_FR" : "en_US",
       alternateLocale: l === "fr" ? "en_US" : "fr_FR",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "kanari" }],
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: "FireSight" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -87,22 +87,22 @@ function jsonLd(l: Lang) {
     "@graph": [
       {
         "@type": "WebApplication",
-        name: "kanari",
-        url: `https://kanari.io/${l}`,
+        name: "FireSight",
+        url: `https://firesight.io/${l}`,
         description: t.metaDescription,
         applicationCategory: "UtilityApplication",
         operatingSystem: "Web",
         offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
         inLanguage: ["fr", "en", "es", "pt"],
-        creator: { "@id": "https://kanari.io/#org" },
+        creator: { "@id": "https://firesight.io/#org" },
       },
       {
         "@type": "Organization",
-        "@id": "https://kanari.io/#org",
-        name: "kanari",
-        url: "https://kanari.io",
-        logo: "https://kanari.io/icon-512.png",
-        slogan: l === "fr" ? "Le canari chante avant la sirène." : "The canary sings before the siren.",
+        "@id": "https://firesight.io/#org",
+        name: "FireSight",
+        url: "https://firesight.io",
+        logo: "https://firesight.io/icon-512.png",
+        slogan: l === "fr" ? "Chaque étincelle en ligne de mire." : "Every spark in sight.",
       },
     ],
   };
@@ -145,7 +145,7 @@ export default async function RootLayout({
                   color: "var(--ink)",
                 }}
               >
-                kanari
+                FireSight
               </span>
             </Link>
             <span className="hidden text-[13px] md:inline" style={{ color: "var(--ink-3)" }}>

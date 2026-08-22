@@ -2,7 +2,7 @@
 -- bot_hits : chaque chargement de page par un crawler SEO ou IA (inséré par
 -- le middleware, fire-and-forget). ChatGPT-User / Perplexity-User = fetchs
 -- déclenchés par une vraie question d'utilisateur → meilleur signal gratuit
--- de « kanari consulté par une IA ».
+-- de « FireSight consulté par une IA ».
 create table if not exists public.bot_hits (
   id   bigint generated always as identity primary key,
   ts   timestamptz not null default now(),
@@ -14,7 +14,7 @@ create index if not exists bot_hits_bot_day_idx on public.bot_hits (bot, day);
 create index if not exists bot_hits_day_idx on public.bot_hits (day);
 alter table public.bot_hits enable row level security;
 
--- ai_citations : le panel hebdomadaire « kanari est-il cité ? » (rempli par
+-- ai_citations : le panel hebdomadaire « FireSight est-il cité ? » (rempli par
 -- le cron via l'API OpenAI + recherche web).
 create table if not exists public.ai_citations (
   id       bigint generated always as identity primary key,
@@ -23,7 +23,7 @@ create table if not exists public.ai_citations (
   engine   text not null,   -- chatgpt-search, perplexity…
   question text not null,
   cited    boolean not null,
-  position int,             -- rang de kanari dans les sources citées
+  position int,             -- rang de FireSight dans les sources citées
   sources  jsonb            -- domaines cités par la réponse
 );
 create index if not exists ai_citations_week_idx on public.ai_citations (week);

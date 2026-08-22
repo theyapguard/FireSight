@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <helmet>
-<title>kanari — carte de veille</title>
+<title>FireSight — carte de veille</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="icon" href="../assets/favicon.svg">
 <style>
@@ -21,8 +21,8 @@
   <header style="height:64px; flex-shrink:0; background:rgba(251,249,244,.9); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; padding:0 24px; z-index:40;">
     <div style="display:flex; align-items:baseline; gap:14px;">
       <div style="display:flex; align-items:center; gap:8px;">
-        <img src="../assets/logo-symbole.svg" width="34" height="34" alt="kanari">
-        <span style="font-family:var(--font-display); font-weight:500; font-size:23px; letter-spacing:-0.5px; color:var(--ink);">kanari</span>
+        <img src="../assets/logo-symbole.svg" width="34" height="34" alt="FireSight">
+        <span style="font-family:var(--font-display); font-weight:500; font-size:23px; letter-spacing:-0.5px; color:var(--ink);">FireSight</span>
       </div>
       <span style="font-size:13px; color:var(--ink-3);">l'alerte feu de forêt, avant tout le monde</span>
     </div>
@@ -97,7 +97,7 @@
       <div style="padding:16px 18px 14px; display:flex; flex-direction:column; gap:12px; border-bottom:1px solid var(--line);">
         <div style="display:flex; align-items:center; gap:8px;">
           <h3 style="font-size:17px; flex:1;">En direct</h3>
-          <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-3);"><span style="width:7px; height:7px; border-radius:50%; background:var(--canary-strong); animation:kanari-wave 1.8s ease-out infinite;"></span>kanari écoute</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-3);"><span style="width:7px; height:7px; border-radius:50%; background:var(--canary-strong); animation:firesight-wave 1.8s ease-out infinite;"></span>FireSight écoute</span>
         </div>
         <div style="display:flex; gap:3px; background:var(--paper-2); border-radius:var(--radius-pill); padding:3px;">
           <button onClick="{{ pickTout }}" style="{{ tabToutStyle }}">Tout · 40</button>
@@ -131,14 +131,14 @@
     <div style="position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:30;">
       <sc-if value="{{ alertOff }}" hint-placeholder-val="{{ true }}">
         <button onClick="{{ toggleAlert }}" style="height:54px; padding:0 30px; display:flex; align-items:center; gap:11px; font-family:var(--font-body); font-weight:500; font-size:16px; background:var(--canary); color:var(--charcoal); border:none; border-radius:var(--radius-pill); box-shadow:var(--shadow-l); cursor:pointer;" style-hover="background:var(--canary-strong); transform:translateY(-1px)">
-          <span style="width:9px; height:9px; border-radius:50%; background:var(--charcoal); animation:kanari-wave 1.8s ease-out infinite;"></span>
+          <span style="width:9px; height:9px; border-radius:50%; background:var(--charcoal); animation:firesight-wave 1.8s ease-out infinite;"></span>
           M'alerter sur cette zone
         </button>
       </sc-if>
       <sc-if value="{{ alertOn }}" hint-placeholder-val="{{ false }}">
         <button onClick="{{ toggleAlert }}" style="height:54px; padding:0 30px; display:flex; align-items:center; gap:11px; font-family:var(--font-body); font-weight:500; font-size:16px; background:var(--charcoal); color:var(--paper); border:none; border-radius:var(--radius-pill); box-shadow:var(--shadow-l); cursor:pointer;">
           <span style="width:9px; height:9px; border-radius:50%; background:var(--canary);"></span>
-          Zone sous alerte — kanari veille ✓
+          Zone sous alerte — FireSight veille ✓
         </button>
       </sc-if>
     </div>

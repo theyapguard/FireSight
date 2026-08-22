@@ -14,7 +14,7 @@ const BASE = (process.argv[2] || "http://localhost:3111").replace(/\/$/, "");
 const PAGES = [
   {
     path: "/fr",
-    title: /kanari/i,
+    title: /firesight/i,
     noindexForbidden: true,
   },
   {
@@ -186,14 +186,14 @@ const PAGES = [
   },
   {
     path: "/fr/methodologie",
-    title: /Méthodologie kanari/i,
+    title: /Méthodologie FireSight/i,
     canonical: "/fr/methodologie",
     hreflang: ["fr", "en", "es", "pt"],
     jsonld: ["TechArticle"],
   },
   {
     path: "/en/methodologie",
-    title: /kanari methodology/i,
+    title: /firesight methodology/i,
     canonical: "/en/methodologie",
   },
   {
@@ -211,8 +211,8 @@ const PAGES = [
 
 const STATIC_CHECKS = [
   { path: "/ads.txt", contains: ["pub-9521453937448688"] },
-  { path: "/llms.txt", contains: ["https://kanari.io/api/mcp", "/statistiques/"] },
-  { path: "/server.json", contains: ["streamable-http", "https://kanari.io/api/mcp"] },
+  { path: "/llms.txt", contains: ["https://firesight.io/api/mcp", "/statistiques/"] },
+  { path: "/server.json", contains: ["streamable-http", "https://firesight.io/api/mcp"] },
   { path: "/robots.txt", contains: ["Sitemap"], forbidden: [/^Disallow:\s*\/\s*$/m] },
   {
     path: "/sitemap.xml",
@@ -230,7 +230,7 @@ const ko = (msg) => {
 async function get(path) {
   const res = await fetch(BASE + path, {
     redirect: "follow",
-    headers: { "user-agent": "kanari-seo-guard" },
+    headers: { "user-agent": "firesight-seo-guard" },
     signal: AbortSignal.timeout(30000),
   });
   const body = await res.text();
@@ -342,16 +342,16 @@ for (const c of STATIC_CHECKS) {
   }
 }
 
-// Un seul hôte canonique : www.kanari.io et le domaine technique Vercel
-// doivent rediriger (308) vers kanari.io — Bing avait indexé le site en
+// Un seul hôte canonique : www.firesight.io et le domaine technique Vercel
+// doivent rediriger (308) vers firesight.io — Bing avait indexé le site en
 // doublon sous www. Le /api du domaine Vercel reste servi (cron GitHub).
 // On parle au même serveur en forçant l'en-tête Host (fetch l'interdit :
 // http(s).request natif).
 const HOST_CHECKS = [
-  { host: "www.kanari.io", path: "/fr/feux/pas-de-calais", expect: "https://kanari.io/fr/feux/pas-de-calais" },
-  { host: "www.kanari.io", path: "/sitemap.xml", expect: "https://kanari.io/sitemap.xml" },
-  { host: "vria-fire-detect.vercel.app", path: "/fr", expect: "https://kanari.io/fr" },
-  { host: "vria-fire-detect.vercel.app", path: "/api/events?hours=1", expect: null },
+  { host: "www.firesight.io", path: "/fr/feux/pas-de-calais", expect: "https://firesight.io/fr/feux/pas-de-calais" },
+  { host: "www.firesight.io", path: "/sitemap.xml", expect: "https://firesight.io/sitemap.xml" },
+  { host: "firesight.vercel.app", path: "/fr", expect: "https://firesight.io/fr" },
+  { host: "firesight.vercel.app", path: "/api/events?hours=1", expect: null },
 ];
 
 async function headWithHost(path, host) {
@@ -364,7 +364,7 @@ async function headWithHost(path, host) {
         port: u.port || undefined,
         path: u.pathname + u.search,
         method: "GET",
-        headers: { host, "user-agent": "kanari-seo-guard" },
+        headers: { host, "user-agent": "firesight-seo-guard" },
         timeout: 30000,
       },
       (res) => {

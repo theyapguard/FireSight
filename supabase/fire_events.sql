@@ -1,5 +1,5 @@
 -- ============================================================
--- kanari — Mémoire des feux (pages événement SEO + futurs bilans/stats)
+-- FireSight — Mémoire des feux (pages événement SEO + futurs bilans/stats)
 -- Alimentée par le cron (archiveEvents). Idempotent.
 -- ============================================================
 

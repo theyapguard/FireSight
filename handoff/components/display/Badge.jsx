@@ -16,7 +16,7 @@ export function Badge({ tone = 'neutral', dot, pulse, children, style }) {
       borderRadius: 'var(--radius-pill)', background: t.bg, color: t.color,
       fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 500, ...style,
     }}>
-      {dot && <span style={{ width: 7, height: 7, borderRadius: '50%', background: t.dot, animation: pulse ? 'kanari-wave 1.8s ease-out infinite' : 'none' }}></span>}
+      {dot && <span style={{ width: 7, height: 7, borderRadius: '50%', background: t.dot, animation: pulse ? 'firesight-wave 1.8s ease-out infinite' : 'none' }}></span>}
       {children}
     </span>
   );

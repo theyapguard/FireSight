@@ -23,7 +23,7 @@ const REGIONS: Record<string, { center: [number, number]; zoom: number }> = {
   Australie: { center: [134, -26], zoom: 3.5 },
 };
 
-// Fond clair (maquette « Kanari App Redesign v2 ») : CARTO Positron.
+// Fond clair (maquette « FireSight App Redesign v2 ») : CARTO Positron.
 const MAP_STYLE: maplibregl.StyleSpecification = {
   version: 8,
   // Glyphes nécessaires aux compteurs de clusters (serveur MapLibre officiel).
@@ -570,7 +570,7 @@ async function fetchGeocolorMax(): Promise<number | null> {
 // la carte s'ouvre sur son pays. Repli : France.
 function visitorStart(): { center: [number, number]; zoom: number } {
   try {
-    const raw = document.cookie.match(/(?:^|;\s*)kanari-geo=([^;]+)/)?.[1];
+    const raw = document.cookie.match(/(?:^|;\s*)firesight-geo=([^;]+)/)?.[1];
     if (raw) {
       const [lat, lon] = decodeURIComponent(raw).split(",").map(parseFloat);
       if (isFinite(lat) && isFinite(lon)) return { center: [lon, lat], zoom: 5.3 };
@@ -903,8 +903,8 @@ export default function FireMap({ lang, hotspots = [] }: { lang: Lang; hotspots?
     const smallScreen = window.innerWidth < 768;
     let intro = false;
     try {
-      intro = !hasDeepLink && !reducedMotion && !smallScreen && sessionStorage.getItem("kanari-intro") !== "1";
-      if (intro) sessionStorage.setItem("kanari-intro", "1");
+      intro = !hasDeepLink && !reducedMotion && !smallScreen && sessionStorage.getItem("firesight-intro") !== "1";
+      if (intro) sessionStorage.setItem("firesight-intro", "1");
     } catch {
       /* sessionStorage indisponible : pas d'intro */
     }
@@ -1743,7 +1743,7 @@ export default function FireMap({ lang, hotspots = [] }: { lang: Lang; hotspots?
 
   // « Je vois un feu » : signalement direct à la position GPS du témoin.
   // Confirmation explicite avant envoi — le bouton rappelle d'appeler les
-  // secours d'abord (kanari n'est pas un canal d'alerte officiel).
+  // secours d'abord (FireSight n'est pas un canal d'alerte officiel).
   const reportFire = () => {
     if (!navigator.geolocation) {
       setAlertMsg(t.geoUnsupported);

@@ -32,5 +32,5 @@
   <!-- = flamme -->
   <text x="600" y="500" text-anchor="middle" font-size="34" font-weight="bold" fill="#1B1C1E">réunis le même jour :</text>
   <text x="600" y="566" text-anchor="middle" font-size="34" font-weight="bold" fill="#D64545">danger maximal, le moindre départ devient incendie</text>
-  <text x="1140" y="608" text-anchor="end" font-size="22" font-weight="bold" fill="#8A8880">kanari.io</text>
+  <text x="1140" y="608" text-anchor="end" font-size="22" font-weight="bold" fill="#8A8880">firesight.io</text>
 </svg>

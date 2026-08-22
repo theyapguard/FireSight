@@ -154,7 +154,7 @@ export async function runRetro(opts: QaOptions, results: CheckResult[]): Promise
             {
               role: "system",
               content:
-                "Tu es l'architecte QA de Kanari (détection précoce de feux : satellites FIRMS/MTG, veille sociale Bluesky/Telegram/GDELT triée par IA, alertes push, carte Next.js). On te donne le bilan d'un run de QA. Réponds en JSON strict : {\"risques_app\": [3 risques applicatifs les plus importants au vu du bilan], \"tests_a_ajouter\": [3 tests concrets qui manquent], \"tests_a_ameliorer\": [jusqu'à 3 tests existants peu discriminants et comment les durcir]}. Sois spécifique et actionnable, en français.",
+                "Tu es l'architecte QA de FireSight (détection précoce de feux : satellites FIRMS/MTG, veille sociale Bluesky/Telegram/GDELT triée par IA, alertes push, carte Next.js). On te donne le bilan d'un run de QA. Réponds en JSON strict : {\"risques_app\": [3 risques applicatifs les plus importants au vu du bilan], \"tests_a_ajouter\": [3 tests concrets qui manquent], \"tests_a_ameliorer\": [jusqu'à 3 tests existants peu discriminants et comment les durcir]}. Sois spécifique et actionnable, en français.",
             },
             { role: "user", content: digest },
           ],

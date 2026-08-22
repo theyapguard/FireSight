@@ -50,19 +50,19 @@ export function fmtDate(iso: string, lang: Lang): string {
 export const OBS = {
   fr: {
     crumbObs: "Observatoire",
-    titleMonth: (name: string, month: string) => `${name}, ${month} : feux de forêt détectés | kanari`,
+    titleMonth: (name: string, month: string) => `${name}, ${month} : feux de forêt détectés | FireSight`,
     descMonth: (name: string, month: string) =>
-      `Combien de feux de forêt en ${month} (${name}) ? Nombre de départs significatifs détectés par satellite, feux les plus puissants, jours les plus actifs. Chiffres kanari, citables, données ouvertes CC BY 4.0.`,
+      `Combien de feux de forêt en ${month} (${name}) ? Nombre de départs significatifs détectés par satellite, feux les plus puissants, jours les plus actifs. Chiffres FireSight, citables, données ouvertes CC BY 4.0.`,
     h1Month: (name: string, month: string) => `${name} : feux de forêt en ${month}`,
-    titleCountry: (name: string) => `${name} : feux de forêt mois par mois | kanari`,
+    titleCountry: (name: string) => `${name} : feux de forêt mois par mois | FireSight`,
     descCountry: (name: string) =>
-      `Nombre de feux de forêt significatifs détectés chaque mois (${name}) par kanari : satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés. Chiffres citables, données ouvertes.`,
+      `Nombre de feux de forêt significatifs détectés chaque mois (${name}) par FireSight : satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés. Chiffres citables, données ouvertes.`,
     h1Country: (name: string) => `${name} : feux de forêt mois par mois`,
     introMonth: (name: string, month: string, total: number, updated: string) =>
-      `Entre le 1er et la fin du mois, kanari a archivé ${total} départ${total > 1 ? "s" : ""} de feu significatif${total > 1 ? "s" : ""} (${name}, ${month}). Chiffres issus de la mémoire des feux kanari, actualisés le ${updated}.`,
+      `Entre le 1er et la fin du mois, FireSight a archivé ${total} départ${total > 1 ? "s" : ""} de feu significatif${total > 1 ? "s" : ""} (${name}, ${month}). Chiffres issus de la mémoire des feux FireSight, actualisés le ${updated}.`,
     quote: (name: string, month: string, total: number, active: number, maxFrp: number) =>
-      `« En ${month}, kanari a détecté ${total} feu${total > 1 ? "x" : ""} de forêt significatif${total > 1 ? "s" : ""} (${name}), dont ${active} encore actif${active > 1 ? "s" : ""} à la dernière mise à jour ; le plus puissant a atteint ${Math.round(maxFrp)} MW. »`,
-    quoteSource: "Source : kanari.io, satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés par IA. Librement citable (CC BY 4.0).",
+      `« En ${month}, FireSight a détecté ${total} feu${total > 1 ? "x" : ""} de forêt significatif${total > 1 ? "s" : ""} (${name}), dont ${active} encore actif${active > 1 ? "s" : ""} à la dernière mise à jour ; le plus puissant a atteint ${Math.round(maxFrp)} MW. »`,
+    quoteSource: "Source : firesight.io, satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés par IA. Librement citable (CC BY 4.0).",
     cards: { total: "feux significatifs", active: "encore actifs", witnesses: "avec témoins vérifiés", aircraft: "avec moyens aériens observés", maxFrp: "puissance max (MW)" },
     byDay: "Départs de feu par jour",
     topCountries: "Pays les plus touchés ce mois-ci",
@@ -79,7 +79,7 @@ export const OBS = {
     fewData: "Peu de feux ce mois-ci : page informative, chiffres à manier avec prudence.",
     cite: "Citer ces chiffres",
     citeText: (name: string, month: string, total: number) =>
-      `kanari (2026). Feux de forêt détectés, ${name}, ${month} : ${total} départs significatifs. https://kanari.io — consulté le`,
+      `FireSight (2026). Feux de forêt détectés, ${name}, ${month} : ${total} départs significatifs. https://firesight.io — consulté le`,
     methodo: "Méthodologie : seuls les foyers significatifs sont archivés (corroborés par des témoins, ou au-delà de seuils de détections et de puissance) ; les totaux ne sont pas comparables aux recensements officiels exhaustifs.",
     methodoLink: "Méthodologie complète et licence",
     openData: "Télécharger l'archive complète (CSV, CC BY 4.0)",
@@ -93,23 +93,23 @@ export const OBS = {
     topShare: (name: string, pct: number, n: number) => `${name} concentre ${pct} % des feux du mois (${n}).`,
     longest: (place: string, hours: number) => `Feu le plus long : ${place}, suivi pendant ${hours} h.`,
     vsPrev: (pct: number, prev: string) => `${pct >= 0 ? "+" : ""}${pct} % par rapport à ${prev}.`,
-    ogAlt: (name: string, month: string) => `Bilan des feux de forêt, ${name}, ${month} (kanari)`,
+    ogAlt: (name: string, month: string) => `Bilan des feux de forêt, ${name}, ${month} (FireSight)`,
   },
   en: {
     crumbObs: "Observatory",
-    titleMonth: (name: string, month: string) => `${name}, ${month}: wildfires detected | kanari`,
+    titleMonth: (name: string, month: string) => `${name}, ${month}: wildfires detected | FireSight`,
     descMonth: (name: string, month: string) =>
-      `How many wildfires in ${name} in ${month}? Number of significant ignitions detected by satellite, most powerful fires, busiest days. kanari figures, citable, open data CC BY 4.0.`,
+      `How many wildfires in ${name} in ${month}? Number of significant ignitions detected by satellite, most powerful fires, busiest days. FireSight figures, citable, open data CC BY 4.0.`,
     h1Month: (name: string, month: string) => `${name}: wildfires in ${month}`,
-    titleCountry: (name: string) => `${name}: wildfires month by month | kanari`,
+    titleCountry: (name: string) => `${name}: wildfires month by month | FireSight`,
     descCountry: (name: string) =>
-      `Number of significant wildfires detected each month in ${name} by kanari: NASA FIRMS, GOES, Meteosat MTG satellites and verified witnesses. Citable figures, open data.`,
+      `Number of significant wildfires detected each month in ${name} by firesight: NASA FIRMS, GOES, Meteosat MTG satellites and verified witnesses. Citable figures, open data.`,
     h1Country: (name: string) => `${name}: wildfires month by month`,
     introMonth: (name: string, month: string, total: number, updated: string) =>
-      `Over the month, kanari archived ${total} significant fire ignition${total > 1 ? "s" : ""} in ${name} (${month}). Figures from kanari's fire memory, updated ${updated}.`,
+      `Over the month, FireSight archived ${total} significant fire ignition${total > 1 ? "s" : ""} in ${name} (${month}). Figures from FireSight's fire memory, updated ${updated}.`,
     quote: (name: string, month: string, total: number, active: number, maxFrp: number) =>
-      `"In ${month}, kanari detected ${total} significant wildfire${total > 1 ? "s" : ""} in ${name}, ${active} of them still active at the last update; the most powerful reached ${Math.round(maxFrp)} MW."`,
-    quoteSource: "Source: kanari.io, NASA FIRMS, GOES and Meteosat MTG satellites plus AI-verified witness reports. Freely citable (CC BY 4.0).",
+      `"In ${month}, FireSight detected ${total} significant wildfire${total > 1 ? "s" : ""} in ${name}, ${active} of them still active at the last update; the most powerful reached ${Math.round(maxFrp)} MW."`,
+    quoteSource: "Source: firesight.io, NASA FIRMS, GOES and Meteosat MTG satellites plus AI-verified witness reports. Freely citable (CC BY 4.0).",
     cards: { total: "significant fires", active: "still active", witnesses: "with verified witnesses", aircraft: "with aircraft observed", maxFrp: "peak power (MW)" },
     byDay: "Fire ignitions per day",
     topCountries: "Most affected countries this month",
@@ -126,7 +126,7 @@ export const OBS = {
     fewData: "Few fires this month: informative page, handle the figures with care.",
     cite: "Cite these figures",
     citeText: (name: string, month: string, total: number) =>
-      `kanari (2026). Wildfires detected, ${name}, ${month}: ${total} significant ignitions. https://kanari.io — accessed`,
+      `FireSight (2026). Wildfires detected, ${name}, ${month}: ${total} significant ignitions. https://firesight.io — accessed`,
     methodo: "Methodology: only significant fires are archived (corroborated by witnesses, or above detection and power thresholds); totals are not comparable to exhaustive official tallies.",
     methodoLink: "Full methodology and licence",
     openData: "Download the full archive (CSV, CC BY 4.0)",
@@ -140,23 +140,23 @@ export const OBS = {
     topShare: (name: string, pct: number, n: number) => `${name} accounts for ${pct}% of the month's fires (${n}).`,
     longest: (place: string, hours: number) => `Longest fire: ${place}, tracked for ${hours} h.`,
     vsPrev: (pct: number, prev: string) => `${pct >= 0 ? "+" : ""}${pct}% compared with ${prev}.`,
-    ogAlt: (name: string, month: string) => `Wildfire report, ${name}, ${month} (kanari)`,
+    ogAlt: (name: string, month: string) => `Wildfire report, ${name}, ${month} (FireSight)`,
   },
   es: {
     crumbObs: "Observatorio",
-    titleMonth: (name: string, month: string) => `${name}, ${month}: incendios detectados | kanari`,
+    titleMonth: (name: string, month: string) => `${name}, ${month}: incendios detectados | FireSight`,
     descMonth: (name: string, month: string) =>
-      `¿Cuántos incendios forestales en ${name} en ${month}? Número de focos significativos detectados por satélite, incendios más potentes, días más activos. Cifras kanari, citables, datos abiertos CC BY 4.0.`,
+      `¿Cuántos incendios forestales en ${name} en ${month}? Número de focos significativos detectados por satélite, incendios más potentes, días más activos. Cifras FireSight, citables, datos abiertos CC BY 4.0.`,
     h1Month: (name: string, month: string) => `${name}: incendios forestales en ${month}`,
-    titleCountry: (name: string) => `${name}: incendios forestales mes a mes | kanari`,
+    titleCountry: (name: string) => `${name}: incendios forestales mes a mes | FireSight`,
     descCountry: (name: string) =>
-      `Número de incendios forestales significativos detectados cada mes en ${name} por kanari: satélites NASA FIRMS, GOES, Meteosat MTG y testigos verificados. Cifras citables, datos abiertos.`,
+      `Número de incendios forestales significativos detectados cada mes en ${name} por firesight: satélites NASA FIRMS, GOES, Meteosat MTG y testigos verificados. Cifras citables, datos abiertos.`,
     h1Country: (name: string) => `${name}: incendios forestales mes a mes`,
     introMonth: (name: string, month: string, total: number, updated: string) =>
-      `A lo largo del mes, kanari archivó ${total} foco${total > 1 ? "s" : ""} significativo${total > 1 ? "s" : ""} en ${name} (${month}). Cifras de la memoria de incendios de kanari, actualizadas el ${updated}.`,
+      `A lo largo del mes, FireSight archivó ${total} foco${total > 1 ? "s" : ""} significativo${total > 1 ? "s" : ""} en ${name} (${month}). Cifras de la memoria de incendios de FireSight, actualizadas el ${updated}.`,
     quote: (name: string, month: string, total: number, active: number, maxFrp: number) =>
-      `« En ${month}, kanari detectó ${total} incendio${total > 1 ? "s" : ""} forestal${total > 1 ? "es" : ""} significativo${total > 1 ? "s" : ""} en ${name}, ${active} todavía activo${active > 1 ? "s" : ""} en la última actualización; el más potente alcanzó ${Math.round(maxFrp)} MW. »`,
-    quoteSource: "Fuente: kanari.io, satélites NASA FIRMS, GOES y Meteosat MTG más testigos verificados por IA. Libremente citable (CC BY 4.0).",
+      `« En ${month}, FireSight detectó ${total} incendio${total > 1 ? "s" : ""} forestal${total > 1 ? "es" : ""} significativo${total > 1 ? "s" : ""} en ${name}, ${active} todavía activo${active > 1 ? "s" : ""} en la última actualización; el más potente alcanzó ${Math.round(maxFrp)} MW. »`,
+    quoteSource: "Fuente: firesight.io, satélites NASA FIRMS, GOES y Meteosat MTG más testigos verificados por IA. Libremente citable (CC BY 4.0).",
     cards: { total: "incendios significativos", active: "todavía activos", witnesses: "con testigos verificados", aircraft: "con medios aéreos observados", maxFrp: "potencia máx. (MW)" },
     byDay: "Focos por día",
     topCountries: "Países más afectados este mes",
@@ -173,7 +173,7 @@ export const OBS = {
     fewData: "Pocos incendios este mes: página informativa, cifras a manejar con prudencia.",
     cite: "Citar estas cifras",
     citeText: (name: string, month: string, total: number) =>
-      `kanari (2026). Incendios forestales detectados, ${name}, ${month}: ${total} focos significativos. https://kanari.io — consultado el`,
+      `FireSight (2026). Incendios forestales detectados, ${name}, ${month}: ${total} focos significativos. https://firesight.io — consultado el`,
     methodo: "Metodología: solo se archivan los focos significativos (corroborados por testigos o por encima de umbrales de detecciones y potencia); los totales no son comparables con los recuentos oficiales exhaustivos.",
     methodoLink: "Metodología completa y licencia",
     openData: "Descargar el archivo completo (CSV, CC BY 4.0)",
@@ -187,23 +187,23 @@ export const OBS = {
     topShare: (name: string, pct: number, n: number) => `${name} concentra el ${pct} % de los incendios del mes (${n}).`,
     longest: (place: string, hours: number) => `Incendio más largo: ${place}, seguido durante ${hours} h.`,
     vsPrev: (pct: number, prev: string) => `${pct >= 0 ? "+" : ""}${pct} % respecto a ${prev}.`,
-    ogAlt: (name: string, month: string) => `Balance de incendios forestales, ${name}, ${month} (kanari)`,
+    ogAlt: (name: string, month: string) => `Balance de incendios forestales, ${name}, ${month} (FireSight)`,
   },
   pt: {
     crumbObs: "Observatório",
-    titleMonth: (name: string, month: string) => `${name}, ${month}: incêndios detectados | kanari`,
+    titleMonth: (name: string, month: string) => `${name}, ${month}: incêndios detectados | FireSight`,
     descMonth: (name: string, month: string) =>
-      `Quantos incêndios florestais em ${name} em ${month}? Número de focos significativos detectados por satélite, incêndios mais potentes, dias mais ativos. Números kanari, citáveis, dados abertos CC BY 4.0.`,
+      `Quantos incêndios florestais em ${name} em ${month}? Número de focos significativos detectados por satélite, incêndios mais potentes, dias mais ativos. Números FireSight, citáveis, dados abertos CC BY 4.0.`,
     h1Month: (name: string, month: string) => `${name}: incêndios florestais em ${month}`,
-    titleCountry: (name: string) => `${name}: incêndios florestais mês a mês | kanari`,
+    titleCountry: (name: string) => `${name}: incêndios florestais mês a mês | FireSight`,
     descCountry: (name: string) =>
-      `Número de incêndios florestais significativos detectados a cada mês em ${name} pelo kanari: satélites NASA FIRMS, GOES, Meteosat MTG e testemunhas verificadas. Números citáveis, dados abertos.`,
+      `Número de incêndios florestais significativos detectados a cada mês em ${name} pelo firesight: satélites NASA FIRMS, GOES, Meteosat MTG e testemunhas verificadas. Números citáveis, dados abertos.`,
     h1Country: (name: string) => `${name}: incêndios florestais mês a mês`,
     introMonth: (name: string, month: string, total: number, updated: string) =>
-      `Ao longo do mês, o kanari arquivou ${total} foco${total > 1 ? "s" : ""} significativo${total > 1 ? "s" : ""} em ${name} (${month}). Números da memória de incêndios do kanari, atualizados em ${updated}.`,
+      `Ao longo do mês, o FireSight arquivou ${total} foco${total > 1 ? "s" : ""} significativo${total > 1 ? "s" : ""} em ${name} (${month}). Números da memória de incêndios do FireSight, atualizados em ${updated}.`,
     quote: (name: string, month: string, total: number, active: number, maxFrp: number) =>
-      `« Em ${month}, o kanari detectou ${total} incêndio${total > 1 ? "s" : ""} florestal${total > 1 ? "is" : ""} significativo${total > 1 ? "s" : ""} em ${name}, ${active} ainda ativo${active > 1 ? "s" : ""} na última atualização; o mais potente chegou a ${Math.round(maxFrp)} MW. »`,
-    quoteSource: "Fonte: kanari.io, satélites NASA FIRMS, GOES e Meteosat MTG mais testemunhas verificadas por IA. Livremente citável (CC BY 4.0).",
+      `« Em ${month}, o FireSight detectou ${total} incêndio${total > 1 ? "s" : ""} florestal${total > 1 ? "is" : ""} significativo${total > 1 ? "s" : ""} em ${name}, ${active} ainda ativo${active > 1 ? "s" : ""} na última atualização; o mais potente chegou a ${Math.round(maxFrp)} MW. »`,
+    quoteSource: "Fonte: firesight.io, satélites NASA FIRMS, GOES e Meteosat MTG mais testemunhas verificadas por IA. Livremente citável (CC BY 4.0).",
     cards: { total: "incêndios significativos", active: "ainda ativos", witnesses: "com testemunhas verificadas", aircraft: "com meios aéreos observados", maxFrp: "potência máx. (MW)" },
     byDay: "Focos por dia",
     topCountries: "Países mais afetados neste mês",
@@ -220,7 +220,7 @@ export const OBS = {
     fewData: "Poucos incêndios neste mês: página informativa, números a usar com cautela.",
     cite: "Citar estes números",
     citeText: (name: string, month: string, total: number) =>
-      `kanari (2026). Incêndios florestais detectados, ${name}, ${month}: ${total} focos significativos. https://kanari.io — acessado em`,
+      `FireSight (2026). Incêndios florestais detectados, ${name}, ${month}: ${total} focos significativos. https://firesight.io — acessado em`,
     methodo: "Metodologia: só os focos significativos são arquivados (corroborados por testemunhas ou acima de limiares de detecções e potência); os totais não são comparáveis aos levantamentos oficiais exaustivos.",
     methodoLink: "Metodologia completa e licença",
     openData: "Baixar o arquivo completo (CSV, CC BY 4.0)",
@@ -234,6 +234,6 @@ export const OBS = {
     topShare: (name: string, pct: number, n: number) => `${name} concentra ${pct}% dos incêndios do mês (${n}).`,
     longest: (place: string, hours: number) => `Incêndio mais longo: ${place}, acompanhado por ${hours} h.`,
     vsPrev: (pct: number, prev: string) => `${pct >= 0 ? "+" : ""}${pct}% em relação a ${prev}.`,
-    ogAlt: (name: string, month: string) => `Balanço de incêndios florestais, ${name}, ${month} (kanari)`,
+    ogAlt: (name: string, month: string) => `Balanço de incêndios florestais, ${name}, ${month} (FireSight)`,
   },
 } as const;

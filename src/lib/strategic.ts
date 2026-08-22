@@ -62,7 +62,7 @@ export async function fetchStrategicPoints(lat: number, lon: number): Promise<St
   for (const ep of ENDPOINTS) {
     try {
       const res = await fetch(`${ep}?data=${encodeURIComponent(q)}`, {
-        headers: { "User-Agent": "kanari.io wildfire map (github.com/vria-consulting/vria-fire-detect)" },
+        headers: { "User-Agent": "firesight.io wildfire map (github.com/theyapguard/FireSight)" },
         next: { revalidate: 21600 },
         signal: AbortSignal.timeout(8000),
       });

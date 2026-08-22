@@ -5,7 +5,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // Open data : l'archive complète des feux en CSV (CC BY 4.0, mention
-// « kanari.io »). Volontairement hors /api pour rester crawlable.
+// « firesight.io »). Volontairement hors /api pour rester crawlable.
 const COLS = [
   "slug", "url", "first_seen", "last_seen", "status", "lat", "lon", "place",
   "admin", "country", "dept_code", "detections", "viirs", "goes", "mtg",
@@ -24,7 +24,7 @@ export async function GET() {
     lines.push(
       [
         f.slug,
-        `https://kanari.io/fr/feu/${f.slug}`,
+        `https://firesight.io/fr/feu/${f.slug}`,
         f.first_seen,
         f.last_seen,
         f.status,
@@ -50,7 +50,7 @@ export async function GET() {
   return new NextResponse(lines.join("\n") + "\n", {
     headers: {
       "content-type": "text/csv; charset=utf-8",
-      "content-disposition": 'inline; filename="kanari-feux.csv"',
+      "content-disposition": 'inline; filename="firesight-feux.csv"',
       "cache-control": "public, s-maxage=1800, stale-while-revalidate=3600",
     },
   });

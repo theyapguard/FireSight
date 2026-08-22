@@ -7,18 +7,18 @@ import { measuredEarliness, type EarlinessCase } from "@/lib/precocity";
 // rapide qu'un appel au 18 ? » et « sur quelle base affirmez-vous être en
 // avance ? » posées par des experts sur le post de lancement. Aucune
 // promesse : uniquement des horodatages mesurés sur les dernières 72 h —
-// premier signal satellite kanari vs premier article de presse détecté.
+// premier signal satellite FireSight vs premier article de presse détecté.
 export const revalidate = 300;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const l: Lang = isValidLang(lang) ? lang : "en";
   return {
-    title: l === "fr" ? "Précocité mesurée — kanari" : "Measured earliness — kanari",
+    title: l === "fr" ? "Précocité mesurée — FireSight" : "Measured earliness — FireSight",
     description:
       l === "fr"
-        ? "Combien de temps d'avance kanari a-t-il réellement ? Méthodologie et mesures horodatées : premier signal satellite vs premier article de presse, sur les 72 dernières heures."
-        : "How early is kanari really? Methodology and timestamped measurements: first satellite signal vs first press article, over the last 72 hours.",
+        ? "Combien de temps d'avance FireSight a-t-il réellement ? Méthodologie et mesures horodatées : premier signal satellite vs premier article de presse, sur les 72 dernières heures."
+        : "How early is FireSight really? Methodology and timestamped measurements: first satellite signal vs first press article, over the last 72 hours.",
     alternates: {
       canonical: `/${l}/precocite`,
       languages: { fr: "/fr/precocite", en: "/en/precocite" },
@@ -65,13 +65,13 @@ export default async function Precocite({ params }: { params: Promise<{ lang: st
             <li>
               {fr ? (
                 <>
-                  <strong>Premier signal kanari</strong> : l&apos;heure du premier passage satellite
+                  <strong>Premier signal FireSight</strong> : l&apos;heure du premier passage satellite
                   ayant vu le foyer (VIIRS, GOES ou Meteosat, heure UTC fournie par la NASA et
                   EUMETSAT — pas par nous) ;
                 </>
               ) : (
                 <>
-                  <strong>First kanari signal</strong>: the time of the first satellite pass that saw
+                  <strong>First FireSight signal</strong>: the time of the first satellite pass that saw
                   the fire (VIIRS, GOES or Meteosat — UTC time supplied by NASA and EUMETSAT, not by
                   us);
                 </>
@@ -179,7 +179,7 @@ export default async function Precocite({ params }: { params: Promise<{ lang: st
                 Le 3 août 2026 à <strong>18 h 00 heure de Paris</strong> (16:00 UTC), le satellite
                 géostationnaire Meteosat MTG capte un point chaud dans le sud-est de la Drôme, en
                 zone du Diois (foyer rattaché à Serres, la ville la plus proche de notre
-                gazetteer). En <strong>2 h 30</strong>, kanari cumule{" "}
+                gazetteer). En <strong>2 h 30</strong>, FireSight cumule{" "}
                 <strong>174 détections satellite</strong> sur ce foyer, avec une intensité maximale
                 mesurée de <strong>1 193 MW</strong> — le foyer français le plus puissant enregistré
                 par notre archive depuis son ouverture. Chaque détection est horodatée par EUMETSAT
@@ -190,7 +190,7 @@ export default async function Precocite({ params }: { params: Promise<{ lang: st
                 On August 3, 2026 at <strong>16:00 UTC</strong>, the Meteosat MTG geostationary
                 satellite picked up a hotspot in the south-east of the Drôme department (Diois
                 area, anchored to Serres, the nearest town in our gazetteer). Within{" "}
-                <strong>2.5 hours</strong>, kanari accumulated{" "}
+                <strong>2.5 hours</strong>, FireSight accumulated{" "}
                 <strong>174 satellite detections</strong> on this fire, with a peak measured
                 intensity of <strong>1,193 MW</strong> — the most powerful French fire recorded in
                 our archive since it opened. Every detection is timestamped by EUMETSAT (one image
@@ -203,8 +203,8 @@ export default async function Precocite({ params }: { params: Promise<{ lang: st
             style={{ borderColor: "var(--canary)", color: "var(--ink)" }}
           >
             {fr
-              ? "Le 3 août 2026, kanari a mesuré en Drôme un foyer de 1 193 MW : 174 détections satellite en 2 h 30, la première à 18 h 00 (heure de Paris). Source : kanari.io, données Meteosat MTG (EUMETSAT), licence CC BY 4.0."
-              : "On August 3, 2026, kanari measured a 1,193 MW fire in the Drôme (France): 174 satellite detections in 2.5 hours, the first at 16:00 UTC. Source: kanari.io, Meteosat MTG data (EUMETSAT), CC BY 4.0."}
+              ? "Le 3 août 2026, FireSight a mesuré en Drôme un foyer de 1 193 MW : 174 détections satellite en 2 h 30, la première à 18 h 00 (heure de Paris). Source : firesight.io, données Meteosat MTG (EUMETSAT), licence CC BY 4.0."
+              : "On August 3, 2026, FireSight measured a 1,193 MW fire in the Drôme (France): 174 satellite detections in 2.5 hours, the first at 16:00 UTC. Source: firesight.io, Meteosat MTG data (EUMETSAT), CC BY 4.0."}
           </blockquote>
           <p>
             {fr ? (

@@ -9,7 +9,7 @@ export const GUIDES_EN: Guide[] = [
   {
     slug: "que-faire-feu-de-foret",
     title: "What to do during a wildfire: the reflexes that save lives",
-    metaTitle: "What to do during a wildfire? The right reflexes | kanari",
+    metaTitle: "What to do during a wildfire? The right reflexes | FireSight",
     metaDesc:
       "Witnessing an ignition, home under threat, smoke in the distance: the right reflexes, step by step, based on civil protection guidance.",
     imageAlt:
@@ -23,14 +23,14 @@ export const GUIDES_EN: Guide[] = [
         paras: [
           "Call the emergency number immediately: 112 anywhere in Europe (free, works even without your own carrier's network), 911 in North America, 000 in Australia. Give the most precise location you can: town, landmark, nearest road, and what you see, white or black smoke, visible flames or not, width of the fire front. Only hang up when the operator tells you to.",
           "Only attempt to put out a nascent fire yourself if it is very small (under one metre), using soil, sand or water, and always keep an escape route. At the slightest doubt, move away: a vegetation fire can advance faster than a person can run.",
-          "Once emergency services are alerted, you can report the ignition on kanari (the “Report a fire” button): your timestamped, geolocated report helps people nearby see the danger as early as possible.",
+          "Once emergency services are alerted, you can report the ignition on FireSight (the “Report a fire” button): your timestamped, geolocated report helps people nearby see the danger as early as possible.",
         ],
       },
       {
         h2: "Your home is under threat",
         paras: [
           "Counterintuitively, a well-prepared solid house is often the safest shelter: close shutters, windows and vents, wet the surroundings if you have time, move gas bottles and vehicles away, wear covering cotton clothes. Only leave by car if the authorities order it: most wildfire victims are caught on the roads, in the smoke.",
-          "Follow official instructions: cell broadcast alerts (FR-Alert in France, Wireless Emergency Alerts in the US), your municipality, the local prefecture or sheriff, local radio. They take precedence over any other information, including kanari.",
+          "Follow official instructions: cell broadcast alerts (FR-Alert in France, Wireless Emergency Alerts in the US), your municipality, the local prefecture or sheriff, local radio. They take precedence over any other information, including firesight.",
         ],
       },
       {
@@ -43,7 +43,7 @@ export const GUIDES_EN: Guide[] = [
       {
         h2: "Watching the risk in real time",
         paras: [
-          "The kanari map shows satellite-detected ignitions and verified citizen reports, continuously and for free, worldwide. During high-risk periods, a glance in the morning and evening is enough to know what is happening around you.",
+          "The FireSight map shows satellite-detected ignitions and verified citizen reports, continuously and for free, worldwide. During high-risk periods, a glance in the morning and evening is enough to know what is happening around you.",
         ],
       },
     ],
@@ -65,7 +65,7 @@ export const GUIDES_EN: Guide[] = [
   {
     slug: "comment-fonctionne-un-canadair",
     title: "How does a Canadair water bomber work?",
-    metaTitle: "How does a Canadair work? Scooping, drops, the French fleet | kanari",
+    metaTitle: "How does a Canadair work? Scooping, drops, the French fleet | FireSight",
     metaDesc:
       "6,000 litres scooped in 12 seconds, drops from 30 metres above ground: how the CL-415 fights wildfires, and how to track water bombers live.",
     imageAlt:
@@ -98,7 +98,7 @@ export const GUIDES_EN: Guide[] = [
       {
         h2: "Tracking water bombers live",
         paras: [
-          "Like airliners, most water bombers broadcast their position via ADS-B transponders. kanari aggregates these signals and shows in real time the Canadairs, Fire Bosses, heavy tankers and firefighting helicopters flying worldwide, overlaid on the fire map. An aircraft looping over a forest is the visible signature of a fire being fought.",
+          "Like airliners, most water bombers broadcast their position via ADS-B transponders. FireSight aggregates these signals and shows in real time the Canadairs, Fire Bosses, heavy tankers and firefighting helicopters flying worldwide, overlaid on the fire map. An aircraft looping over a forest is the visible signature of a fire being fought.",
         ],
       },
     ],
@@ -120,13 +120,13 @@ export const GUIDES_EN: Guide[] = [
   {
     slug: "detection-feux-satellite",
     title: "How do satellites detect wildfires?",
-    metaTitle: "Wildfire detection from space: VIIRS, GOES, Meteosat | kanari",
+    metaTitle: "Wildfire detection from space: VIIRS, GOES, Meteosat | FireSight",
     metaDesc:
       "Thermal anomalies, 375 m resolution, 10-minute refresh: how VIIRS, GOES and Meteosat MTG satellites spot new fires, and their limits.",
     imageAlt:
       "Diagram of the two satellite families for fire detection: polar-orbiting VIIRS at 830 km (375 m pixel, 2 passes per day) and geostationary GOES/Meteosat at 36,000 km (rescan every 10 minutes)",
     intro:
-      "A fire emits infrared radiation very different from its surroundings. From orbit, specialized sensors spot these “thermal anomalies”, the backbone of every real-time fire map, kanari included.",
+      "A fire emits infrared radiation very different from its surroundings. From orbit, specialized sensors spot these “thermal anomalies”, the backbone of every real-time fire map, FireSight included.",
     updated: "2026-08-14",
     sections: [
       {
@@ -140,21 +140,21 @@ export const GUIDES_EN: Guide[] = [
         h2: "From hot pixel to alert",
         paras: [
           "Algorithms compare each pixel to its neighbours and its history: a point abnormally hot in mid-infrared, at night or by contrast with its surroundings, becomes an “active detection”. Each detection carries a position, a radiative power (in megawatts) and a confidence level.",
-          "kanari aggregates these detections (NASA FIRMS, GOES read directly from the raw feed, Meteosat MTG), clusters them into fire events, cross-checks them with AI-verified witness reports, and displays them within minutes. The satellite-plus-human cross-check is key: the satellite confirms the witness, the witness sometimes beats the satellite.",
+          "FireSight aggregates these detections (NASA FIRMS, GOES read directly from the raw feed, Meteosat MTG), clusters them into fire events, cross-checks them with AI-verified witness reports, and displays them within minutes. The satellite-plus-human cross-check is key: the satellite confirms the witness, the witness sometimes beats the satellite.",
         ],
       },
       {
         h2: "What satellites cannot see",
         paras: [
           "A very small or nascent fire can slip between two polar satellite passes (up to 12 hours apart at mid-latitudes). Thick clouds, dense smoke or canopy can mask the signal. A hot pixel is not always a wildfire: industrial flares, agricultural burns and even overheated metal roofs generate false positives, which algorithms partially filter.",
-          "That is why human reports matter: on kanari, a geolocated witness report can surface an ignition before the first satellite detection.",
+          "That is why human reports matter: on FireSight, a geolocated witness report can surface an ignition before the first satellite detection.",
         ],
       },
     ],
     faq: [
       {
         q: "How fast can a satellite detect a wildfire?",
-        a: "Geostationary satellites (GOES, Meteosat MTG) rescan their zone every 10 minutes with 2 to 4 km pixels. Polar-orbiting satellites (VIIRS, 375 m resolution) pass about twice a day per satellite. kanari displays published detections within minutes.",
+        a: "Geostationary satellites (GOES, Meteosat MTG) rescan their zone every 10 minutes with 2 to 4 km pixels. Polar-orbiting satellites (VIIRS, 375 m resolution) pass about twice a day per satellite. FireSight displays published detections within minutes.",
       },
       {
         q: "How small a fire can a satellite spot?",
@@ -162,14 +162,14 @@ export const GUIDES_EN: Guide[] = [
       },
       {
         q: "Can satellite detections be false positives?",
-        a: "Yes: industrial flares, agricultural burns or overheated metal roofs generate hot pixels without any wildfire. Algorithms filter part of them, and kanari cross-checks detections with AI-verified human reports to consolidate confidence.",
+        a: "Yes: industrial flares, agricultural burns or overheated metal roofs generate hot pixels without any wildfire. Algorithms filter part of them, and FireSight cross-checks detections with AI-verified human reports to consolidate confidence.",
       },
     ],
   },
   {
     slug: "meteo-des-forets",
     title: "Fire weather: understanding wildfire risk",
-    metaTitle: "Fire weather: understanding the day's wildfire risk | kanari",
+    metaTitle: "Fire weather: understanding the day's wildfire risk | FireSight",
     metaDesc:
       "Drought, wind, air humidity: how wildfire risk is computed, what the 30/30/30 rule means, and where to check the risk in real time.",
     imageAlt:
@@ -189,7 +189,7 @@ export const GUIDES_EN: Guide[] = [
         h2: "Official fire danger ratings",
         paras: [
           "Most fire-prone countries publish a daily fire danger rating: Météo-France's “météo des forêts” map (green to red, per department, since 2023), the US National Fire Danger Rating System, Canada's Fire Weather Index (FWI), which has become the international reference formula. At the highest levels, access to some forests is legally restricted.",
-          "kanari shows an estimated weather risk on each French department page, computed continuously from the same ingredients (temperature, humidity, wind, recent rain). It gives the real-time trend without replacing the official maps, which carry legal force.",
+          "FireSight shows an estimated weather risk on each French department page, computed continuously from the same ingredients (temperature, humidity, wind, recent rain). It gives the real-time trend without replacing the official maps, which carry legal force.",
         ],
       },
       {
@@ -207,7 +207,7 @@ export const GUIDES_EN: Guide[] = [
       },
       {
         q: "Where can I check today's fire risk?",
-        a: "National services publish daily ratings: Météo-France's forest weather map in France, the National Fire Danger Rating System in the US, the Fire Weather Index in Canada. kanari also shows a continuously computed estimated risk on each French department page.",
+        a: "National services publish daily ratings: Météo-France's forest weather map in France, the National Fire Danger Rating System in the US, the Fire Weather Index in Canada. FireSight also shows a continuously computed estimated risk on each French department page.",
       },
       {
         q: "What is banned on very high risk days?",
@@ -218,7 +218,7 @@ export const GUIDES_EN: Guide[] = [
   {
     slug: "odeur-de-fumee-que-faire",
     title: "Smelling smoke outside: how to check if there is a fire near you",
-    metaTitle: "Smelling smoke outside: is there a fire near me? | kanari",
+    metaTitle: "Smelling smoke outside: is there a fire near me? | FireSight",
     metaDesc:
       "It smells like smoke or burning outside? The possible causes, how to check in 2 minutes whether a fire is burning around you (free satellite map), and when to call emergency services.",
     imageAlt:
@@ -237,7 +237,7 @@ export const GUIDES_EN: Guide[] = [
       {
         h2: "Check in two minutes whether a fire is burning around you",
         paras: [
-          "Open the kanari map (free, no account) and centre it on your position: satellite-detected ignitions (refreshed every 10 minutes over Europe and the Americas) and verified citizen reports appear continuously.",
+          "Open the FireSight map (free, no account) and centre it on your position: satellite-detected ignitions (refreshed every 10 minutes over Europe and the Americas) and verified citizen reports appear continuously.",
           "Then look at the wind direction, shown on the map: a smoke smell ALWAYS arrives from the direction the wind blows from. If the wind comes from the southwest, the source is to the southwest. Search for fires in that direction, including far away: a powerful fire 100 km upwind smells distinctly.",
           "Cross-check with other signals: sirens, aircraft or helicopter rotations (the map tracks water bombers live), posts from local authorities or fire services, and your region's air quality index, which climbs when a plume passes.",
         ],
@@ -252,7 +252,7 @@ export const GUIDES_EN: Guide[] = [
       {
         h2: "Follow the situation without thinking about it",
         paras: [
-          "On the kanari map, tap “Alert me on this area”: you will receive a notification if a new significant fire is detected around you. Free, no account, works on phone and desktop. The simplest way to sleep soundly on evenings when “it smells like smoke”.",
+          "On the FireSight map, tap “Alert me on this area”: you will receive a notification if a new significant fire is detected around you. Free, no account, works on phone and desktop. The simplest way to sleep soundly on evenings when “it smells like smoke”.",
         ],
       },
     ],
@@ -263,7 +263,7 @@ export const GUIDES_EN: Guide[] = [
       },
       {
         q: "How can I check if there is a fire near me right now?",
-        a: "Open a real-time detection map like kanari.io (satellites refreshed every 10 minutes over Europe and the Americas, AI-verified witness reports) and look at the wind direction: a smoke smell always arrives from upwind. Cross-check with sirens, aircraft rotations and the air quality index.",
+        a: "Open a real-time detection map like firesight.io (satellites refreshed every 10 minutes over Europe and the Americas, AI-verified witness reports) and look at the wind direction: a smoke smell always arrives from upwind. Cross-check with sirens, aircraft rotations and the air quality index.",
       },
       {
         q: "When should I call emergency services about a smoke smell?",

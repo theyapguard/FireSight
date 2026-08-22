@@ -1,9 +1,9 @@
-// kanari-fires — minimal client for the public kanari wildfire API.
+// firesight-fires — minimal client for the public FireSight wildfire API.
 // No dependency, works in Node 18+, Deno, Bun and browsers (fetch).
-// Data: CC BY 4.0, credit "kanari.io" with a link. Not an official alert channel.
+// Data: CC BY 4.0, credit "firesight.io" with a link. Not an official alert channel.
 
-export const KANARI_BASE = "https://kanari.io";
-export const KANARI_MCP_URL = `${KANARI_BASE}/api/mcp`;
+export const FIRESIGHT_BASE = "https://firesight.io";
+export const FIRESIGHT_MCP_URL = `${FIRESIGHT_BASE}/api/mcp`;
 
 export type Hours = 6 | 12 | 24 | 48 | 72;
 
@@ -48,20 +48,20 @@ export type ClientOptions = {
   userAgent?: string;
 };
 
-export class KanariClient {
+export class FireSightClient {
   private base: string;
   private f: typeof fetch;
   private ua?: string;
 
   constructor(opts: ClientOptions = {}) {
-    this.base = (opts.baseUrl ?? KANARI_BASE).replace(/\/$/, "");
+    this.base = (opts.baseUrl ?? FIRESIGHT_BASE).replace(/\/$/, "");
     this.f = opts.fetch ?? globalThis.fetch;
     this.ua = opts.userAgent;
   }
 
   private async get<T>(path: string): Promise<T> {
     const res = await this.f(`${this.base}${path}`, { headers: this.ua ? { "user-agent": this.ua } : undefined });
-    if (!res.ok) throw new Error(`kanari ${path}: HTTP ${res.status}`);
+    if (!res.ok) throw new Error(`FireSight ${path}: HTTP ${res.status}`);
     return (await res.json()) as T;
   }
 
@@ -84,7 +84,7 @@ export class KanariClient {
   /** Full archive of significant fires as CSV text (CC BY 4.0). */
   async archiveCsv(): Promise<string> {
     const res = await this.f(`${this.base}/opendata/feux.csv`);
-    if (!res.ok) throw new Error(`kanari archive: HTTP ${res.status}`);
+    if (!res.ok) throw new Error(`FireSight archive: HTTP ${res.status}`);
     return res.text();
   }
 
@@ -102,4 +102,4 @@ export function haversineKm(lat1: number, lon1: number, lat2: number, lon2: numb
   return 2 * R * Math.asin(Math.sqrt(a));
 }
 
-export default KanariClient;
+export default FireSightClient;

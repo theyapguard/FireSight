@@ -47,10 +47,10 @@ export async function generateMetadata({
   // Titre façon Discover : un chiffre précis + l'enjeu, 90-105 caractères,
   // sans sensationnalisme (les filtres 2026 le sanctionnent).
   const title = `${t} : ${Math.round(f.max_frp)} MW, ${f.detections} détection${f.detections > 1 ? "s" : ""} satellite le ${frDate(f.first_seen)}`;
-  const img = `https://kanari.io/ogfire/${f.slug}`;
+  const img = `https://firesight.io/ogfire/${f.slug}`;
   return {
     title,
-    description: `${t} détecté le ${frDate(f.first_seen)} : ${f.detections} détection${f.detections > 1 ? "s" : ""} satellite, puissance max ${Math.round(f.max_frp)} MW${f.aircraft.length > 0 ? `, ${f.aircraft.length} moyen(s) aérien(s) engagé(s)` : ""}. Chronologie complète et carte sur kanari.`,
+    description: `${t} détecté le ${frDate(f.first_seen)} : ${f.detections} détection${f.detections > 1 ? "s" : ""} satellite, puissance max ${Math.round(f.max_frp)} MW${f.aircraft.length > 0 ? `, ${f.aircraft.length} moyen(s) aérien(s) engagé(s)` : ""}. Chronologie complète et carte sur firesight.`,
     alternates: { canonical: `/fr/feu/${f.slug}` },
     // Pages feu « minces » (1-2 détections, sans moyens aériens ni puissance
     // notable) : noindex,follow — elles restent dans le maillage mais ne
@@ -111,7 +111,7 @@ export default async function FirePage({
   const fading = active && lastAgeH >= 3 && lastAgeH < 24;
   const title = titleOf(f);
 
-  const heroImg = `https://kanari.io/ogfire/${f.slug}`;
+  const heroImg = `https://firesight.io/ogfire/${f.slug}`;
   // Lieu géolocalisé du feu : utilisé en contentLocation (NewsArticle) et en
   // about (LiveBlog). Surtout PAS de @type Event ici : la Search Console le
   // traiterait comme un événement public (concert…) et réclamerait location/
@@ -130,25 +130,25 @@ export default async function FirePage({
     dateModified: f.updated_at ?? f.last_seen,
     inLanguage: "fr",
     contentLocation: placeLd,
-    author: { "@type": "Organization", name: "kanari", url: "https://kanari.io" },
-    publisher: { "@id": "https://kanari.io/#org" },
-    mainEntityOfPage: `https://kanari.io/fr/feu/${f.slug}`,
+    author: { "@type": "Organization", name: "FireSight", url: "https://firesight.io" },
+    publisher: { "@id": "https://firesight.io/#org" },
+    mainEntityOfPage: `https://firesight.io/fr/feu/${f.slug}`,
   };
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: "https://kanari.io/fr" },
-      { "@type": "ListItem", position: 2, name: "Historique des feux", item: "https://kanari.io/fr/feu" },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: "https://firesight.io/fr" },
+      { "@type": "ListItem", position: 2, name: "Historique des feux", item: "https://firesight.io/fr/feu" },
       ...(f.dept_slug && deptName
-        ? [{ "@type": "ListItem", position: 3, name: `Feux en ${deptName}`, item: `https://kanari.io/fr/feux/${f.dept_slug}` }]
+        ? [{ "@type": "ListItem", position: 3, name: `Feux en ${deptName}`, item: `https://firesight.io/fr/feux/${f.dept_slug}` }]
         : []),
       {
         "@type": "ListItem",
         position: f.dept_slug && deptName ? 4 : 3,
         name: title,
-        item: `https://kanari.io/fr/feu/${f.slug}`,
+        item: `https://firesight.io/fr/feu/${f.slug}`,
       },
     ],
   };
@@ -165,8 +165,8 @@ export default async function FirePage({
         dateModified: f.updated_at ?? f.last_seen,
         inLanguage: "fr",
         about: placeLd,
-        publisher: { "@id": "https://kanari.io/#org" },
-        mainEntityOfPage: `https://kanari.io/fr/feu/${f.slug}`,
+        publisher: { "@id": "https://firesight.io/#org" },
+        mainEntityOfPage: `https://firesight.io/fr/feu/${f.slug}`,
         liveBlogUpdate: [
           {
             "@type": "BlogPosting",
@@ -401,7 +401,7 @@ export default async function FirePage({
             D'où viennent ces données ?
           </h2>
           <p>
-            Cette page est générée et mise à jour automatiquement par kanari à partir des
+            Cette page est générée et mise à jour automatiquement par FireSight à partir des
             détections thermiques satellites (NASA FIRMS/VIIRS, GOES, Meteosat MTG) et des
             témoignages publics vérifiés par IA. Les surfaces brûlées et bilans officiels
             relèvent des autorités : cette chronologie documente ce que les capteurs ont vu,
@@ -410,7 +410,7 @@ export default async function FirePage({
         </section>
 
         <p className="mt-8 border-t pt-4 text-[12.5px]" style={{ borderColor: "var(--line)", color: "var(--ink-3)" }}>
-          kanari est un service d'information indépendant et gratuit, pas un canal d'alerte
+          FireSight est un service d'information indépendant et gratuit, pas un canal d'alerte
           officiel. En cas d'urgence : 18 ou 112. Page mise à jour le {frDateTime(f.updated_at ?? f.last_seen)}.
         </p>
         <SiteFooter lang="fr" />

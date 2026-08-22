@@ -1,4 +1,4 @@
-// Veille d'audience kanari — helpers partagés (serveur uniquement).
+// Veille d'audience FireSight — helpers partagés (serveur uniquement).
 // Cookieless / RGPD : on ne stocke jamais l'IP, seulement un hash quotidien salé
 // (visiteurs uniques sans cookie, méthode Plausible). Toutes les écritures
 // passent par la clé service_role, jamais exposée au navigateur.
@@ -73,7 +73,7 @@ export function clientIp(h: Headers): string {
 // hash = sha256(IP + UA + sel-du-jour). Le sel change chaque jour : impossible
 // de relier un visiteur d'un jour à l'autre, ni de retrouver l'IP.
 function dailySalt(): string {
-  const secret = process.env.SESSION_SECRET || "kanari-fallback-salt";
+  const secret = process.env.SESSION_SECRET || "firesight-fallback-salt";
   const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
   return createHash("sha256").update(`${secret}::${day}`).digest("hex");
 }
@@ -88,7 +88,7 @@ export function referrerHost(ref: string | undefined | null): string {
   try {
     const h = new URL(ref).hostname.replace(/^www\./, "");
     // On ignore l'auto-référencement (navigation interne).
-    if (/kanari\.io$/i.test(h) || /vria-fire-detect.*\.vercel\.app$/i.test(h)) return "";
+    if (/firesight\.io$/i.test(h) || /firesight.*\.vercel\.app$/i.test(h)) return "";
     return h.slice(0, 120);
   } catch {
     return "";

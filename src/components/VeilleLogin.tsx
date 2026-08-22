@@ -45,7 +45,7 @@ export function VeilleLogin() {
             letterSpacing: "-0.4px",
           }}
         >
-          Veille kanari
+          Veille FireSight
         </h1>
         <p style={{ color: "var(--ink-3)", fontSize: 14, margin: "0 0 24px", lineHeight: 1.5 }}>
           Espace privé. Reçois un lien d&apos;accès à usage unique par e-mail.

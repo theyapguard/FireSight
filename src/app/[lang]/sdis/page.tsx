@@ -4,7 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { isValidLang } from "@/lib/i18n";
 import { SiteFooter } from "@/components/SiteFooter";
 
-// Landing B2G : ce que kanari apporte aux services d'incendie, communes et
+// Landing B2G : ce que FireSight apporte aux services d'incendie, communes et
 // gestionnaires forestiers — et ce qu'il n'est pas. Honnêteté d'abord : c'est
 // un complément gratuit, pas un système opérationnel.
 export const revalidate = 3600;
@@ -12,7 +12,7 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   await params;
   return {
-    title: "kanari pour les SDIS et collectivités : veille satellite gratuite",
+    title: "FireSight pour les SDIS et collectivités : veille satellite gratuite",
     description:
       "Un complément gratuit à vos dispositifs : détections satellite mondiales (Meteosat 10 min, VIIRS, GOES), témoignages vérifiés par IA, suivi des moyens aériens, alertes par zone, open data et API. Sans déploiement, sans compte, sans coût.",
     alternates: { canonical: "/fr/sdis" },
@@ -48,15 +48,15 @@ const CARDS: { title: string; body: string }[] = [
 
 const FAQ: { q: string; a: string }[] = [
   {
-    q: "Combien coûte kanari pour un SDIS ou une commune ?",
-    a: "Rien : la carte, les alertes par zone, l'API et l'open data sont gratuits, sans compte et sans engagement. kanari est un service d'information indépendant financé par son fondateur.",
+    q: "Combien coûte FireSight pour un SDIS ou une commune ?",
+    a: "Rien : la carte, les alertes par zone, l'API et l'open data sont gratuits, sans compte et sans engagement. FireSight est un service d'information indépendant financé par son fondateur.",
   },
   {
-    q: "kanari remplace-t-il nos systèmes opérationnels ou nos caméras ?",
-    a: "Non. kanari est une couche de veille complémentaire : il ne remplace ni les systèmes de gestion opérationnelle, ni les caméras terrestres, ni les vigies, et n'est pas un canal d'alerte officiel. Il ajoute une couverture satellite mondiale rafraîchie toutes les 10 minutes et des signaux citoyens vérifiés.",
+    q: "FireSight remplace-t-il nos systèmes opérationnels ou nos caméras ?",
+    a: "Non. FireSight est une couche de veille complémentaire : il ne remplace ni les systèmes de gestion opérationnelle, ni les caméras terrestres, ni les vigies, et n'est pas un canal d'alerte officiel. Il ajoute une couverture satellite mondiale rafraîchie toutes les 10 minutes et des signaux citoyens vérifiés.",
   },
   {
-    q: "D'où viennent les données de kanari ?",
+    q: "D'où viennent les données de FireSight ?",
     a: "Des détections thermiques satellite (NASA FIRMS/VIIRS, NOAA GOES, EUMETSAT Meteosat MTG), des positions ADS-B des moyens aériens, des témoignages publics vérifiés deux fois par IA, et d'OpenStreetMap pour les points d'eau et casernes. Chaque donnée est horodatée par sa source et l'archive est ouverte (CC BY 4.0).",
   },
 ];
@@ -79,8 +79,8 @@ export default async function SdisPage({ params }: { params: Promise<{ lang: str
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: "https://kanari.io/fr" },
-      { "@type": "ListItem", position: 2, name: "Pour les SDIS et collectivités", item: "https://kanari.io/fr/sdis" },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: "https://firesight.io/fr" },
+      { "@type": "ListItem", position: 2, name: "Pour les SDIS et collectivités", item: "https://firesight.io/fr/sdis" },
     ],
   };
 
@@ -90,10 +90,10 @@ export default async function SdisPage({ params }: { params: Promise<{ lang: str
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="mx-auto max-w-2xl px-4 py-10 sm:py-14" style={{ color: "var(--ink-2)" }}>
         <h1 className="mb-3" style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-h2)", color: "var(--ink)" }}>
-          kanari pour les SDIS, communes et gestionnaires forestiers
+          FireSight pour les SDIS, communes et gestionnaires forestiers
         </h1>
         <p className="mb-6 text-[15px] leading-relaxed">
-          kanari est un service d&apos;information gratuit et indépendant qui croise les détections
+          FireSight est un service d&apos;information gratuit et indépendant qui croise les détections
           satellite mondiales avec des témoignages vérifiés par IA. Il ne remplace ni vos systèmes
           opérationnels, ni vos caméras, ni vos vigies : il ajoute une couche de veille qui
           fonctionne partout, tout de suite, sans déploiement et sans budget.
@@ -109,7 +109,7 @@ export default async function SdisPage({ params }: { params: Promise<{ lang: str
 
         <section className="mb-8">
           <h2 className="mb-3 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
-            Ce que kanari vous apporte
+            Ce que FireSight vous apporte
           </h2>
           <div className="flex flex-col gap-3">
             {CARDS.map((c) => (
@@ -123,7 +123,7 @@ export default async function SdisPage({ params }: { params: Promise<{ lang: str
 
         <section className="mb-8 text-[14.5px] leading-relaxed">
           <h2 className="mb-2 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
-            Ce que kanari n&apos;est pas
+            Ce que FireSight n&apos;est pas
           </h2>
           <ul className="list-disc space-y-2 pl-5">
             <li>
@@ -165,10 +165,10 @@ export default async function SdisPage({ params }: { params: Promise<{ lang: str
           </ol>
           <p className="mt-3">
             Un besoin spécifique (périmètre, format, intégration) ? Écrivez-nous :{" "}
-            <a href="mailto:contact@kanari.io" style={{ color: "var(--link)", fontWeight: 600 }}>contact@kanari.io</a>{" "}
+            <a href="mailto:contact@firesight.io" style={{ color: "var(--link)", fontWeight: 600 }}>contact@firesight.io</a>{" "}
             — les demandes des services d&apos;incendie et des collectivités sont prioritaires. Côté
             technique, les tickets{" "}
-            <a href="https://github.com/vria-consulting/vria-fire-detect/issues" style={{ color: "var(--link)" }}>GitHub</a>{" "}
+            <a href="https://github.com/theyapguard/FireSight/issues" style={{ color: "var(--link)" }}>GitHub</a>{" "}
             fonctionnent aussi.
           </p>
         </section>

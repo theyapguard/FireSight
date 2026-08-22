@@ -36,7 +36,7 @@ const FR: { title: string; items: Item[] }[] = [
       { href: "/fr/precocite", label: "Précocité mesurée" },
       { href: "/fr/methodologie", label: "Méthodologie et citation" },
       { href: "/fr/faq", label: "Questions fréquentes" },
-      { href: "/fr/a-propos", label: "À propos de kanari" },
+      { href: "/fr/a-propos", label: "À propos de FireSight" },
       { href: "/fr/sdis", label: "Pour les SDIS et collectivités" },
       { href: "/fr/widget", label: "Widget pour votre site" },
       { href: "/fr/confidentialite", label: "Confidentialité et cookies" },
@@ -69,7 +69,7 @@ const EN: { title: string; items: Item[] }[] = [
       { href: "/en/faq", label: "FAQ" },
       { href: "/en/comparatif", label: "Wildfire maps compared" },
       { href: "/en/methodologie", label: "Methodology and how to cite" },
-      { href: "/en/a-propos", label: "About kanari" },
+      { href: "/en/a-propos", label: "About FireSight" },
       { href: "/en/widget", label: "Embed widget" },
       { href: "/en/confidentialite", label: "Privacy and cookies" },
     ],
@@ -101,7 +101,7 @@ const ES: { title: string; items: Item[] }[] = [
       { href: "/es/guide", label: "Guías sobre incendios" },
       { href: "/es/faq", label: "Preguntas frecuentes" },
       { href: "/es/methodologie", label: "Metodología y cita" },
-      { href: "/en/a-propos", label: "Sobre kanari" },
+      { href: "/en/a-propos", label: "Sobre FireSight" },
       { href: "/es/widget", label: "Widget para tu sitio" },
       { href: "/en/confidentialite", label: "Privacidad y cookies" },
     ],
@@ -131,7 +131,7 @@ const PT: { title: string; items: Item[] }[] = [
       { href: "/pt/guide", label: "Guias sobre incêndios" },
       { href: "/pt/faq", label: "Perguntas frequentes" },
       { href: "/pt/methodologie", label: "Metodologia e citação" },
-      { href: "/en/a-propos", label: "Sobre o kanari" },
+      { href: "/en/a-propos", label: "Sobre o FireSight" },
       { href: "/pt/widget", label: "Widget para seu site" },
       { href: "/en/confidentialite", label: "Privacidade e cookies" },
     ],
@@ -141,17 +141,17 @@ const PT: { title: string; items: Item[] }[] = [
 const COLS: Record<Lang, { title: string; items: Item[] }[]> = { fr: FR, en: EN, es: ES, pt: PT };
 
 const SUPPORT: Record<Lang, string> = {
-  fr: "Soutenir kanari (gratuit pour toujours, grâce à vous)",
-  en: "Support kanari (free forever, thanks to you)",
-  es: "Apoyar a kanari (gratis para siempre, gracias a ti)",
-  pt: "Apoiar o kanari (grátis para sempre, graças a você)",
+  fr: "Soutenir FireSight (gratuit pour toujours, grâce à vous)",
+  en: "Support FireSight (free forever, thanks to you)",
+  es: "Apoyar a FireSight (gratis para siempre, gracias a ti)",
+  pt: "Apoiar o FireSight (grátis para sempre, graças a você)",
 };
 
 const TAGLINE: Record<Lang, string> = {
-  fr: "kanari — le canari chante avant la sirène. Service d'information indépendant et gratuit ; en cas d'urgence : 18 ou 112.",
-  en: "kanari — the canary sings before the siren. Free, independent information service; in an emergency call 112 or 911.",
-  es: "kanari — el canario canta antes que la sirena. Servicio de información independiente y gratuito; en una emergencia llama al 911 o al 112.",
-  pt: "kanari — o canário canta antes da sirene. Serviço de informação independente e gratuito; em emergência, ligue 193 (Brasil) ou 112 (Portugal).",
+  fr: "FireSight — le canari chante avant la sirène. Service d'information indépendant et gratuit ; en cas d'urgence : 18 ou 112.",
+  en: "FireSight — the canary sings before the siren. Free, independent information service; in an emergency call 112 or 911.",
+  es: "FireSight — el canario canta antes que la sirena. Servicio de información independiente y gratuito; en una emergencia llama al 911 o al 112.",
+  pt: "FireSight — o canário canta antes da sirene. Serviço de informação independente e gratuito; em emergência, ligue 193 (Brasil) ou 112 (Portugal).",
 };
 
 export function SiteFooter({ lang }: { lang: Lang }) {
@@ -176,11 +176,11 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           </nav>
         ))}
       </div>
-      {/* Soutien : kanari est gratuit et le restera ; les dons financent
+      {/* Soutien : FireSight est gratuit et le restera ; les dons financent
           l'hébergement et les données. Lien simple, aucun script tiers. */}
       <p className="mt-6">
         <a
-          href="https://buymeacoffee.com/kanari"
+          href="https://buymeacoffee.com/firesight"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13.5px] font-semibold"

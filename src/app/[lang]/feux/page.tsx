@@ -17,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   await params;
   return {
-    title: "Feux de forêt en France aujourd'hui par département | kanari",
+    title: "Feux de forêt en France aujourd'hui par département | FireSight",
     description:
       "Où sont les feux de forêt en France en ce moment ? Carte des départs de feu en temps réel, département par département : détections satellites, témoins vérifiés, Canadair en direct.",
     alternates: { canonical: "/fr/feux" },
@@ -131,7 +131,7 @@ export default async function FeuxHub({ params }: { params: Promise<{ lang: stri
         </section>
 
         <p className="mt-8 border-t pt-4 text-[12.5px]" style={{ borderColor: "var(--line)", color: "var(--ink-3)" }}>
-          kanari est un service d'information indépendant et gratuit, pas un canal d'alerte
+          FireSight est un service d'information indépendant et gratuit, pas un canal d'alerte
           officiel. En cas d'urgence : 18 ou 112. Voir aussi : <Link href="/fr/feu" style={{ color: "var(--link)" }}>historique des feux</Link> · <Link href="/fr/canadair" style={{ color: "var(--link)" }}>Canadair en direct</Link> · <Link href="/fr/faq" style={{ color: "var(--link)" }}>FAQ</Link>.
         </p>
         <SiteFooter lang="fr" />

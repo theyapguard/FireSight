@@ -119,7 +119,7 @@ export async function searchArchive(q: ArchiveQuery): Promise<ArchiveRow[]> {
 }
 
 export function fireUrl(slug: string): string {
-  return `https://kanari.io/fr/feu/${slug}`;
+  return `https://firesight.io/fr/feu/${slug}`;
 }
 
 // ---- Agrégats d'une période -----------------------------------------------

@@ -26,11 +26,11 @@ export async function GET() {
   const items = fires
     .map((f) => {
       const desc = `${f.detections} détection${f.detections > 1 ? "s" : ""} satellite · puissance max ${Math.round(f.max_frp)} MW${f.aircraft.length > 0 ? ` · ${f.aircraft.length} moyen(s) aérien(s) observé(s)` : ""}${f.confidence === "corrobore" ? " · corroboré par témoins" : ""} · statut : ${f.status === "active" ? "actif" : "plus détecté"}.`;
-      return `<item><title>${esc(titleOf(f))}</title><link>https://kanari.io/fr/feu/${f.slug}</link><guid isPermaLink="true">https://kanari.io/fr/feu/${f.slug}</guid><pubDate>${new Date(f.first_seen).toUTCString()}</pubDate><description>${esc(desc)}</description></item>`;
+      return `<item><title>${esc(titleOf(f))}</title><link>https://firesight.io/fr/feu/${f.slug}</link><guid isPermaLink="true">https://firesight.io/fr/feu/${f.slug}</guid><pubDate>${new Date(f.first_seen).toUTCString()}</pubDate><description>${esc(desc)}</description></item>`;
     })
     .join("");
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kanari — départs de feu détectés</title><link>https://kanari.io/fr</link><atom:link href="https://kanari.io/feed.xml" rel="self" type="application/rss+xml"/><description>Les feux de forêt significatifs détectés en temps réel par kanari (satellites NASA FIRMS, GOES, Meteosat MTG + témoins vérifiés).</description><language>fr</language><lastBuildDate>${now.toUTCString()}</lastBuildDate>${items}</channel></rss>`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FireSight — départs de feu détectés</title><link>https://firesight.io/fr</link><atom:link href="https://firesight.io/feed.xml" rel="self" type="application/rss+xml"/><description>Les feux de forêt significatifs détectés en temps réel par FireSight (satellites NASA FIRMS, GOES, Meteosat MTG + témoins vérifiés).</description><language>fr</language><lastBuildDate>${now.toUTCString()}</lastBuildDate>${items}</channel></rss>`;
   return new NextResponse(xml, {
     headers: {
       "content-type": "application/rss+xml; charset=utf-8",

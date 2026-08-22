@@ -5,7 +5,7 @@ import { VeilleLogin } from "@/components/VeilleLogin";
 import { Card, Kpi, emptyStyle, fmt, h3Style, timeAgo } from "@/components/VeilleDashboard";
 import { ShareList } from "@/components/VeilleCharts";
 
-// Onglet « Référencement » : qui fait des liens vers kanari (index Bing +
+// Onglet « Référencement » : qui fait des liens vers FireSight (index Bing +
 // domaines référents réellement observés dans le trafic) et où en est le
 // plan de soumissions (annuaires, open data, wikis, presse).
 
@@ -34,7 +34,7 @@ function classify(host: string): { label: string; color: string } {
   if (ENGINES.has(h) || h.endsWith(".google.com")) return { label: "moteur", color: "var(--ink-3)" };
   if (AI.has(h)) return { label: "IA", color: "#7C5CBF" };
   if (SOCIAL.has(h)) return { label: "social", color: "#4A90C2" };
-  if (h.endsWith("kanari.io")) return { label: "interne", color: "var(--ink-3)" };
+  if (h.endsWith("firesight.io")) return { label: "interne", color: "var(--ink-3)" };
   return { label: "backlink", color: "#3aa76d" };
 }
 
@@ -149,7 +149,7 @@ export function VeilleBacklinks({ reloadKey }: { reloadKey: number }) {
                   title=""
                   rows={(bing.data?.targets ?? []).slice(0, 10).map((t) => ({
                     key: t.url,
-                    label: t.url.replace(/^https?:\/\/(www\.)?kanari\.io/, ""),
+                    label: t.url.replace(/^https?:\/\/(www\.)?FireSight\.io/, ""),
                     value: t.count,
                   }))}
                 />

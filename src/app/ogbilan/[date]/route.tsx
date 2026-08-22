@@ -77,7 +77,7 @@ export async function GET(
               fontWeight: 700,
             }}
           >
-            kanari.io
+            firesight.io
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "#8A8880" }}>
             {isToday ? "bilan en cours, mis à jour en continu" : "bilan de la journée"}

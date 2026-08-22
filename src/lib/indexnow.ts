@@ -5,7 +5,7 @@
 // La clé est publique par conception (fichier hébergé à la racine du site).
 
 const KEY = "edb448efb970b6e2d870772ad22798b9";
-const HOST = "kanari.io";
+const HOST = "firesight.io";
 
 export async function pingIndexNow(paths: string[]): Promise<void> {
   if (paths.length === 0) return;

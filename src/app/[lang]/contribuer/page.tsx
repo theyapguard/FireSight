@@ -6,11 +6,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const l: Lang = isValidLang(lang) ? lang : "en";
   return {
-    title: l === "fr" ? "Contribuer — kanari" : "Contribute — kanari",
+    title: l === "fr" ? "Contribuer — FireSight" : "Contribute — FireSight",
     description:
       l === "fr"
-        ? "Aide kanari à voir les feux plus tôt : signale un bug, propose une idée, une donnée ou une API. Chaque contribution compte."
-        : "Help kanari see fires earlier: report a bug, suggest an idea, data or an API. Every contribution counts.",
+        ? "Aide FireSight à voir les feux plus tôt : signale un bug, propose une idée, une donnée ou une API. Chaque contribution compte."
+        : "Help FireSight see fires earlier: report a bug, suggest an idea, data or an API. Every contribution counts.",
     alternates: {
       canonical: `/${l}/contribuer`,
       languages: { fr: "/fr/contribuer", en: "/en/contribuer" },

@@ -51,7 +51,7 @@ const VERIFY_ENABLED = (process.env.TRIAGE_VERIFY ?? "on").toLowerCase() !== "of
 // du coût. La classification ne rend qu'un petit JSON -> 1200 suffit largement.
 const MAX_TOKENS = parseInt(process.env.TRIAGE_MAX_TOKENS ?? "1200", 10);
 
-const SYSTEM = `Tu es le filtre de pertinence de Kanari, un service d'alerte ultra-précoce des feux de forêt destiné aux secours. Chaque faux positif décrédibilise le service. Tu reçois une liste d'items : texte d'un post de réseau social ou titre d'article de presse, avec des lieux candidats.
+const SYSTEM = `Tu es le filtre de pertinence de FireSight, un service d'alerte ultra-précoce des feux de forêt destiné aux secours. Chaque faux positif décrédibilise le service. Tu reçois une liste d'items : texte d'un post de réseau social ou titre d'article de presse, avec des lieux candidats.
 
 Pour chaque item :
 

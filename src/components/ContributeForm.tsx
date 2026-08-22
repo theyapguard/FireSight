@@ -23,7 +23,7 @@ const ALLOWED = [
 
 const T = {
   fr: {
-    title: "Contribuer à kanari",
+    title: "Contribuer à FireSight",
     intro:
       "Une idée, un bug, une donnée à ajouter, une API utile ? Dis-le-nous. Chaque contribution rend l'alerte feu plus précoce et plus fiable pour tout le monde.",
     name: "Ton nom",
@@ -50,12 +50,12 @@ const T = {
     rateLimited: "Trop d'envois d'affilée. Patiente quelques minutes.",
     successTitle: "Merci pour ta contribution 🐤",
     successBody:
-      "Ta demande a bien été enregistrée et va être étudiée. kanari est un projet à mission : aider les citoyens, les secours et les autorités à voir les départs de feu le plus tôt possible. Plus on est nombreux à contribuer, plus l'outil devient précis et utile à tous. Merci de faire partie de l'aventure.",
+      "Ta demande a bien été enregistrée et va être étudiée. FireSight est un projet à mission : aider les citoyens, les secours et les autorités à voir les départs de feu le plus tôt possible. Plus on est nombreux à contribuer, plus l'outil devient précis et utile à tous. Merci de faire partie de l'aventure.",
     another: "Faire une autre suggestion",
     backMap: "Retour à la carte",
   },
   en: {
-    title: "Contribute to kanari",
+    title: "Contribute to FireSight",
     intro:
       "An idea, a bug, data to add, a useful API? Tell us. Every contribution makes the fire alert earlier and more reliable for everyone.",
     name: "Your name",
@@ -81,7 +81,7 @@ const T = {
     rateLimited: "Too many submissions in a row. Wait a few minutes.",
     successTitle: "Thank you for contributing 🐤",
     successBody:
-      "Your request has been saved and will be reviewed. kanari is a mission project: helping citizens, emergency services and authorities see wildfires as early as possible. The more people contribute, the more precise and useful the tool becomes for everyone. Thanks for being part of it.",
+      "Your request has been saved and will be reviewed. FireSight is a mission project: helping citizens, emergency services and authorities see wildfires as early as possible. The more people contribute, the more precise and useful the tool becomes for everyone. Thanks for being part of it.",
     another: "Make another suggestion",
     backMap: "Back to the map",
   },
@@ -157,7 +157,7 @@ export function ContributeForm({ lang }: { lang: Lang }) {
       fd.set("lang", lang);
       // Provenance (premier contact de la session) pour la veille.
       try {
-        const src = JSON.parse(sessionStorage.getItem("kanari_src") || "{}");
+        const src = JSON.parse(sessionStorage.getItem("firesight_src") || "{}");
         if (src.referrer || document.referrer) fd.set("referrer", src.referrer || document.referrer);
         if (src.utm_source) fd.set("utm_source", src.utm_source);
         if (src.utm_medium) fd.set("utm_medium", src.utm_medium);

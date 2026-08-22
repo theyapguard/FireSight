@@ -9,7 +9,7 @@ import { FRENCH_FLEET } from "@/lib/aircraft";
 import { archiveMonths } from "@/lib/observatory";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://kanari.io";
+  const base = "https://firesight.io";
   const langs = { fr: `${base}/fr`, en: `${base}/en`, es: `${base}/es`, pt: `${base}/pt` };
   // Pages locales « feux par département » (contenu FR, URL canonique unique).
   const deptPages: MetadataRoute.Sitemap = DEPARTEMENTS.map((d) => ({

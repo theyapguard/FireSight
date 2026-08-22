@@ -1,13 +1,13 @@
 import type { MetadataRoute } from "next";
 
-// PWA : Kanari installable sur l'écran d'accueil (Android/desktop).
+// PWA : FireSight installable sur l'écran d'accueil (Android/desktop).
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "kanari — l'alerte feu de forêt, avant tout le monde",
-    short_name: "kanari",
+    name: "FireSight — l'alerte feu de forêt, avant tout le monde",
+    short_name: "FireSight",
     description:
-      "Le canari chante avant la sirène : départs de feu détectés par satellite et témoignages citoyens, en temps quasi réel.",
+      "Chaque étincelle en ligne de mire : départs de feu détectés par satellite et témoignages citoyens, en temps quasi réel.",
     start_url: "/",
     display: "standalone",
     orientation: "any",

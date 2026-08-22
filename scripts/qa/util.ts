@@ -1,4 +1,4 @@
-// Socle du programme de QA Kanari : registre de résultats, rapport console,
+// Socle du programme de QA FireSight : registre de résultats, rapport console,
 // helpers réseau. Chaque vérification produit PASS / FAIL / WARN / SKIP —
 // le processus sort en code 1 dès qu'un FAIL existe (utilisable en pre-commit).
 
@@ -87,7 +87,7 @@ export function parseOptions(): QaOptions {
   const get = (k: string) => args.find((a) => a.startsWith(`--${k}=`))?.split("=")[1];
   const target = args.includes("--local")
     ? "http://localhost:3100"
-    : (get("target") ?? process.env.QA_TARGET ?? "https://kanari.io");
+    : (get("target") ?? process.env.QA_TARGET ?? "https://firesight.io");
   return {
     target: target.replace(/\/$/, ""),
     aiSample: parseInt(get("ai-sample") ?? "24", 10),

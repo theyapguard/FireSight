@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "./tokens.css";
 
-/* Thème clair Kanari : la carte de veille vit sur blancs chauds (charte). */
+/* Thème clair FireSight : la carte de veille vit sur blancs chauds (charte). */
 :root {
   color-scheme: light;
 }
@@ -19,22 +19,22 @@ a:focus-visible {
   box-shadow: var(--focus-ring);
 }
 
-/* Le chant du kanari : les ondes s'allument en cascade (logo animé). */
-.kanari-w1,
-.kanari-w2,
-.kanari-w3 {
-  animation: kanari-wave 2.4s ease-out infinite;
+/* Le chant du FireSight : les ondes s'allument en cascade (logo animé). */
+.firesight-w1,
+.firesight-w2,
+.firesight-w3 {
+  animation: firesight-wave 2.4s ease-out infinite;
 }
-.kanari-w2 {
+.firesight-w2 {
   animation-delay: 0.3s;
 }
-.kanari-w3 {
+.firesight-w3 {
   animation-delay: 0.6s;
 }
 
-/* Point « écoute en cours » (kanari écoute, CTA d'alerte). */
+/* Point « écoute en cours » (FireSight écoute, CTA d'alerte). */
 .k-listen {
-  animation: kanari-wave 1.8s ease-out infinite;
+  animation: firesight-wave 1.8s ease-out infinite;
 }
 
 /* Anneau pulsant des feux actifs / départs très récents. */

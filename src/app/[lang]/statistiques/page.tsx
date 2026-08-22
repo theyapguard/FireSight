@@ -25,21 +25,21 @@ const ARCHIVE_START = "2026-08-03";
 
 const T = {
   fr: {
-    metaTitle: "Statistiques des feux de forêt en temps réel : l'observatoire kanari",
+    metaTitle: "Statistiques des feux de forêt en temps réel : l'observatoire FireSight",
     metaDesc:
       "Combien de feux de forêt aujourd'hui, cette semaine, dans le monde et en France ? Chiffres en temps réel, pays et départements les plus touchés, moyens aériens — et données ouvertes (CSV).",
     h1: "L'observatoire des feux de forêt",
     intro: (updated: string) =>
-      `Les chiffres en temps réel de la mémoire des feux kanari (départs significatifs détectés par satellite et témoins vérifiés, archivés depuis le 3 août 2026). Dernière mise à jour : ${updated}.`,
+      `Les chiffres en temps réel de la mémoire des feux FireSight (départs significatifs détectés par satellite et témoins vérifiés, archivés depuis le 3 août 2026). Dernière mise à jour : ${updated}.`,
     cardActive: "feux actifs suivis",
     cardToday: "départs aujourd'hui",
     cardWeek: "sur 7 jours",
     cardTotal: "depuis le début de l'archive",
     cardBombers: "bombardiers d'eau en vol",
     quote: (updated: string, active: number, today: number, total: number) =>
-      `« Au ${updated}, kanari suit ${active} feux actifs dans le monde ; ${today} départ${today > 1 ? "s" : ""} significatif${today > 1 ? "s" : ""} ont été détectés aujourd'hui et ${total} archivés depuis le 3 août 2026. »`,
+      `« Au ${updated}, FireSight suit ${active} feux actifs dans le monde ; ${today} départ${today > 1 ? "s" : ""} significatif${today > 1 ? "s" : ""} ont été détectés aujourd'hui et ${total} archivés depuis le 3 août 2026. »`,
     quoteSource:
-      "Source : kanari.io — satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés par IA. Chiffres librement citables (CC BY 4.0).",
+      "Source : firesight.io — satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés par IA. Chiffres librement citables (CC BY 4.0).",
     topCountries: "Pays les plus touchés",
     topDepts: "Départements français les plus touchés",
     biggest: "Les feux les plus puissants archivés",
@@ -47,12 +47,12 @@ const T = {
     faqTitle: "Questions fréquentes sur les chiffres",
     openDataTitle: "Données ouvertes",
     openData: (aircraftFires: number) =>
-      `L'archive complète est librement réutilisable (licence CC BY 4.0, mention « kanari.io ») : `,
+      `L'archive complète est librement réutilisable (licence CC BY 4.0, mention « firesight.io ») : `,
     openDataLink: "télécharger le CSV",
     openDataEnd: (aircraftFires: number) =>
       `. Journalistes, chercheurs, collectivités : servez-vous. ${aircraftFires > 0 ? `${aircraftFires} feux avec moyens aériens observés sur zone à ce jour.` : ""}`,
     methodo:
-      "Méthodologie : seuls les foyers significatifs sont archivés (corroborés, ou au-delà de seuils de détections/puissance) — les totaux kanari ne sont donc pas comparables aux recensements officiels exhaustifs. Voir aussi : ",
+      "Méthodologie : seuls les foyers significatifs sont archivés (corroborés, ou au-delà de seuils de détections/puissance) — les totaux FireSight ne sont donc pas comparables aux recensements officiels exhaustifs. Voir aussi : ",
     links: [
       { href: "/fr/bilan", label: "bilans quotidiens" },
       { href: "/fr/feu", label: "historique feu par feu" },
@@ -61,56 +61,56 @@ const T = {
     faq: (p: { updated: string; active: string; today: string; frTotal: number; bombers: number | null; topCountry: { name: string; n: number } | null }) => [
       {
         q: "Combien de feux de forêt sont en cours dans le monde aujourd'hui ?",
-        a: `Au ${p.updated}, kanari suit ${p.active} feux actifs dans le monde et ${p.today} départs significatifs ont été détectés aujourd'hui. Ces chiffres sont actualisés en continu sur kanari.io/fr/statistiques et sur la carte mondiale gratuite.`,
+        a: `Au ${p.updated}, FireSight suit ${p.active} feux actifs dans le monde et ${p.today} départs significatifs ont été détectés aujourd'hui. Ces chiffres sont actualisés en continu sur firesight.io/fr/statistiques et sur la carte mondiale gratuite.`,
       },
       {
         q: "Combien de départs de feu ont été détectés en France ?",
-        a: `${p.frTotal} feux significatifs ont été archivés en France depuis le 3 août 2026 (seuil : au moins 2 détections satellite ou 20 MW de puissance). Le détail par département est sur kanari.io/fr/feux.`,
+        a: `${p.frTotal} feux significatifs ont été archivés en France depuis le 3 août 2026 (seuil : au moins 2 détections satellite ou 20 MW de puissance). Le détail par département est sur firesight.io/fr/feux.`,
       },
       {
         q: "Combien de bombardiers d'eau sont en vol en ce moment ?",
         a:
           p.bombers != null
-            ? `${p.bombers} moyen${p.bombers > 1 ? "s" : ""} aérien${p.bombers > 1 ? "s" : ""} anti-incendie (Canadair, tankers, hélicoptères) ${p.bombers > 1 ? "sont" : "est"} en vol dans le monde au ${p.updated}. Leur position en temps réel est sur kanari.io/fr/canadair (suivi ADS-B, gratuit).`
-            : "La position en temps réel des bombardiers d'eau et hélicoptères anti-incendie en vol dans le monde est sur kanari.io/fr/canadair (suivi ADS-B, gratuit).",
+            ? `${p.bombers} moyen${p.bombers > 1 ? "s" : ""} aérien${p.bombers > 1 ? "s" : ""} anti-incendie (Canadair, tankers, hélicoptères) ${p.bombers > 1 ? "sont" : "est"} en vol dans le monde au ${p.updated}. Leur position en temps réel est sur firesight.io/fr/canadair (suivi ADS-B, gratuit).`
+            : "La position en temps réel des bombardiers d'eau et hélicoptères anti-incendie en vol dans le monde est sur firesight.io/fr/canadair (suivi ADS-B, gratuit).",
       },
       {
         q: "Où télécharger des données ouvertes sur les feux de forêt ?",
-        a: "L'archive complète des feux significatifs (date, position, puissance, pays, statut, moyens aériens) se télécharge librement en CSV sur kanari.io/opendata/feux.csv, sous licence CC BY 4.0, mise à jour en continu.",
+        a: "L'archive complète des feux significatifs (date, position, puissance, pays, statut, moyens aériens) se télécharge librement en CSV sur firesight.io/opendata/feux.csv, sous licence CC BY 4.0, mise à jour en continu.",
       },
     ],
-    datasetName: "kanari — archive des feux de forêt détectés",
+    datasetName: "FireSight — archive des feux de forêt détectés",
     datasetDesc:
-      "Feux de forêt significatifs détectés par satellites (NASA FIRMS, GOES, Meteosat MTG) et témoins vérifiés, archivés en continu par kanari : position, chronologie, puissance, moyens aériens observés.",
+      "Feux de forêt significatifs détectés par satellites (NASA FIRMS, GOES, Meteosat MTG) et témoins vérifiés, archivés en continu par FireSight : position, chronologie, puissance, moyens aériens observés.",
   },
   en: {
-    metaTitle: "Wildfire statistics in real time: the kanari observatory",
+    metaTitle: "Wildfire statistics in real time: the FireSight observatory",
     metaDesc:
       "How many wildfires today, this week, worldwide and in France? Real-time figures, most affected countries, firefighting aircraft — and open data (CSV).",
     h1: "The wildfire observatory",
     intro: (updated: string) =>
-      `Real-time figures from kanari's fire memory (significant ignitions detected by satellite and verified witnesses, archived since August 3, 2026). Last update: ${updated}.`,
+      `Real-time figures from FireSight's fire memory (significant ignitions detected by satellite and verified witnesses, archived since August 3, 2026). Last update: ${updated}.`,
     cardActive: "active fires tracked",
     cardToday: "ignitions today",
     cardWeek: "over 7 days",
     cardTotal: "since the archive began",
     cardBombers: "water bombers in flight",
     quote: (updated: string, active: number, today: number, total: number) =>
-      `"As of ${updated}, kanari tracks ${active} active fires worldwide; ${today} significant ignition${today > 1 ? "s were" : " was"} detected today and ${total} archived since August 3, 2026."`,
+      `"As of ${updated}, FireSight tracks ${active} active fires worldwide; ${today} significant ignition${today > 1 ? "s were" : " was"} detected today and ${total} archived since August 3, 2026."`,
     quoteSource:
-      "Source: kanari.io — NASA FIRMS, GOES and Meteosat MTG satellites plus AI-verified witness reports. Figures freely citable (CC BY 4.0).",
+      "Source: firesight.io — NASA FIRMS, GOES and Meteosat MTG satellites plus AI-verified witness reports. Figures freely citable (CC BY 4.0).",
     topCountries: "Most affected countries",
     topDepts: "Most affected French departments",
     biggest: "Most powerful fires archived",
     satDetection: "Satellite detection",
     faqTitle: "Frequently asked questions about the numbers",
     openDataTitle: "Open data",
-    openData: () => "The full archive is freely reusable (CC BY 4.0 licence, attribution “kanari.io”): ",
+    openData: () => "The full archive is freely reusable (CC BY 4.0 licence, attribution “firesight.io”): ",
     openDataLink: "download the CSV",
     openDataEnd: (aircraftFires: number) =>
       `. Journalists, researchers, agencies: help yourselves. ${aircraftFires > 0 ? `${aircraftFires} fires with aircraft observed on zone so far.` : ""}`,
     methodo:
-      "Methodology: only significant fires are archived (corroborated, or above detection/power thresholds) — kanari totals are therefore not comparable to exhaustive official tallies. See also: ",
+      "Methodology: only significant fires are archived (corroborated, or above detection/power thresholds) — FireSight totals are therefore not comparable to exhaustive official tallies. See also: ",
     links: [
       { href: "/en/canadair", label: "water bombers live" },
       { href: "/en/api", label: "public API" },
@@ -119,56 +119,56 @@ const T = {
     faq: (p: { updated: string; active: string; today: string; frTotal: number; bombers: number | null; topCountry: { name: string; n: number } | null }) => [
       {
         q: "How many wildfires are burning in the world today?",
-        a: `As of ${p.updated}, kanari tracks ${p.active} active fires worldwide and ${p.today} significant ignitions were detected today. These figures update continuously on kanari.io/en/statistiques and on the free world map.`,
+        a: `As of ${p.updated}, FireSight tracks ${p.active} active fires worldwide and ${p.today} significant ignitions were detected today. These figures update continuously on firesight.io/en/statistiques and on the free world map.`,
       },
       {
         q: "How many wildfires have been detected in France?",
-        a: `${p.frTotal} significant fires have been archived in France since August 3, 2026 (threshold: at least 2 satellite detections or 20 MW). Per-department detail is on kanari.io/fr/feux.`,
+        a: `${p.frTotal} significant fires have been archived in France since August 3, 2026 (threshold: at least 2 satellite detections or 20 MW). Per-department detail is on firesight.io/fr/feux.`,
       },
       {
         q: "How many water bombers are flying right now?",
         a:
           p.bombers != null
-            ? `${p.bombers} firefighting aircraft (Canadairs, tankers, helicopters) ${p.bombers > 1 ? "are" : "is"} in flight worldwide as of ${p.updated}. Their real-time position is on kanari.io/en/canadair (ADS-B tracking, free).`
-            : "The real-time position of water bombers and firefighting helicopters in flight worldwide is on kanari.io/en/canadair (ADS-B tracking, free).",
+            ? `${p.bombers} firefighting aircraft (Canadairs, tankers, helicopters) ${p.bombers > 1 ? "are" : "is"} in flight worldwide as of ${p.updated}. Their real-time position is on firesight.io/en/canadair (ADS-B tracking, free).`
+            : "The real-time position of water bombers and firefighting helicopters in flight worldwide is on firesight.io/en/canadair (ADS-B tracking, free).",
       },
       {
         q: "Where can I download open data on wildfires?",
-        a: "kanari's full archive of significant fires (date, position, power, country, status, aircraft) is freely downloadable as CSV at kanari.io/opendata/feux.csv, licensed CC BY 4.0, continuously updated.",
+        a: "FireSight's full archive of significant fires (date, position, power, country, status, aircraft) is freely downloadable as CSV at firesight.io/opendata/feux.csv, licensed CC BY 4.0, continuously updated.",
       },
     ],
-    datasetName: "kanari — archive of detected wildfires",
+    datasetName: "FireSight — archive of detected wildfires",
     datasetDesc:
-      "Significant wildfires detected by satellites (NASA FIRMS, GOES, Meteosat MTG) and verified witnesses, continuously archived by kanari: position, timeline, power, observed firefighting aircraft.",
+      "Significant wildfires detected by satellites (NASA FIRMS, GOES, Meteosat MTG) and verified witnesses, continuously archived by firesight: position, timeline, power, observed firefighting aircraft.",
   },
   es: {
-    metaTitle: "Estadísticas de incendios forestales en tiempo real | kanari",
+    metaTitle: "Estadísticas de incendios forestales en tiempo real | FireSight",
     metaDesc:
       "¿Cuántos incendios forestales hay hoy, esta semana, en el mundo? Cifras en tiempo real, países más afectados, medios aéreos — y datos abiertos (CSV).",
     h1: "El observatorio de incendios forestales",
     intro: (updated: string) =>
-      `Las cifras en tiempo real de la memoria de incendios de kanari (focos significativos detectados por satélite y testigos verificados, archivados desde el 3 de agosto de 2026). Última actualización: ${updated}.`,
+      `Las cifras en tiempo real de la memoria de incendios de FireSight (focos significativos detectados por satélite y testigos verificados, archivados desde el 3 de agosto de 2026). Última actualización: ${updated}.`,
     cardActive: "incendios activos seguidos",
     cardToday: "focos hoy",
     cardWeek: "en 7 días",
     cardTotal: "desde el inicio del archivo",
     cardBombers: "aviones cisterna en vuelo",
     quote: (updated: string, active: number, today: number, total: number) =>
-      `« Al ${updated}, kanari sigue ${active} incendios activos en el mundo; ${today} foco${today > 1 ? "s" : ""} significativo${today > 1 ? "s" : ""} ${today > 1 ? "fueron detectados" : "fue detectado"} hoy y ${total} archivados desde el 3 de agosto de 2026. »`,
+      `« Al ${updated}, FireSight sigue ${active} incendios activos en el mundo; ${today} foco${today > 1 ? "s" : ""} significativo${today > 1 ? "s" : ""} ${today > 1 ? "fueron detectados" : "fue detectado"} hoy y ${total} archivados desde el 3 de agosto de 2026. »`,
     quoteSource:
-      "Fuente: kanari.io — satélites NASA FIRMS, GOES y Meteosat MTG más testigos verificados por IA. Cifras libremente citables (CC BY 4.0).",
+      "Fuente: firesight.io — satélites NASA FIRMS, GOES y Meteosat MTG más testigos verificados por IA. Cifras libremente citables (CC BY 4.0).",
     topCountries: "Países más afectados",
     topDepts: "Departamentos franceses más afectados",
     biggest: "Los incendios más potentes archivados",
     satDetection: "Detección satelital",
     faqTitle: "Preguntas frecuentes sobre las cifras",
     openDataTitle: "Datos abiertos",
-    openData: () => "El archivo completo es libremente reutilizable (licencia CC BY 4.0, mención « kanari.io »): ",
+    openData: () => "El archivo completo es libremente reutilizable (licencia CC BY 4.0, mención « firesight.io »): ",
     openDataLink: "descargar el CSV",
     openDataEnd: (aircraftFires: number) =>
       `. Periodistas, investigadores, instituciones: sírvanse. ${aircraftFires > 0 ? `${aircraftFires} incendios con medios aéreos observados en zona hasta hoy.` : ""}`,
     methodo:
-      "Metodología: solo se archivan los focos significativos (corroborados, o por encima de umbrales de detecciones/potencia) — los totales de kanari no son comparables con los recuentos oficiales exhaustivos. Ver también: ",
+      "Metodología: solo se archivan los focos significativos (corroborados, o por encima de umbrales de detecciones/potencia) — los totales de FireSight no son comparables con los recuentos oficiales exhaustivos. Ver también: ",
     links: [
       { href: "/es", label: "mapa en vivo" },
       { href: "/en/canadair", label: "aviones cisterna en vivo" },
@@ -177,58 +177,58 @@ const T = {
     faq: (p: { updated: string; active: string; today: string; frTotal: number; bombers: number | null; topCountry: { name: string; n: number } | null }) => [
       {
         q: "¿Cuántos incendios forestales hay en el mundo hoy?",
-        a: `Al ${p.updated}, kanari sigue ${p.active} incendios activos en el mundo y ${p.today} focos significativos fueron detectados hoy. Estas cifras se actualizan de forma continua en kanari.io/es/statistiques y en el mapa mundial gratuito.`,
+        a: `Al ${p.updated}, FireSight sigue ${p.active} incendios activos en el mundo y ${p.today} focos significativos fueron detectados hoy. Estas cifras se actualizan de forma continua en firesight.io/es/statistiques y en el mapa mundial gratuito.`,
       },
       {
         q: "¿Qué país registra más incendios en este momento?",
         a: p.topCountry
-          ? `Desde el 3 de agosto de 2026, el país con más focos significativos archivados por kanari es ${p.topCountry.name}, con ${p.topCountry.n} incendios. El ranking completo y actualizado en tiempo real está en kanari.io/es/statistiques.`
-          : "El ranking de países más afectados, actualizado en tiempo real, está en kanari.io/es/statistiques.",
+          ? `Desde el 3 de agosto de 2026, el país con más focos significativos archivados por FireSight es ${p.topCountry.name}, con ${p.topCountry.n} incendios. El ranking completo y actualizado en tiempo real está en firesight.io/es/statistiques.`
+          : "El ranking de países más afectados, actualizado en tiempo real, está en firesight.io/es/statistiques.",
       },
       {
         q: "¿Cuántos aviones cisterna están volando ahora mismo?",
         a:
           p.bombers != null
-            ? `${p.bombers} medio${p.bombers > 1 ? "s" : ""} aéreo${p.bombers > 1 ? "s" : ""} contra incendios (aviones cisterna, helicópteros) ${p.bombers > 1 ? "están" : "está"} en vuelo en el mundo al ${p.updated}. Su posición en tiempo real está en kanari.io (seguimiento ADS-B, gratuito).`
-            : "La posición en tiempo real de los aviones cisterna y helicópteros contra incendios en vuelo está en kanari.io (seguimiento ADS-B, gratuito).",
+            ? `${p.bombers} medio${p.bombers > 1 ? "s" : ""} aéreo${p.bombers > 1 ? "s" : ""} contra incendios (aviones cisterna, helicópteros) ${p.bombers > 1 ? "están" : "está"} en vuelo en el mundo al ${p.updated}. Su posición en tiempo real está en firesight.io (seguimiento ADS-B, gratuito).`
+            : "La posición en tiempo real de los aviones cisterna y helicópteros contra incendios en vuelo está en firesight.io (seguimiento ADS-B, gratuito).",
       },
       {
         q: "¿Dónde descargar datos abiertos sobre incendios forestales?",
-        a: "El archivo completo de incendios significativos (fecha, posición, potencia, país, estado, medios aéreos) se descarga libremente en CSV en kanari.io/opendata/feux.csv, bajo licencia CC BY 4.0, actualizado de forma continua.",
+        a: "El archivo completo de incendios significativos (fecha, posición, potencia, país, estado, medios aéreos) se descarga libremente en CSV en firesight.io/opendata/feux.csv, bajo licencia CC BY 4.0, actualizado de forma continua.",
       },
     ],
-    datasetName: "kanari — archivo de incendios forestales detectados",
+    datasetName: "FireSight — archivo de incendios forestales detectados",
     datasetDesc:
-      "Incendios forestales significativos detectados por satélites (NASA FIRMS, GOES, Meteosat MTG) y testigos verificados, archivados de forma continua por kanari: posición, cronología, potencia, medios aéreos observados.",
+      "Incendios forestales significativos detectados por satélites (NASA FIRMS, GOES, Meteosat MTG) y testigos verificados, archivados de forma continua por firesight: posición, cronología, potencia, medios aéreos observados.",
   },
   pt: {
-    metaTitle: "Estatísticas de incêndios florestais em tempo real | kanari",
+    metaTitle: "Estatísticas de incêndios florestais em tempo real | FireSight",
     metaDesc:
       "Quantos incêndios florestais hoje, nesta semana, no mundo? Números em tempo real, países mais afetados, meios aéreos — e dados abertos (CSV).",
     h1: "O observatório de incêndios florestais",
     intro: (updated: string) =>
-      `Os números em tempo real da memória de incêndios do kanari (focos significativos detectados por satélite e testemunhas verificadas, arquivados desde 3 de agosto de 2026). Última atualização: ${updated}.`,
+      `Os números em tempo real da memória de incêndios do FireSight (focos significativos detectados por satélite e testemunhas verificadas, arquivados desde 3 de agosto de 2026). Última atualização: ${updated}.`,
     cardActive: "incêndios ativos acompanhados",
     cardToday: "focos hoje",
     cardWeek: "em 7 dias",
     cardTotal: "desde o início do arquivo",
     cardBombers: "aviões-tanque em voo",
     quote: (updated: string, active: number, today: number, total: number) =>
-      `« Em ${updated}, o kanari acompanha ${active} incêndios ativos no mundo; ${today} foco${today > 1 ? "s" : ""} significativo${today > 1 ? "s" : ""} ${today > 1 ? "foram detectados" : "foi detectado"} hoje e ${total} arquivados desde 3 de agosto de 2026. »`,
+      `« Em ${updated}, o FireSight acompanha ${active} incêndios ativos no mundo; ${today} foco${today > 1 ? "s" : ""} significativo${today > 1 ? "s" : ""} ${today > 1 ? "foram detectados" : "foi detectado"} hoje e ${total} arquivados desde 3 de agosto de 2026. »`,
     quoteSource:
-      "Fonte: kanari.io — satélites NASA FIRMS, GOES e Meteosat MTG mais testemunhas verificadas por IA. Números livremente citáveis (CC BY 4.0).",
+      "Fonte: firesight.io — satélites NASA FIRMS, GOES e Meteosat MTG mais testemunhas verificadas por IA. Números livremente citáveis (CC BY 4.0).",
     topCountries: "Países mais afetados",
     topDepts: "Departamentos franceses mais afetados",
     biggest: "Os incêndios mais potentes arquivados",
     satDetection: "Detecção por satélite",
     faqTitle: "Perguntas frequentes sobre os números",
     openDataTitle: "Dados abertos",
-    openData: () => "O arquivo completo é livremente reutilizável (licença CC BY 4.0, menção « kanari.io »): ",
+    openData: () => "O arquivo completo é livremente reutilizável (licença CC BY 4.0, menção « firesight.io »): ",
     openDataLink: "baixar o CSV",
     openDataEnd: (aircraftFires: number) =>
       `. Jornalistas, pesquisadores, instituições: fiquem à vontade. ${aircraftFires > 0 ? `${aircraftFires} incêndios com meios aéreos observados na zona até hoje.` : ""}`,
     methodo:
-      "Metodologia: só os focos significativos são arquivados (corroborados, ou acima de limiares de detecções/potência) — os totais do kanari não são comparáveis aos levantamentos oficiais exaustivos. Ver também: ",
+      "Metodologia: só os focos significativos são arquivados (corroborados, ou acima de limiares de detecções/potência) — os totais do FireSight não são comparáveis aos levantamentos oficiais exaustivos. Ver também: ",
     links: [
       { href: "/pt", label: "mapa ao vivo" },
       { href: "/en/canadair", label: "aviões-tanque ao vivo" },
@@ -237,29 +237,29 @@ const T = {
     faq: (p: { updated: string; active: string; today: string; frTotal: number; bombers: number | null; topCountry: { name: string; n: number } | null }) => [
       {
         q: "Quantos incêndios florestais há no mundo hoje?",
-        a: `Em ${p.updated}, o kanari acompanha ${p.active} incêndios ativos no mundo e ${p.today} focos significativos foram detectados hoje. Esses números se atualizam continuamente em kanari.io/pt/statistiques e no mapa mundial gratuito.`,
+        a: `Em ${p.updated}, o FireSight acompanha ${p.active} incêndios ativos no mundo e ${p.today} focos significativos foram detectados hoje. Esses números se atualizam continuamente em firesight.io/pt/statistiques e no mapa mundial gratuito.`,
       },
       {
         q: "Qual país registra mais incêndios neste momento?",
         a: p.topCountry
-          ? `Desde 3 de agosto de 2026, o país com mais focos significativos arquivados pelo kanari é ${p.topCountry.name}, com ${p.topCountry.n} incêndios. O ranking completo, atualizado em tempo real, está em kanari.io/pt/statistiques.`
-          : "O ranking dos países mais afetados, atualizado em tempo real, está em kanari.io/pt/statistiques.",
+          ? `Desde 3 de agosto de 2026, o país com mais focos significativos arquivados pelo FireSight é ${p.topCountry.name}, com ${p.topCountry.n} incêndios. O ranking completo, atualizado em tempo real, está em firesight.io/pt/statistiques.`
+          : "O ranking dos países mais afetados, atualizado em tempo real, está em firesight.io/pt/statistiques.",
       },
       {
         q: "Quantos aviões-tanque estão voando agora?",
         a:
           p.bombers != null
-            ? `${p.bombers} meio${p.bombers > 1 ? "s" : ""} aéreo${p.bombers > 1 ? "s" : ""} de combate a incêndios (aviões-tanque, helicópteros) ${p.bombers > 1 ? "estão" : "está"} em voo no mundo em ${p.updated}. A posição em tempo real está em kanari.io (rastreamento ADS-B, gratuito).`
-            : "A posição em tempo real dos aviões-tanque e helicópteros de combate a incêndios em voo está em kanari.io (rastreamento ADS-B, gratuito).",
+            ? `${p.bombers} meio${p.bombers > 1 ? "s" : ""} aéreo${p.bombers > 1 ? "s" : ""} de combate a incêndios (aviões-tanque, helicópteros) ${p.bombers > 1 ? "estão" : "está"} em voo no mundo em ${p.updated}. A posição em tempo real está em firesight.io (rastreamento ADS-B, gratuito).`
+            : "A posição em tempo real dos aviões-tanque e helicópteros de combate a incêndios em voo está em firesight.io (rastreamento ADS-B, gratuito).",
       },
       {
         q: "Onde baixar dados abertos sobre incêndios florestais?",
-        a: "O arquivo completo de incêndios significativos (data, posição, potência, país, status, meios aéreos) pode ser baixado livremente em CSV em kanari.io/opendata/feux.csv, sob licença CC BY 4.0, atualizado continuamente.",
+        a: "O arquivo completo de incêndios significativos (data, posição, potência, país, status, meios aéreos) pode ser baixado livremente em CSV em firesight.io/opendata/feux.csv, sob licença CC BY 4.0, atualizado continuamente.",
       },
     ],
-    datasetName: "kanari — arquivo de incêndios florestais detectados",
+    datasetName: "FireSight — arquivo de incêndios florestais detectados",
     datasetDesc:
-      "Incêndios florestais significativos detectados por satélites (NASA FIRMS, GOES, Meteosat MTG) e testemunhas verificadas, arquivados continuamente pelo kanari: posição, cronologia, potência, meios aéreos observados.",
+      "Incêndios florestais significativos detectados por satélites (NASA FIRMS, GOES, Meteosat MTG) e testemunhas verificadas, arquivados continuamente pelo firesight: posição, cronologia, potência, meios aéreos observados.",
   },
 } as const;
 
@@ -380,15 +380,15 @@ export default async function StatsPage({ params }: { params: Promise<{ lang: st
     "@type": "Dataset",
     name: t.datasetName,
     description: t.datasetDesc,
-    url: `https://kanari.io/${lang}/statistiques`,
+    url: `https://firesight.io/${lang}/statistiques`,
     license: "https://creativecommons.org/licenses/by/4.0/",
-    creator: { "@id": "https://kanari.io/#org" },
+    creator: { "@id": "https://firesight.io/#org" },
     temporalCoverage: `${ARCHIVE_START}/..`,
     distribution: [
       {
         "@type": "DataDownload",
         encodingFormat: "text/csv",
-        contentUrl: "https://kanari.io/opendata/feux.csv",
+        contentUrl: "https://firesight.io/opendata/feux.csv",
       },
     ],
   };

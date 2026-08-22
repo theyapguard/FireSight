@@ -1,9 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-
-<circle cx="36" cy="56" r="22" fill="#FFC72E"></circle>
-<polygon points="56,50 70,56 56,62" fill="#1B1C1E"></polygon>
-<circle cx="45" cy="48" r="4" fill="#1B1C1E"></circle>
-<path class="w1" d="M70,44.5 A14,14 0 0 1 70,67.5" fill="none" stroke="#1B1C1E" stroke-width="5" stroke-linecap="round"></path>
-<path class="w2" d="M74.6,38 A22,22 0 0 1 74.6,74" fill="none" stroke="#1B1C1E" stroke-width="5" stroke-linecap="round"></path>
-<path class="w3" d="M79.2,31.4 A30,30 0 0 1 79.2,80.6" fill="none" stroke="#1B1C1E" stroke-width="5" stroke-linecap="round"></path>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="FireSight">
+  <defs>
+    <linearGradient id="flame" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#F6C83E"/>
+      <stop offset="55%" stop-color="#FF9E3D"/>
+      <stop offset="100%" stop-color="#E4572E"/>
+    </linearGradient>
+    <style>
+      .eye { transform-origin: 50px 50px; animation: blink 5.2s ease-in-out infinite; }
+      .flame { transform-origin: 50px 65px; animation: flick 1.7s ease-in-out infinite; }
+      @keyframes blink { 0%, 90%, 100% { transform: scaleY(1); } 94% { transform: scaleY(0.06); } }
+      @keyframes flick { 0%, 100% { transform: scale(1, 1); } 30% { transform: scale(1.05, 1.1); } 60% { transform: scale(0.96, 0.94); } }
+    </style>
+  </defs>
+  <g class="eye">
+    <path d="M10,50 C30,20 70,20 90,50 C70,80 30,80 10,50 Z" fill="none" stroke="#1B1C1E" stroke-width="6.5" stroke-linejoin="round"/>
+    <g class="flame">
+      <path d="M50,26 C55,35 63,40 63,52 A13,13 0 1 1 37,52 C37,45 40,41 42,36 C44,32 46,28 50,26 Z" fill="url(#flame)"/>
+      <path d="M50,42 C53,46 56,48 56,53 A6,6 0 1 1 44,53 C44,50 45.5,47.5 47,45 C48,44 49,43 50,42 Z" fill="#FFE9A8"/>
+    </g>
+  </g>
 </svg>

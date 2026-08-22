@@ -309,7 +309,7 @@ export function VeilleDashboard() {
           <span style={{ fontSize: 26 }}>🐤</span>
           <div>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 21, fontWeight: 600, color: "var(--ink)", margin: 0, letterSpacing: "-0.3px" }}>
-              Veille kanari
+              Veille FireSight
             </h1>
             <div style={{ fontSize: 12, color: "var(--ink-3)" }}>
               {loading ? "Chargement…" : updatedAt ? `Mis à jour ${timeAgo(new Date(updatedAt).toISOString())}` : ""}

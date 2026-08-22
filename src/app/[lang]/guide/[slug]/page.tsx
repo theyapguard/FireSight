@@ -14,7 +14,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 // uniquement là où la recommandation est légitime pour le lecteur, avec la
 // mention légale du Club Partenaires. Jamais sur les guides sans produit
 // naturellement utile.
-const AFFILIATE_TAG = "kanari-21";
+const AFFILIATE_TAG = "firesight-21";
 const AFFILIATE: Record<string, { q: string; label: string }[]> = {
   "que-faire-feu-de-foret": [
     { q: "detecteur de fumee NF", label: "Détecteur de fumée (obligatoire dans chaque logement)" },
@@ -85,9 +85,9 @@ const UI = {
     ],
     also: "À lire aussi",
     disclaimer:
-      "kanari est un service d'information indépendant et gratuit, pas un canal d'alerte officiel. En cas d'urgence : 18 ou 112.",
+      "FireSight est un service d'information indépendant et gratuit, pas un canal d'alerte officiel. En cas d'urgence : 18 ou 112.",
     citable: (today: string, total: number, france: number | null) =>
-      `Au ${today}, kanari a archivé ${total.toLocaleString("fr-FR")} feux significatifs détectés par satellite dans le monde depuis le 3 août 2026${france !== null && france > 0 ? `, dont ${france.toLocaleString("fr-FR")} en France` : ""}. Source : kanari.io, données ouvertes (CC BY 4.0).`,
+      `Au ${today}, FireSight a archivé ${total.toLocaleString("fr-FR")} feux significatifs détectés par satellite dans le monde depuis le 3 août 2026${france !== null && france > 0 ? `, dont ${france.toLocaleString("fr-FR")} en France` : ""}. Source : firesight.io, données ouvertes (CC BY 4.0).`,
   },
   en: {
     guides: "Guides",
@@ -101,9 +101,9 @@ const UI = {
     ],
     also: "Also worth reading",
     disclaimer:
-      "kanari is an independent, free information service, not an official alert channel. In an emergency call 112 (EU), 911 (North America) or your local emergency number.",
+      "FireSight is an independent, free information service, not an official alert channel. In an emergency call 112 (EU), 911 (North America) or your local emergency number.",
     citable: (today: string, total: number, france: number | null) =>
-      `As of ${today}, kanari has archived ${total.toLocaleString("en-US")} significant satellite-detected fires worldwide since August 3, 2026${france !== null && france > 0 ? `, including ${france.toLocaleString("en-US")} in France` : ""}. Source: kanari.io, open data (CC BY 4.0).`,
+      `As of ${today}, FireSight has archived ${total.toLocaleString("en-US")} significant satellite-detected fires worldwide since August 3, 2026${france !== null && france > 0 ? `, including ${france.toLocaleString("en-US")} in France` : ""}. Source: firesight.io, open data (CC BY 4.0).`,
   },
   es: {
     guides: "Guías",
@@ -117,9 +117,9 @@ const UI = {
     ],
     also: "También te puede interesar",
     disclaimer:
-      "kanari es un servicio de información independiente y gratuito, no un canal de alerta oficial. En caso de emergencia llama al 911 (América) o al 112 (España y Europa).",
+      "FireSight es un servicio de información independiente y gratuito, no un canal de alerta oficial. En caso de emergencia llama al 911 (América) o al 112 (España y Europa).",
     citable: (today: string, total: number, france: number | null) =>
-      `Al ${today}, kanari ha archivado ${total.toLocaleString("es")} incendios significativos detectados por satélite en el mundo desde el 3 de agosto de 2026${france !== null && france > 0 ? `, incluidos ${france.toLocaleString("es")} en Francia` : ""}. Fuente: kanari.io, datos abiertos (CC BY 4.0).`,
+      `Al ${today}, FireSight ha archivado ${total.toLocaleString("es")} incendios significativos detectados por satélite en el mundo desde el 3 de agosto de 2026${france !== null && france > 0 ? `, incluidos ${france.toLocaleString("es")} en Francia` : ""}. Fuente: firesight.io, datos abiertos (CC BY 4.0).`,
   },
   pt: {
     guides: "Guias",
@@ -133,9 +133,9 @@ const UI = {
     ],
     also: "Vale a pena ler também",
     disclaimer:
-      "O kanari é um serviço de informação independente e gratuito, não um canal de alerta oficial. Em caso de emergência, ligue 193 (Brasil) ou 112 (Portugal).",
+      "O FireSight é um serviço de informação independente e gratuito, não um canal de alerta oficial. Em caso de emergência, ligue 193 (Brasil) ou 112 (Portugal).",
     citable: (today: string, total: number, france: number | null) =>
-      `Em ${today}, o kanari já arquivou ${total.toLocaleString("pt-BR")} incêndios significativos detectados por satélite no mundo desde 3 de agosto de 2026${france !== null && france > 0 ? `, incluindo ${france.toLocaleString("pt-BR")} na França` : ""}. Fonte: kanari.io, dados abertos (CC BY 4.0).`,
+      `Em ${today}, o FireSight já arquivou ${total.toLocaleString("pt-BR")} incêndios significativos detectados por satélite no mundo desde 3 de agosto de 2026${france !== null && france > 0 ? `, incluindo ${france.toLocaleString("pt-BR")} na França` : ""}. Fonte: firesight.io, dados abertos (CC BY 4.0).`,
   },
 } as const;
 
@@ -149,7 +149,7 @@ export async function generateMetadata({
   const resolved = resolveGuide(l, slug);
   if (!resolved) return {};
   const { g, eff } = resolved;
-  const ogImg = `https://kanari.io/guides/${g.slug}.png`;
+  const ogImg = `https://firesight.io/guides/${g.slug}.png`;
   return {
     title: g.metaTitle,
     description: g.metaDesc,
@@ -193,12 +193,12 @@ export default async function GuidePage({
     "@type": "Article",
     headline: g.title,
     description: g.metaDesc,
-    image: [`https://kanari.io/guides/${g.slug}.png`],
+    image: [`https://firesight.io/guides/${g.slug}.png`],
     dateModified: g.updated,
     inLanguage: eff,
-    author: { "@type": "Organization", name: "kanari", url: "https://kanari.io" },
-    publisher: { "@id": "https://kanari.io/#org" },
-    mainEntityOfPage: `https://kanari.io/${eff}/guide/${g.slug}`,
+    author: { "@type": "Organization", name: "FireSight", url: "https://firesight.io" },
+    publisher: { "@id": "https://firesight.io/#org" },
+    mainEntityOfPage: `https://firesight.io/${eff}/guide/${g.slug}`,
   };
   const faqLd =
     g.faq && g.faq.length > 0
@@ -306,7 +306,7 @@ export default async function GuidePage({
               ))}
             </ul>
             <p className="text-[11.5px]" style={{ color: "var(--ink-3)" }}>
-              Liens partenaires : en tant que Partenaire Amazon, kanari réalise un bénéfice sur les
+              Liens partenaires : en tant que Partenaire Amazon, FireSight réalise un bénéfice sur les
               achats remplissant les conditions requises. Cela finance le service, qui reste gratuit.
             </p>
           </section>

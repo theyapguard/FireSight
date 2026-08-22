@@ -35,11 +35,11 @@ const PT_IN: Record<string, string> = {
 
 const CT = {
   en: {
-    metaTitle: (n: string) => `Wildfires in ${n} today: live fire map | kanari`,
+    metaTitle: (n: string) => `Wildfires in ${n} today: live fire map | FireSight`,
     metaDesc: (n: string) => `Is there a wildfire in ${n} right now? Live map of fire ignitions detected by satellite (NASA FIRMS, GOES, MTG) and verified witness reports. Free, no account.`,
     crumb: "Wildfires by country",
     h1: (n: string) => `Wildfires in ${n}: the live situation`,
-    asOf: (d: string) => `As of ${d} UTC — significant fires archived by kanari from satellite detections (NASA FIRMS, GOES, Meteosat MTG) and AI-verified witness reports. Continuously updated.`,
+    asOf: (d: string) => `As of ${d} UTC — significant fires archived by FireSight from satellite detections (NASA FIRMS, GOES, Meteosat MTG) and AI-verified witness reports. Continuously updated.`,
     tracked: (n: number) => (n === 1 ? "fire currently tracked" : "fires currently tracked"),
     cta: (n: string) => `Open the live map of ${n} →`,
     latest: "Latest significant fires",
@@ -48,20 +48,20 @@ const CT = {
     sat: "Satellite detection",
     how: (n: string) => `How do I know if there is a fire near me in ${n}?`,
     how1:
-      "kanari continuously fuses thermal detections from satellites (VIIRS at 375 m resolution, geostationary GOES and Meteosat MTG re-scanning every 10 minutes) with witness reports published on social networks, each verified twice by AI before being shown. A new ignition can appear on the map within minutes of its first signals — often before the press.",
+      "FireSight continuously fuses thermal detections from satellites (VIIRS at 375 m resolution, geostationary GOES and Meteosat MTG re-scanning every 10 minutes) with witness reports published on social networks, each verified twice by AI before being shown. A new ignition can appear on the map within minutes of its first signals — often before the press.",
     how2a: "You can also ",
     how2link: "track water bombers live",
     how2b: " while they operate. If you witness a fire starting, call your local emergency number first (112 in Europe, 911 in North America).",
     byState: "Wildfires by state",
-    note: "kanari is a free, independent information service — not an official alert channel. Open data:",
+    note: "FireSight is a free, independent information service — not an official alert channel. Open data:",
     noteLink: "full fire archive (CSV, CC BY 4.0)",
   },
   es: {
-    metaTitle: (n: string) => `Incendios en ${n} hoy: mapa en vivo | kanari`,
+    metaTitle: (n: string) => `Incendios en ${n} hoy: mapa en vivo | FireSight`,
     metaDesc: (n: string) => `¿Hay un incendio en ${n} ahora mismo? Mapa en vivo de los focos detectados por satélite (NASA FIRMS, GOES, MTG) y reportes de testigos verificados. Gratis, sin cuenta.`,
     crumb: "Incendios por país",
     h1: (n: string) => `Incendios en ${n}: la situación en vivo`,
-    asOf: (d: string) => `Al ${d} UTC — incendios significativos archivados por kanari a partir de detecciones satelitales (NASA FIRMS, GOES, Meteosat MTG) y reportes de testigos verificados por IA. Actualización continua.`,
+    asOf: (d: string) => `Al ${d} UTC — incendios significativos archivados por FireSight a partir de detecciones satelitales (NASA FIRMS, GOES, Meteosat MTG) y reportes de testigos verificados por IA. Actualización continua.`,
     tracked: (n: number) => (n === 1 ? "incendio seguido ahora" : "incendios seguidos ahora"),
     cta: (n: string) => `Abrir el mapa en vivo de ${n} →`,
     latest: "Últimos incendios significativos",
@@ -70,20 +70,20 @@ const CT = {
     sat: "Detección satelital",
     how: (n: string) => `¿Cómo sé si hay un incendio cerca de mí en ${n}?`,
     how1:
-      "kanari fusiona de forma continua las detecciones térmicas de los satélites (VIIRS a 375 m de resolución, los geoestacionarios GOES y Meteosat MTG que reescanean cada 10 minutos) con reportes de testigos publicados en redes sociales, verificados dos veces por IA antes de mostrarse. Un foco nuevo puede aparecer en el mapa a los pocos minutos de sus primeras señales, a menudo antes que la prensa.",
+      "FireSight fusiona de forma continua las detecciones térmicas de los satélites (VIIRS a 375 m de resolución, los geoestacionarios GOES y Meteosat MTG que reescanean cada 10 minutos) con reportes de testigos publicados en redes sociales, verificados dos veces por IA antes de mostrarse. Un foco nuevo puede aparecer en el mapa a los pocos minutos de sus primeras señales, a menudo antes que la prensa.",
     how2a: "También puedes ",
     how2link: "seguir los aviones cisterna en vivo",
     how2b: " mientras operan. Si eres testigo de un foco, llama primero a tu número de emergencias local (911 en América, 112 en Europa).",
     byState: "Incendios por estado",
-    note: "kanari es un servicio de información independiente y gratuito, no un canal de alerta oficial. Datos abiertos:",
+    note: "FireSight es un servicio de información independiente y gratuito, no un canal de alerta oficial. Datos abiertos:",
     noteLink: "archivo completo de incendios (CSV, CC BY 4.0)",
   },
   pt: {
-    metaTitle: (n: string) => `Incêndios ${n} hoje: mapa ao vivo | kanari`,
+    metaTitle: (n: string) => `Incêndios ${n} hoje: mapa ao vivo | FireSight`,
     metaDesc: (n: string) => `Há um incêndio ${n} agora? Mapa ao vivo dos focos detectados por satélite (NASA FIRMS, GOES, MTG) e relatos de testemunhas verificados. Grátis, sem conta.`,
     crumb: "Incêndios por país",
     h1: (n: string) => `Incêndios ${n}: a situação ao vivo`,
-    asOf: (d: string) => `Em ${d} UTC — incêndios significativos arquivados pelo kanari a partir de detecções por satélite (NASA FIRMS, GOES, Meteosat MTG) e relatos de testemunhas verificados por IA. Atualização contínua.`,
+    asOf: (d: string) => `Em ${d} UTC — incêndios significativos arquivados pelo FireSight a partir de detecções por satélite (NASA FIRMS, GOES, Meteosat MTG) e relatos de testemunhas verificados por IA. Atualização contínua.`,
     tracked: (n: number) => (n === 1 ? "incêndio acompanhado agora" : "incêndios acompanhados agora"),
     cta: (n: string) => `Abrir o mapa ao vivo · ${n} →`,
     latest: "Últimos incêndios significativos",
@@ -92,12 +92,12 @@ const CT = {
     sat: "Detecção por satélite",
     how: (n: string) => `Como sei se há um incêndio perto de mim ${n}?`,
     how1:
-      "O kanari funde continuamente as detecções térmicas dos satélites (VIIRS a 375 m de resolução, os geoestacionários GOES e Meteosat MTG que revarrem a cada 10 minutos) com relatos de testemunhas publicados nas redes sociais, verificados duas vezes por IA antes de aparecerem. Um foco novo pode surgir no mapa poucos minutos após os primeiros sinais, muitas vezes antes da imprensa.",
+      "O FireSight funde continuamente as detecções térmicas dos satélites (VIIRS a 375 m de resolução, os geoestacionários GOES e Meteosat MTG que revarrem a cada 10 minutos) com relatos de testemunhas publicados nas redes sociais, verificados duas vezes por IA antes de aparecerem. Um foco novo pode surgir no mapa poucos minutos após os primeiros sinais, muitas vezes antes da imprensa.",
     how2a: "Você também pode ",
     how2link: "acompanhar os aviões-tanque ao vivo",
     how2b: " enquanto operam. Se presenciar um foco, ligue primeiro para o número de emergência local (193 no Brasil, 112 em Portugal).",
     byState: "Incêndios por estado",
-    note: "O kanari é um serviço de informação independente e gratuito, não um canal de alerta oficial. Dados abertos:",
+    note: "O FireSight é um serviço de informação independente e gratuito, não um canal de alerta oficial. Dados abertos:",
     noteLink: "arquivo completo de incêndios (CSV, CC BY 4.0)",
   },
 } as const;
@@ -130,7 +130,7 @@ export async function generateMetadata({
   const s = STATE_BY_SLUG.get(country);
   if (!s) return {};
   return {
-    title: `${s.name} wildfires today: live fire map | kanari`,
+    title: `${s.name} wildfires today: live fire map | FireSight`,
     description: `Is there a fire in ${s.name} right now? Live map of wildfire ignitions detected by satellite, NIFC perimeters and water bombers in flight. Free, no account.`,
     alternates: { canonical: `/en/fires/${s.slug}` },
   };
@@ -286,15 +286,15 @@ async function StateFires({ state }: { state: UsState }) {
   const faq = [
     {
       q: `Are there wildfires in ${state.name} right now?`,
-      a: `As of ${now} (Pacific time), kanari tracks ${active.length} active significant fire${active.length === 1 ? "" : "s"} in ${state.name}; ${week.length} significant ignition${week.length === 1 ? " was" : "s were"} detected over the last 7 days and ${fires.length} archived since August 3, 2026. These figures update continuously on the free live map at kanari.io.`,
+      a: `As of ${now} (Pacific time), FireSight tracks ${active.length} active significant fire${active.length === 1 ? "" : "s"} in ${state.name}; ${week.length} significant ignition${week.length === 1 ? " was" : "s were"} detected over the last 7 days and ${fires.length} archived since August 3, 2026. These figures update continuously on the free live map at firesight.io.`,
     },
     {
       q: `How fast do new ${state.name} fires appear on the map?`,
-      a: `kanari reads the NOAA GOES geostationary feed directly, so detections appear about 13 minutes after satellite scan (the satellite re-scans every 10 minutes), plus VIIRS polar passes at 375 m resolution. Witness reports, verified by AI, can surface an ignition even earlier.`,
+      a: `FireSight reads the NOAA GOES geostationary feed directly, so detections appear about 13 minutes after satellite scan (the satellite re-scans every 10 minutes), plus VIIRS polar passes at 375 m resolution. Witness reports, verified by AI, can surface an ignition even earlier.`,
     },
     {
       q: `Where do the official ${state.name} fire perimeters come from?`,
-      a: `From NIFC (National Interagency Fire Center) incident data, displayed on the kanari map alongside satellite detections and firefighting aircraft tracked live via ADS-B. All of it is free, with no account.`,
+      a: `From NIFC (National Interagency Fire Center) incident data, displayed on the FireSight map alongside satellite detections and firefighting aircraft tracked live via ADS-B. All of it is free, with no account.`,
     },
   ];
   const faqLd = {
@@ -320,7 +320,7 @@ async function StateFires({ state }: { state: UsState }) {
           {state.name} wildfires: the live situation
         </h1>
         <p className="mb-6 text-[15px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
-          As of {now} (Pacific time) — significant fires archived by kanari from satellite
+          As of {now} (Pacific time) — significant fires archived by FireSight from satellite
           detections (NASA FIRMS, GOES) and AI-verified witness reports, with official NIFC
           perimeters on the map. Continuously updated.
         </p>
@@ -403,7 +403,7 @@ async function StateFires({ state }: { state: UsState }) {
         )}
 
         <p className="mt-8 border-t pt-4 text-[12.5px]" style={{ borderColor: "var(--line)", color: "var(--ink-3)" }}>
-          kanari is a free, independent information service — not an official alert channel.
+          FireSight is a free, independent information service — not an official alert channel.
           In an emergency call 911. Open data:{" "}
           <a href="/opendata/feux.csv" style={{ color: "var(--link)" }}>full fire archive (CSV, CC BY 4.0)</a>.
         </p>

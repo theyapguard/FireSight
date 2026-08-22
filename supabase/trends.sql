@@ -89,7 +89,7 @@ as $$
           select referrer_host, min(created_at)::date as first_day
           from page_views
           where referrer_host is not null and referrer_host <> ''
-            and referrer_host not ilike '%kanari%'
+            and referrer_host not ilike '%FireSight%'
           group by referrer_host
         )
         select d.day, (select count(*) from firsts f where f.first_day <= d.day)::int as domains

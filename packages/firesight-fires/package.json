@@ -1,0 +1,21 @@
+{
+  "name": "firesight-fires",
+  "version": "0.1.0",
+  "description": "Tiny, dependency-free client for the FireSight wildfire API: live fire clusters, verified witness signals, open-data archive and MCP endpoint.",
+  "keywords": ["wildfire", "fire", "satellite", "NASA FIRMS", "GOES", "Meteosat", "open data", "FireSight", "mcp"],
+  "homepage": "https://firesight.io/en/api",
+  "repository": { "type": "git", "url": "git+https://github.com/theyapguard/FireSight.git", "directory": "packages/firesight-fires" },
+  "bugs": "https://github.com/theyapguard/FireSight/issues",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": { ".": { "types": "./index.d.ts", "import": "./index.js" } },
+  "files": ["index.js", "index.d.ts", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": { "typescript": "^5" },
+  "engines": { "node": ">=18" }
+}

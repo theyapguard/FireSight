@@ -68,9 +68,9 @@ export default async function ObservatoryCountryPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: `https://kanari.io/${lang}` },
-      { "@type": "ListItem", position: 2, name: t.crumbObs, item: `https://kanari.io/${lang}/statistiques` },
-      { "@type": "ListItem", position: 3, name: scope.name, item: `https://kanari.io/${lang}/statistiques/${country}` },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: `https://firesight.io/${lang}` },
+      { "@type": "ListItem", position: 2, name: t.crumbObs, item: `https://firesight.io/${lang}/statistiques` },
+      { "@type": "ListItem", position: 3, name: scope.name, item: `https://firesight.io/${lang}/statistiques/${country}` },
     ],
   };
 

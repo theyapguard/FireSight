@@ -6,7 +6,7 @@ import { listRecentFires } from "@/lib/firearchive";
 import { DEPT_BY_SLUG } from "@/lib/departements";
 import { SiteFooter } from "@/components/SiteFooter";
 
-// Historique des feux : index des pages événement (mémoire publique kanari).
+// Historique des feux : index des pages événement (mémoire publique FireSight).
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
@@ -16,9 +16,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   await params;
   return {
-    title: "Historique des feux de forêt : chaque incendie détecté | kanari",
+    title: "Historique des feux de forêt : chaque incendie détecté | FireSight",
     description:
-      "La mémoire publique des feux de forêt : chaque incendie significatif détecté par kanari a sa page permanente — chronologie, détections satellites, moyens aériens engagés.",
+      "La mémoire publique des feux de forêt : chaque incendie significatif détecté par FireSight a sa page permanente — chronologie, détections satellites, moyens aériens engagés.",
     alternates: { canonical: "/fr/feu" },
   };
 }
@@ -43,7 +43,7 @@ export default async function FireIndex({ params }: { params: Promise<{ lang: st
           Historique des feux de forêt
         </h1>
         <p className="mb-8 text-[15px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
-          Chaque feu significatif détecté par kanari (satellites + témoins vérifiés) a sa page
+          Chaque feu significatif détecté par FireSight (satellites + témoins vérifiés) a sa page
           permanente : chronologie, puissance, moyens aériens observés. L'archive s'enrichit
           automatiquement, feu après feu.
         </p>

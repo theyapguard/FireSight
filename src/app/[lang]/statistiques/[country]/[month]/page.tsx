@@ -40,7 +40,7 @@ export async function generateMetadata({
   const t = localize(OBS, l);
   const label = monthLabel(month, l);
   const path = `/statistiques/${country}/${month}`;
-  const og = `https://kanari.io/ogobs/${country}/${month}.png?lang=${l}`;
+  const og = `https://firesight.io/ogobs/${country}/${month}.png?lang=${l}`;
   return {
     title: t.titleMonth(scope.name, label),
     description: t.descMonth(scope.name, label),
@@ -50,7 +50,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "article",
-      url: `https://kanari.io/${l}${path}`,
+      url: `https://firesight.io/${l}${path}`,
       title: t.h1Month(scope.name, label),
       description: t.descMonth(scope.name, label),
       images: [{ url: og, width: 1200, height: 630, alt: t.ogAlt(scope.name, label) }],
@@ -117,9 +117,9 @@ export default async function ObservatoryMonthPage({
     "@type": "Dataset",
     name: t.h1Month(scope.name, label),
     description: t.descMonth(scope.name, label),
-    url: `https://kanari.io/${lang}/statistiques/${country}/${month}`,
+    url: `https://firesight.io/${lang}/statistiques/${country}/${month}`,
     license: "https://creativecommons.org/licenses/by/4.0/",
-    creator: { "@id": "https://kanari.io/#org" },
+    creator: { "@id": "https://firesight.io/#org" },
     isAccessibleForFree: true,
     temporalCoverage: `${range.fromIso.slice(0, 10)}/${new Date(Date.parse(range.toIso) - 1).toISOString().slice(0, 10)}`,
     spatialCoverage: scope.cc ? { "@type": "Place", name: scope.name, address: { "@type": "PostalAddress", addressCountry: scope.cc } } : { "@type": "Place", name: "World" },
@@ -128,16 +128,16 @@ export default async function ObservatoryMonthPage({
       { "@type": "PropertyValue", name: "fires still active", value: stats.active },
       { "@type": "PropertyValue", name: "peak fire radiative power", value: Math.round(stats.maxFrp), unitText: "MW" },
     ],
-    distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: "https://kanari.io/opendata/feux.csv" }],
+    distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: "https://firesight.io/opendata/feux.csv" }],
   };
   const crumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: `https://kanari.io/${lang}` },
-      { "@type": "ListItem", position: 2, name: t.crumbObs, item: `https://kanari.io/${lang}/statistiques` },
-      { "@type": "ListItem", position: 3, name: scope.name, item: `https://kanari.io/${lang}/statistiques/${country}` },
-      { "@type": "ListItem", position: 4, name: label, item: `https://kanari.io/${lang}/statistiques/${country}/${month}` },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: `https://firesight.io/${lang}` },
+      { "@type": "ListItem", position: 2, name: t.crumbObs, item: `https://firesight.io/${lang}/statistiques` },
+      { "@type": "ListItem", position: 3, name: scope.name, item: `https://firesight.io/${lang}/statistiques/${country}` },
+      { "@type": "ListItem", position: 4, name: label, item: `https://firesight.io/${lang}/statistiques/${country}/${month}` },
     ],
   };
 

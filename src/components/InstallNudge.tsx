@@ -3,28 +3,28 @@
 import { useEffect, useState } from "react";
 import { localize, type Lang } from "@/lib/i18n";
 
-// Invitation discrète à installer kanari sur l'écran d'accueil : le visiteur
+// Invitation discrète à installer FireSight sur l'écran d'accueil : le visiteur
 // d'un soir de feu devient un utilisateur permanent (le carburant de la
 // rétention). Trois états : Android/desktop Chrome (prompt natif via
 // beforeinstallprompt), iOS Safari (mini-guide Partager → Sur l'écran
 // d'accueil), déjà installé ou refusé (rien).
 type BipEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
 
-const DISMISS_KEY = "kanari-install-dismissed";
+const DISMISS_KEY = "firesight-install-dismissed";
 
 const T = {
   fr: {
     install: "Installer l'app",
-    iosTitle: "Installer kanari sur l'écran d'accueil",
+    iosTitle: "Installer FireSight sur l'écran d'accueil",
     iosSteps: ["Touchez le bouton Partager", "Choisissez « Sur l'écran d'accueil »"],
-    iosNote: "Gratuit, sans app store — kanari s'ouvrira comme une app, alertes comprises.",
+    iosNote: "Gratuit, sans app store — FireSight s'ouvrira comme une app, alertes comprises.",
     close: "Plus tard",
   },
   en: {
     install: "Install the app",
-    iosTitle: "Install kanari on your home screen",
+    iosTitle: "Install FireSight on your home screen",
     iosSteps: ["Tap the Share button", "Choose “Add to Home Screen”"],
-    iosNote: "Free, no app store — kanari opens like an app, alerts included.",
+    iosNote: "Free, no app store — FireSight opens like an app, alerts included.",
     close: "Later",
   },
 } as const;

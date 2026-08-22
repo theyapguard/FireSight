@@ -24,7 +24,7 @@ export async function GET() {
   const fires = await listFiresBetween(from.toISOString(), now.toISOString(), 300);
 
   const entry = (loc: string, date: string, title: string) =>
-    `<url><loc>${loc}</loc><news:news><news:publication><news:name>kanari</news:name><news:language>fr</news:language></news:publication><news:publication_date>${date}</news:publication_date><news:title>${esc(title)}</news:title></news:news></url>`;
+    `<url><loc>${loc}</loc><news:news><news:publication><news:name>FireSight</news:name><news:language>fr</news:language></news:publication><news:publication_date>${date}</news:publication_date><news:title>${esc(title)}</news:title></news:news></url>`;
 
   const items: string[] = [];
   // Bilans du jour et de la veille.
@@ -32,14 +32,14 @@ export async function GET() {
     const d = new Date(now.getTime() - off * 86400_000).toISOString().slice(0, 10);
     items.push(
       entry(
-        `https://kanari.io/fr/bilan/${d}`,
+        `https://firesight.io/fr/bilan/${d}`,
         `${d}T05:00:00Z`,
         `Bilan des feux de forêt du ${new Date(`${d}T12:00:00Z`).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}`
       )
     );
   }
   for (const f of fires) {
-    items.push(entry(`https://kanari.io/fr/feu/${f.slug}`, f.first_seen, titleOf(f)));
+    items.push(entry(`https://firesight.io/fr/feu/${f.slug}`, f.first_seen, titleOf(f)));
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">${items.join("")}</urlset>`;

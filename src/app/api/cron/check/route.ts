@@ -63,7 +63,7 @@ export async function GET(req: NextRequest) {
     archived = res.count;
     // IndexNow : pages éditoriales du jour, UNE fois par jour. Jamais les
     // pages feu individuelles — en pousser ~550 par jour (quasi identiques)
-    // et re-pinger les mêmes URLs à chaque run a fait sortir kanari de
+    // et re-pinger les mêmes URLs à chaque run a fait sortir FireSight de
     // l'index Bing (= Bing + DuckDuckGo + Ecosia + Qwant + Yahoo, 80 % de
     // notre search) entre le 18 et le 20/08. Les pages feu restent crawlables
     // par le maillage (/fr/feu) et le flux RSS.

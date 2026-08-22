@@ -24,7 +24,7 @@ const EFFIS_COUNTRIES = new Set([
   "TN", "IL", "LB", "SY",
 ]);
 
-const UA = "kanari.io wildfire map (contact@kanari.io)";
+const UA = "firesight.io wildfire map (contact@firesight.io)";
 
 // Canada : périmètres estimés M3 (pas de nom d'incident dans la couche —
 // hcount + surface + dates). bbox en LAT,LON (WFS 2.0 + CRS urn).

@@ -148,7 +148,7 @@ export function VeilleVisibility({ reloadKey }: { reloadKey: number }) {
           delta={gImpr === null ? undefined : <DeltaBadge cur={gImpr} prev={gT!.web.previous.impressions + gT!.discover.previous.impressions + gT!.news.previous.impressions} />}
           sub={gImpr === null ? "Search Console non connectée" : `position moyenne ${gT!.web.current.position.toFixed(1)}`}
         />
-        <Kpi label="Lectures par des IA (7 j)" value={fmt(aiHits7)} delta={<DeltaBadge cur={aiHits7} prev={aiHitsPrev} />} sub="bots IA sur les pages kanari" />
+        <Kpi label="Lectures par des IA (7 j)" value={fmt(aiHits7)} delta={<DeltaBadge cur={aiHits7} prev={aiHitsPrev} />} sub="bots IA sur les pages FireSight" />
         <Kpi label="Consultations IA en direct" value={fmt(liveHits7)} sub="pages chargées pour répondre à un utilisateur" />
         <Kpi label="Visites venues des IA (7 j)" value={fmt(refs7)} delta={<DeltaBadge cur={refs7} prev={refsPrev} />} sub="referrals ChatGPT, Perplexity…" />
         <Kpi
@@ -188,7 +188,7 @@ export function VeilleVisibility({ reloadKey }: { reloadKey: number }) {
               env="GSC_SERVICE_ACCOUNT"
               steps={[
                 "console.cloud.google.com → crée un projet, active l'API « Google Search Console », crée un compte de service et télécharge sa clé JSON.",
-                "search.google.com/search-console → propriété kanari.io → Paramètres → Utilisateurs → ajoute l'e-mail du compte de service (accès complet).",
+                "search.google.com/search-console → propriété firesight.io → Paramètres → Utilisateurs → ajoute l'e-mail du compte de service (accès complet).",
                 "Colle le contenu du JSON dans la variable Vercel (3 environnements).",
               ]}
             />
@@ -234,7 +234,7 @@ export function VeilleVisibility({ reloadKey }: { reloadKey: number }) {
                     key: `${p.type}-${p.page}`,
                     label: (
                       <span>
-                        {p.page.replace("https://kanari.io", "")}{" "}
+                        {p.page.replace("https://firesight.io", "")}{" "}
                         {p.type === "discover" && <span style={{ fontSize: 11, color: "var(--ember)", fontWeight: 700 }}>Discover</span>}
                       </span>
                     ),
@@ -251,7 +251,7 @@ export function VeilleVisibility({ reloadKey }: { reloadKey: number }) {
       {/* Robots IA + referrals */}
       <section style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 14, marginBottom: 14 }}>
         <Card>
-          <h3 style={h3Style}>Robots IA et moteurs sur kanari (7 j)</h3>
+          <h3 style={h3Style}>Robots IA et moteurs sur FireSight (7 j)</h3>
           {bots.length === 0 ? (
             <div style={emptyStyle}>Aucun passage détecté pour l&apos;instant — le comptage vient d&apos;être activé.</div>
           ) : (
@@ -297,7 +297,7 @@ export function VeilleVisibility({ reloadKey }: { reloadKey: number }) {
       {/* Citations + Bing */}
       <section style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 14, marginBottom: 14 }}>
         <Card>
-          <h3 style={h3Style}>Panel de citations : « kanari est-il cité ? »</h3>
+          <h3 style={h3Style}>Panel de citations : « FireSight est-il cité ? »</h3>
           {panel.length === 0 ? (
             <div style={emptyStyle}>
               Premier passage au prochain cron (15 questions posées chaque semaine à ChatGPT avec recherche web).

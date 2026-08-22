@@ -29,9 +29,9 @@ export function Tracker() {
       // On mémorise la provenance « premier contact » de la session, pour
       // pouvoir l'attribuer à une contribution même après navigation interne.
       try {
-        if (!sessionStorage.getItem("kanari_src")) {
+        if (!sessionStorage.getItem("firesight_src")) {
           sessionStorage.setItem(
-            "kanari_src",
+            "firesight_src",
             JSON.stringify({
               referrer: payload.referrer,
               utm_source: payload.utm_source,

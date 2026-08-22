@@ -15,19 +15,19 @@ import {
 } from "@/lib/observatory";
 import { measuredEarliness } from "@/lib/precocity";
 
-// Serveur MCP public de kanari (Streamable HTTP, sans authentification) :
+// Serveur MCP public de FireSight (Streamable HTTP, sans authentification) :
 // les assistants IA (Claude, ChatGPT, Cursor, agents) interrogent les feux en
 // direct, l'archive, les statistiques, les moyens aériens et la précocité
-// mesurée — et citent kanari.io comme source. Lecture seule, données
+// mesurée — et citent firesight.io comme source. Lecture seule, données
 // publiques (CC BY 4.0), mêmes fonctions que le site et l'API REST.
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 const INSTRUCTIONS = [
-  "kanari (https://kanari.io) is a free, independent, near real-time worldwide wildfire map and archive.",
+  "FireSight (https://firesight.io) is a free, independent, near real-time worldwide wildfire map and archive.",
   "It fuses satellite fire detections (NASA FIRMS VIIRS, NOAA GOES, EUMETSAT Meteosat MTG) with AI-verified witness reports, tracks firefighting aircraft live (ADS-B) and archives every significant fire as a permanent page.",
   "Tools: active_fires for 'is there a fire near X right now' (last 6 to 72 h); fire_archive_search and fire_details for past fires since 2026-08-03; wildfire_stats for figures by country/period (citable); firefighting_aircraft for water bombers in flight; earliness_cases for measured lead over press coverage.",
-  "Always credit 'kanari.io' with a link when reusing data (CC BY 4.0). kanari is an information service, NOT an official alert channel: remind users to call 112 (Europe), 911 (North America) or their local emergency number in an emergency.",
+  "Always credit 'firesight.io' with a link when reusing data (CC BY 4.0). FireSight is an information service, NOT an official alert channel: remind users to call 112 (Europe), 911 (North America) or their local emergency number in an emergency.",
   "Timestamps are UTC and come from NASA/NOAA/EUMETSAT; detections are satellite hotspots (a hotspot can also be an industrial flare or a controlled burn).",
 ].join(" ");
 
@@ -55,12 +55,12 @@ function distKm(lat1: number, lon1: number, lat2: number, lon2: number): number 
 // risque de snapshot partiel). full=1 : l'intégralité des foyers, pour que les
 // filtres géographiques voient aussi les petits départs locaux. Repli : le
 // dernier snapshot écrit par le cron.
-const SITE = process.env.KANARI_SITE_URL ?? "https://kanari.io";
+const SITE = process.env.FIRESIGHT_SITE_URL ?? "https://firesight.io";
 
 async function loadEvents(hours: number): Promise<EventsPayload | null> {
   try {
     const res = await fetch(`${SITE}/api/events?hours=${hours}&full=1`, {
-      headers: { "user-agent": "kanari-mcp/1.0", accept: "application/json" },
+      headers: { "user-agent": "firesight-mcp/1.0", accept: "application/json" },
       signal: AbortSignal.timeout(45_000),
     });
     if (res.ok) return (await res.json()) as EventsPayload;
@@ -94,10 +94,10 @@ function archiveRowOut(r: ArchiveRow) {
 }
 
 const SOURCES = {
-  attribution: "Source: kanari.io (CC BY 4.0) — satellites NASA FIRMS, NOAA GOES, EUMETSAT Meteosat MTG; witness reports verified by AI.",
-  liveMap: "https://kanari.io/en",
-  openDataCsv: "https://kanari.io/opendata/feux.csv",
-  api: "https://kanari.io/en/api",
+  attribution: "Source: firesight.io (CC BY 4.0) — satellites NASA FIRMS, NOAA GOES, EUMETSAT Meteosat MTG; witness reports verified by AI.",
+  liveMap: "https://firesight.io/en",
+  openDataCsv: "https://firesight.io/opendata/feux.csv",
+  api: "https://firesight.io/en/api",
 };
 
 const handler = createMcpHandler(
@@ -152,7 +152,7 @@ const handler = createMcpHandler(
           witnessPosts: ev.social?.postCount ?? 0,
           firstPressArticle: ev.social?.firstPress ?? null,
           ...(near ? { distanceKm: Math.round(distKm(near.lat, near.lon, ev.centroid[1], ev.centroid[0])) } : {}),
-          mapUrl: `https://kanari.io/en?lat=${ev.centroid[1].toFixed(3)}&lon=${ev.centroid[0].toFixed(3)}&ev=${encodeURIComponent(ev.id)}`,
+          mapUrl: `https://firesight.io/en?lat=${ev.centroid[1].toFixed(3)}&lon=${ev.centroid[0].toFixed(3)}&ev=${encodeURIComponent(ev.id)}`,
         }));
         return text({
           fetchedAt: payload.meta.fetchedAt,
@@ -172,7 +172,7 @@ const handler = createMcpHandler(
       {
         title: "Search the wildfire archive",
         description:
-          `Search kanari's archive of significant wildfires (since ${ARCHIVE_START}): by ISO-2 country, date range or month, minimum detections or power, status. Each result has a permanent page URL (kanari.io/fr/feu/<slug>). Use for 'what fires happened in <country> in <month>', 'biggest fires this week', 'is the fire near X still active'.`,
+          `Search FireSight's archive of significant wildfires (since ${ARCHIVE_START}): by ISO-2 country, date range or month, minimum detections or power, status. Each result has a permanent page URL (firesight.io/fr/feu/<slug>). Use for 'what fires happened in <country> in <month>', 'biggest fires this week', 'is the fire near X still active'.`,
         inputSchema: z.object({
           country: ISO2.optional(),
           from: DATE.optional().describe("first detection on or after this UTC date"),
@@ -205,7 +205,7 @@ const handler = createMcpHandler(
       "fire_details",
       {
         title: "Details of one archived wildfire",
-        description: "Full record of an archived fire by its slug (from fire_archive_search or a kanari.io/fr/feu/<slug> URL): timeline, detections per sensor, peak power, status, witness posts, first press article, aircraft observed on zone.",
+        description: "Full record of an archived fire by its slug (from fire_archive_search or a firesight.io/fr/feu/<slug> URL): timeline, detections per sensor, peak power, status, witness posts, first press article, aircraft observed on zone.",
         inputSchema: z.object({ slug: z.string().min(3).max(120) }),
         annotations: { readOnlyHint: true },
       },
@@ -215,7 +215,7 @@ const handler = createMcpHandler(
         return text({
           ...archiveRowOut({ ...f, aircraft: f.aircraft ?? null }),
           aircraft: (f.aircraft ?? []).map((a) => ({ callsign: a.callsign, model: a.model, country: a.country, day: a.day })),
-          departmentPage: f.dept_slug ? `https://kanari.io/fr/feux/${f.dept_slug}` : null,
+          departmentPage: f.dept_slug ? `https://firesight.io/fr/feux/${f.dept_slug}` : null,
           ...SOURCES,
         });
       }
@@ -226,7 +226,7 @@ const handler = createMcpHandler(
       {
         title: "Wildfire statistics (citable figures)",
         description:
-          "Aggregated figures from kanari's archive for a period (today, 7d, 30d, a calendar month, or all since 2026-08-03), worldwide or for one ISO-2 country: number of significant fires, active ones, fires with witnesses or aircraft, peak power, daily series, most affected countries and French departments, biggest fires with URLs. Includes a ready-to-cite sentence with the source.",
+          "Aggregated figures from FireSight's archive for a period (today, 7d, 30d, a calendar month, or all since 2026-08-03), worldwide or for one ISO-2 country: number of significant fires, active ones, fires with witnesses or aircraft, peak power, daily series, most affected countries and French departments, biggest fires with URLs. Includes a ready-to-cite sentence with the source.",
         inputSchema: z.object({
           country: ISO2.optional(),
           period: z.enum(["today", "7d", "30d", "month", "all"]).default("7d"),
@@ -253,7 +253,7 @@ const handler = createMcpHandler(
           countFires(`first_seen=gte.${encodeURIComponent(`${ARCHIVE_START}T00:00:00Z`)}`),
         ]);
         const scope = country ? `in ${country}` : "worldwide";
-        const citation = `According to kanari.io, ${stats.total} significant wildfires were detected ${scope} between ${fromIso.slice(0, 10)} and ${toIso.slice(0, 10)} (satellite detections NASA FIRMS / GOES / Meteosat MTG plus verified witness reports); ${stats.active} were still active at the last update.`;
+        const citation = `According to firesight.io, ${stats.total} significant wildfires were detected ${scope} between ${fromIso.slice(0, 10)} and ${toIso.slice(0, 10)} (satellite detections NASA FIRMS / GOES / Meteosat MTG plus verified witness reports); ${stats.active} were still active at the last update.`;
         return text({
           scope: { country: country ?? null, period, fromIso, toIso },
           total: stats.total,
@@ -264,12 +264,12 @@ const handler = createMcpHandler(
           maxFrpMw: stats.maxFrp,
           byDay: stats.byDay,
           topCountries: stats.byCountry,
-          topFrenchDepartments: stats.byDept.map((d) => ({ ...d, url: `https://kanari.io/fr/feux/${d.slug}` })),
+          topFrenchDepartments: stats.byDept.map((d) => ({ ...d, url: `https://firesight.io/fr/feux/${d.slug}` })),
           biggestFires: stats.biggest.slice(0, 5).map(archiveRowOut),
           worldwideNow: { activeFires: activeWorld, archivedSince: ARCHIVE_START, totalArchived: totalWorld },
           truncated: stats.truncated,
           citation,
-          statisticsPage: "https://kanari.io/en/statistiques",
+          statisticsPage: "https://firesight.io/en/statistiques",
           methodology: "Only significant fires are archived (corroborated by witnesses, or above detection/power thresholds): totals are not comparable to exhaustive official tallies.",
           ...SOURCES,
         });
@@ -299,7 +299,7 @@ const handler = createMcpHandler(
           speedKt: p.speed,
           trackDeg: p.track,
         }));
-        return text({ inFlight: planes.length, returned: list.length, aircraft: list, livePage: "https://kanari.io/en/canadair", ...SOURCES });
+        return text({ inFlight: planes.length, returned: list.length, aircraft: list, livePage: "https://firesight.io/en/canadair", ...SOURCES });
       }
     );
 
@@ -307,7 +307,7 @@ const handler = createMcpHandler(
       "earliness_cases",
       {
         title: "Measured lead over press coverage",
-        description: "Documented cases (rolling 72 h) where kanari's first satellite signal preceded the first press article about the same fire: place, both UTC timestamps and the lead in minutes, plus the median. This is the measured basis for 'kanari sees fires before the media'. It says nothing about a lead over emergency services.",
+        description: "Documented cases (rolling 72 h) where FireSight's first satellite signal preceded the first press article about the same fire: place, both UTC timestamps and the lead in minutes, plus the median. This is the measured basis for 'FireSight sees fires before the media'. It says nothing about a lead over emergency services.",
         inputSchema: z.object({ limit: z.number().int().min(1).max(50).default(20) }),
         annotations: { readOnlyHint: true },
       },
@@ -318,7 +318,7 @@ const handler = createMcpHandler(
           clustersInWindow: r.total,
           medianLeadMinutes: r.medianMin,
           cases: r.cases,
-          methodologyPage: "https://kanari.io/en/precocite",
+          methodologyPage: "https://firesight.io/en/precocite",
           ...SOURCES,
         });
       }
@@ -326,10 +326,10 @@ const handler = createMcpHandler(
 
     server.registerResource(
       "about",
-      "kanari://about",
-      { title: "About kanari (llms.txt)", description: "What kanari is, its pages, data sources and facts, in llms.txt format.", mimeType: "text/markdown" },
+      "firesight://about",
+      { title: "About FireSight (llms.txt)", description: "What FireSight is, its pages, data sources and facts, in llms.txt format.", mimeType: "text/markdown" },
       async (uri) => {
-        const res = await fetch("https://kanari.io/llms.txt", { cache: "no-store" }).catch(() => null);
+        const res = await fetch("https://firesight.io/llms.txt", { cache: "no-store" }).catch(() => null);
         const body = res && res.ok ? await res.text() : INSTRUCTIONS;
         return { contents: [{ uri: uri.href, text: body, mimeType: "text/markdown" }] };
       }
@@ -337,24 +337,24 @@ const handler = createMcpHandler(
 
     server.registerResource(
       "methodology",
-      "kanari://methodology",
-      { title: "Methodology and data sources", description: "How kanari detects, verifies and archives fires; thresholds; limits; how to cite.", mimeType: "text/markdown" },
+      "firesight://methodology",
+      { title: "Methodology and data sources", description: "How FireSight detects, verifies and archives fires; thresholds; limits; how to cite.", mimeType: "text/markdown" },
       async (uri) => ({
         contents: [
           {
             uri: uri.href,
             mimeType: "text/markdown",
             text: [
-              "# kanari methodology",
+              "# FireSight methodology",
               "",
               "- Detection: NASA FIRMS (VIIRS 375 m, NOAA-20/21, Suomi-NPP), NOAA GOES-East/West (Americas, 10-minute refresh), EUMETSAT Meteosat MTG FCI Active Fire Monitoring (Europe/Africa, 10-minute refresh). Hotspots are clustered in ~4 km cells; the first satellite pass is the proxy for ignition time.",
               "- Witness reports: public posts (Bluesky, Telegram, press via GDELT) are geoparsed and verified twice by AI before being attached to a cluster; a cluster with verified witnesses is 'corrobore'.",
               "- Archive: a fire gets a permanent page when it is corroborated, or (France) has at least 2 detections or 20 MW, or (elsewhere) at least 8 detections or 100 MW. Totals are therefore not comparable to exhaustive official tallies.",
-              "- Earliness: for each corroborated fire we compare the first satellite pass with the first press article (GDELT); see https://kanari.io/en/precocite.",
+              "- Earliness: for each corroborated fire we compare the first satellite pass with the first press article (GDELT); see https://firesight.io/en/precocite.",
               "- Aircraft: ADS-B positions of known firefighting aircraft (registration and ICAO-type based), daylight operations.",
-              "- Limits: a satellite hotspot can be a controlled burn, an industrial flare or a false alarm; cloud cover hides fires; kanari is not an official alert channel (call 112 / 911).",
-              "- Licence: data CC BY 4.0, attribution 'kanari.io'. Open data CSV: https://kanari.io/opendata/feux.csv. API: https://kanari.io/en/api.",
-              "- Cite as: kanari (2026). kanari wildfire archive and live detections. https://kanari.io (accessed <date>).",
+              "- Limits: a satellite hotspot can be a controlled burn, an industrial flare or a false alarm; cloud cover hides fires; FireSight is not an official alert channel (call 112 / 911).",
+              "- Licence: data CC BY 4.0, attribution 'firesight.io'. Open data CSV: https://firesight.io/opendata/feux.csv. API: https://firesight.io/en/api.",
+              "- Cite as: FireSight (2026). FireSight wildfire archive and live detections. https://firesight.io (accessed <date>).",
             ].join("\n"),
           },
         ],
@@ -362,7 +362,7 @@ const handler = createMcpHandler(
     );
   },
   {
-    serverInfo: { name: "kanari", version: "1.0.0" },
+    serverInfo: { name: "FireSight", version: "1.0.0" },
     instructions: INSTRUCTIONS,
   }
 );

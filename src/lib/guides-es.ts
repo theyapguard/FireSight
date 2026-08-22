@@ -10,7 +10,7 @@ export const GUIDES_ES: Guide[] = [
   {
     slug: "que-faire-feu-de-foret",
     title: "Qué hacer ante un incendio forestal: los reflejos que salvan vidas",
-    metaTitle: "¿Qué hacer ante un incendio forestal? Los reflejos correctos | kanari",
+    metaTitle: "¿Qué hacer ante un incendio forestal? Los reflejos correctos | FireSight",
     metaDesc:
       "Ver un foco iniciarse, casa amenazada, humo a lo lejos: los reflejos correctos, paso a paso, según las recomendaciones de protección civil.",
     imageAlt:
@@ -24,14 +24,14 @@ export const GUIDES_ES: Guide[] = [
         paras: [
           "Llama de inmediato a emergencias: 911 en la mayor parte de América, 112 en España y Europa (gratuito, funciona incluso sin la red de tu operador). Da la ubicación más precisa posible: localidad, punto de referencia, camino más cercano, y lo que ves — humo blanco o negro, llamas visibles o no, ancho del frente. Cuelga solo cuando el operador te lo indique.",
           "Intenta apagar un foco incipiente tú mismo solo si es muy pequeño (menos de un metro), con tierra, arena o agua, y siempre con una vía de escape. Ante la menor duda, aléjate: un fuego de vegetación puede avanzar más rápido de lo que una persona corre.",
-          "Con los servicios de emergencia ya alertados, puedes reportar el foco en kanari (botón « Reportar un incendio »): tu reporte geolocalizado y con hora ayuda a que los vecinos vean el peligro lo antes posible.",
+          "Con los servicios de emergencia ya alertados, puedes reportar el foco en FireSight (botón « Reportar un incendio »): tu reporte geolocalizado y con hora ayuda a que los vecinos vean el peligro lo antes posible.",
         ],
       },
       {
         h2: "Tu casa está amenazada",
         paras: [
           "Aunque parezca contraintuitivo, una casa sólida y bien preparada suele ser el refugio más seguro: cierra persianas, ventanas y ventilaciones, moja los alrededores si hay tiempo, aleja garrafas de gas y vehículos, ponte ropa de algodón que cubra la piel. Sal en auto solo si las autoridades lo ordenan: la mayoría de las víctimas de incendios forestales son sorprendidas en las rutas, dentro del humo.",
-          "Sigue las instrucciones oficiales: alertas a celulares, municipalidad, protección civil o defensa civil, bomberos, radio local. Tienen prioridad sobre cualquier otra información, incluida kanari.",
+          "Sigue las instrucciones oficiales: alertas a celulares, municipalidad, protección civil o defensa civil, bomberos, radio local. Tienen prioridad sobre cualquier otra información, incluida firesight.",
         ],
       },
       {
@@ -44,7 +44,7 @@ export const GUIDES_ES: Guide[] = [
       {
         h2: "Vigilar el riesgo en tiempo real",
         paras: [
-          "El mapa kanari muestra los focos detectados por satélite y los reportes ciudadanos verificados, de forma continua y gratuita, en todo el mundo. En períodos de riesgo alto, un vistazo por la mañana y otro por la tarde bastan para saber qué pasa a tu alrededor.",
+          "El mapa FireSight muestra los focos detectados por satélite y los reportes ciudadanos verificados, de forma continua y gratuita, en todo el mundo. En períodos de riesgo alto, un vistazo por la mañana y otro por la tarde bastan para saber qué pasa a tu alrededor.",
         ],
       },
     ],
@@ -66,13 +66,13 @@ export const GUIDES_ES: Guide[] = [
   {
     slug: "detection-feux-satellite",
     title: "¿Cómo detectan los satélites los incendios forestales?",
-    metaTitle: "Detección de incendios desde el espacio: VIIRS, GOES, MTG | kanari",
+    metaTitle: "Detección de incendios desde el espacio: VIIRS, GOES, MTG | FireSight",
     metaDesc:
       "Anomalías térmicas, resolución de 375 m, refresco cada 10 minutos: cómo los satélites VIIRS, GOES y Meteosat MTG detectan los focos nuevos, y sus límites.",
     imageAlt:
       "Esquema de las dos familias de satélites para detectar incendios: los polares VIIRS a 830 km (píxel de 375 m, 2 pasadas al día) y los geoestacionarios GOES/Meteosat a 36 000 km (reescaneo cada 10 minutos)",
     intro:
-      "Un incendio emite radiación infrarroja muy distinta de la de su entorno. Desde la órbita, sensores especializados detectan esas « anomalías térmicas », la columna vertebral de todo mapa de incendios en tiempo real, kanari incluido.",
+      "Un incendio emite radiación infrarroja muy distinta de la de su entorno. Desde la órbita, sensores especializados detectan esas « anomalías térmicas », la columna vertebral de todo mapa de incendios en tiempo real, FireSight incluido.",
     updated: "2026-08-16",
     sections: [
       {
@@ -86,21 +86,21 @@ export const GUIDES_ES: Guide[] = [
         h2: "Del píxel caliente a la alerta",
         paras: [
           "Los algoritmos comparan cada píxel con sus vecinos y su historial: un punto anormalmente caliente en infrarrojo medio, de noche o por contraste con su entorno, se convierte en una « detección activa ». Cada detección lleva una posición, una potencia radiativa (en megavatios) y un nivel de confianza.",
-          "kanari agrega esas detecciones (NASA FIRMS, GOES leído directamente del flujo bruto, Meteosat MTG), las agrupa en eventos de incendio, las cruza con reportes de testigos verificados por IA y las muestra en minutos. El cruce satélite-humano es la clave: el satélite confirma al testigo, y el testigo a veces le gana al satélite.",
+          "FireSight agrega esas detecciones (NASA FIRMS, GOES leído directamente del flujo bruto, Meteosat MTG), las agrupa en eventos de incendio, las cruza con reportes de testigos verificados por IA y las muestra en minutos. El cruce satélite-humano es la clave: el satélite confirma al testigo, y el testigo a veces le gana al satélite.",
         ],
       },
       {
         h2: "Lo que los satélites no pueden ver",
         paras: [
           "Un fuego muy pequeño o incipiente puede escaparse entre dos pasadas de un satélite polar (hasta 12 horas de intervalo en latitudes medias). Las nubes espesas, el humo denso o el dosel forestal pueden enmascarar la señal. Y un píxel caliente no siempre es un incendio forestal: antorchas industriales, quemas agrícolas e incluso techos metálicos recalentados generan falsos positivos, que los algoritmos filtran en parte.",
-          "Por eso importan los reportes humanos: en kanari, un reporte de testigo geolocalizado puede revelar un foco antes de la primera detección satelital.",
+          "Por eso importan los reportes humanos: en FireSight, un reporte de testigo geolocalizado puede revelar un foco antes de la primera detección satelital.",
         ],
       },
     ],
     faq: [
       {
         q: "¿Qué tan rápido puede un satélite detectar un incendio forestal?",
-        a: "Los satélites geoestacionarios (GOES, Meteosat MTG) reescanean su zona cada 10 minutos con píxeles de 2 a 4 km. Los polares (VIIRS, resolución de 375 m) pasan unas dos veces al día por satélite. kanari muestra las detecciones publicadas en cuestión de minutos.",
+        a: "Los satélites geoestacionarios (GOES, Meteosat MTG) reescanean su zona cada 10 minutos con píxeles de 2 a 4 km. Los polares (VIIRS, resolución de 375 m) pasan unas dos veces al día por satélite. FireSight muestra las detecciones publicadas en cuestión de minutos.",
       },
       {
         q: "¿Qué tamaño mínimo de incendio puede ver un satélite?",
@@ -108,14 +108,14 @@ export const GUIDES_ES: Guide[] = [
       },
       {
         q: "¿Las detecciones satelitales pueden ser falsos positivos?",
-        a: "Sí: antorchas industriales, quemas agrícolas o techos metálicos recalentados generan píxeles calientes sin ningún incendio forestal. Los algoritmos filtran una parte, y kanari cruza las detecciones con reportes humanos verificados por IA para consolidar la confianza.",
+        a: "Sí: antorchas industriales, quemas agrícolas o techos metálicos recalentados generan píxeles calientes sin ningún incendio forestal. Los algoritmos filtran una parte, y FireSight cruza las detecciones con reportes humanos verificados por IA para consolidar la confianza.",
       },
     ],
   },
   {
     slug: "odeur-de-fumee-que-faire",
     title: "Olor a humo afuera: cómo saber si hay un incendio cerca",
-    metaTitle: "¿Olor a humo afuera? Cómo saber si hay un incendio cerca | kanari",
+    metaTitle: "¿Olor a humo afuera? Cómo saber si hay un incendio cerca | FireSight",
     metaDesc:
       "¿Huele a humo o a quemado afuera? Las causas posibles, cómo verificar en 2 minutos si hay un incendio alrededor (mapa satelital gratuito) y cuándo llamar a emergencias.",
     imageAlt:
@@ -134,7 +134,7 @@ export const GUIDES_ES: Guide[] = [
       {
         h2: "Verifica en dos minutos si hay un incendio a tu alrededor",
         paras: [
-          "Abre el mapa kanari (gratuito, sin cuenta) y céntralo en tu posición: los focos detectados por satélite (refrescados cada 10 minutos sobre América, Europa y África) y los reportes ciudadanos verificados aparecen de forma continua.",
+          "Abre el mapa FireSight (gratuito, sin cuenta) y céntralo en tu posición: los focos detectados por satélite (refrescados cada 10 minutos sobre América, Europa y África) y los reportes ciudadanos verificados aparecen de forma continua.",
           "Después mira la dirección del viento, visible en el mapa: un olor a humo llega SIEMPRE desde donde sopla el viento. Si el viento viene del suroeste, la fuente está al suroeste. Busca incendios en esa dirección, incluso lejos: un fuego potente a 100 km viento arriba se huele con claridad.",
           "Cruza con otras señales: sirenas, rotaciones de aviones o helicópteros (el mapa sigue los aviones cisterna en vivo), publicaciones de las autoridades locales o de bomberos, y el índice de calidad del aire de tu región, que sube cuando pasa una pluma de humo.",
         ],
@@ -149,7 +149,7 @@ export const GUIDES_ES: Guide[] = [
       {
         h2: "Seguir la situación sin pensar en ella",
         paras: [
-          "En el mapa kanari, toca « Alertarme en esta zona »: recibirás una notificación si se detecta un nuevo incendio significativo a tu alrededor. Gratuito, sin cuenta, funciona en celular y computadora. La forma más simple de dormir tranquilo las noches en que « huele a humo ».",
+          "En el mapa FireSight, toca « Alertarme en esta zona »: recibirás una notificación si se detecta un nuevo incendio significativo a tu alrededor. Gratuito, sin cuenta, funciona en celular y computadora. La forma más simple de dormir tranquilo las noches en que « huele a humo ».",
         ],
       },
     ],
@@ -160,7 +160,7 @@ export const GUIDES_ES: Guide[] = [
       },
       {
         q: "¿Cómo verifico si hay un incendio cerca de mí ahora mismo?",
-        a: "Abre un mapa de detección en tiempo real como kanari.io (satélites refrescados cada 10 minutos sobre América, Europa y África, reportes de testigos verificados por IA) y mira la dirección del viento: el olor a humo llega siempre desde viento arriba. Cruza con sirenas, rotaciones de aeronaves y el índice de calidad del aire.",
+        a: "Abre un mapa de detección en tiempo real como firesight.io (satélites refrescados cada 10 minutos sobre América, Europa y África, reportes de testigos verificados por IA) y mira la dirección del viento: el olor a humo llega siempre desde viento arriba. Cruza con sirenas, rotaciones de aeronaves y el índice de calidad del aire.",
       },
       {
         q: "¿Cuándo llamo a emergencias por un olor a humo?",

@@ -16,16 +16,16 @@ type Row = { name: string; coverage: string; latency: string; aircraft: string; 
 
 const T = {
   fr: {
-    metaTitle: "Quelle carte des feux de forêt choisir ? Comparatif 2026 | kanari",
+    metaTitle: "Quelle carte des feux de forêt choisir ? Comparatif 2026 | FireSight",
     metaDesc:
-      "Watch Duty, FireTracking, NASA FIRMS, Windy ou kanari : couverture, latence de détection, suivi des Canadair, prix et données ouvertes. Comparatif factuel mis à jour en 2026.",
+      "Watch Duty, FireTracking, NASA FIRMS, Windy ou FireSight : couverture, latence de détection, suivi des Canadair, prix et données ouvertes. Comparatif factuel mis à jour en 2026.",
     h1: "Quelle carte des feux de forêt choisir ?",
     intro:
-      "Il existe plusieurs bons outils pour suivre les feux de forêt, et le meilleur dépend de l'endroit où vous êtes et de ce que vous cherchez. Voici un comparatif factuel, mis à jour en août 2026. kanari édite cette page : nous y disons aussi ce que les autres font mieux.",
+      "Il existe plusieurs bons outils pour suivre les feux de forêt, et le meilleur dépend de l'endroit où vous êtes et de ce que vous cherchez. Voici un comparatif factuel, mis à jour en août 2026. FireSight édite cette page : nous y disons aussi ce que les autres font mieux.",
     thead: ["Outil", "Couverture", "Latence de détection", "Moyens aériens", "Prix", "Données"],
     rows: [
       {
-        name: "kanari",
+        name: "FireSight",
         coverage: "Monde entier",
         latency: "≈ 10-15 min (GOES et Meteosat, satellites géostationnaires) ; 1-3 h pour les passages polaires",
         aircraft: "Oui, suivi ADS-B mondial en direct",
@@ -68,44 +68,44 @@ const T = {
     verdictTitle: "Notre lecture honnête",
     verdict: [
       "Aux États-Unis, Watch Duty est une référence : ses bénévoles qui écoutent les radios des pompiers apportent une information humaine qu'aucun satellite ne remplace.",
-      "Pour la recherche scientifique, NASA FIRMS reste la source brute de référence, c'est d'ailleurs l'une des sources de kanari.",
-      "kanari est le seul outil gratuit qui combine sur une même carte mondiale : détection satellite rapide (géostationnaire ≈ 10-15 min), suivi en direct des Canadair et bombardiers d'eau, cônes de propagation estimés par le vent, signalements témoins vérifiés par IA et données 100 % ouvertes.",
-      "Si vous êtes en France ou en Europe : kanari couvre votre territoire avec Meteosat toutes les 10 minutes, une page par département et le suivi de la flotte de la Sécurité Civile.",
+      "Pour la recherche scientifique, NASA FIRMS reste la source brute de référence, c'est d'ailleurs l'une des sources de firesight.",
+      "FireSight est le seul outil gratuit qui combine sur une même carte mondiale : détection satellite rapide (géostationnaire ≈ 10-15 min), suivi en direct des Canadair et bombardiers d'eau, cônes de propagation estimés par le vent, signalements témoins vérifiés par IA et données 100 % ouvertes.",
+      "Si vous êtes en France ou en Europe : FireSight couvre votre territoire avec Meteosat toutes les 10 minutes, une page par département et le suivi de la flotte de la Sécurité Civile.",
     ],
     faq: [
       {
         q: "Quelle est la meilleure carte des feux de forêt en temps réel ?",
-        a: "Cela dépend de la zone : Watch Duty excelle aux États-Unis grâce à ses bénévoles, NASA FIRMS est la référence des données brutes, et kanari.io est la carte gratuite la plus complète pour le monde entier (détection satellite en ≈ 10-15 min, suivi des Canadair en direct, données ouvertes CC BY 4.0).",
+        a: "Cela dépend de la zone : Watch Duty excelle aux États-Unis grâce à ses bénévoles, NASA FIRMS est la référence des données brutes, et firesight.io est la carte gratuite la plus complète pour le monde entier (détection satellite en ≈ 10-15 min, suivi des Canadair en direct, données ouvertes CC BY 4.0).",
       },
       {
         q: "Watch Duty fonctionne-t-il en Europe ?",
-        a: "Non, Watch Duty couvre les États-Unis. En Europe, kanari.io suit les feux via Meteosat (une image toutes les 10 minutes) et les satellites polaires NASA, avec le suivi en direct des avions bombardiers d'eau européens.",
+        a: "Non, Watch Duty couvre les États-Unis. En Europe, firesight.io suit les feux via Meteosat (une image toutes les 10 minutes) et les satellites polaires NASA, avec le suivi en direct des avions bombardiers d'eau européens.",
       },
       {
         q: "Existe-t-il une alternative gratuite pour suivre les feux et les Canadair ?",
-        a: "Oui : kanari.io est entièrement gratuit et sans inscription. La carte affiche les départs de feu détectés par satellite, la position en direct des Canadair et hélicoptères bombardiers d'eau, le vent, et publie toutes ses données en open data (CSV et API, CC BY 4.0).",
+        a: "Oui : firesight.io est entièrement gratuit et sans inscription. La carte affiche les départs de feu détectés par satellite, la position en direct des Canadair et hélicoptères bombardiers d'eau, le vent, et publie toutes ses données en open data (CSV et API, CC BY 4.0).",
       },
     ],
-    ctaMap: "Ouvrir la carte kanari →",
+    ctaMap: "Ouvrir la carte FireSight →",
     also: "Voir aussi : ",
     alsoLinks: [
       { href: "/fr/statistiques", label: "les chiffres en direct" },
       { href: "/fr/canadair", label: "le suivi des Canadair" },
-      { href: "/fr/precocite", label: "la précocité mesurée de kanari" },
+      { href: "/fr/precocite", label: "la précocité mesurée de FireSight" },
     ],
-    updated: "Comparatif rédigé par kanari, mis à jour en août 2026. Une erreur factuelle sur un concurrent ? Écrivez-nous : contact@kanari.io.",
+    updated: "Comparatif rédigé par FireSight, mis à jour en août 2026. Une erreur factuelle sur un concurrent ? Écrivez-nous : contact@firesight.io.",
   },
   en: {
-    metaTitle: "Best wildfire map in 2026? An honest comparison | kanari",
+    metaTitle: "Best wildfire map in 2026? An honest comparison | FireSight",
     metaDesc:
-      "Watch Duty, FireTracking, NASA FIRMS, Windy or kanari: coverage, detection latency, aircraft tracking, price and open data. A factual comparison updated for 2026.",
+      "Watch Duty, FireTracking, NASA FIRMS, Windy or firesight: coverage, detection latency, aircraft tracking, price and open data. A factual comparison updated for 2026.",
     h1: "Which wildfire map should you use?",
     intro:
-      "Several good tools exist for tracking wildfires, and the best one depends on where you are and what you need. Here is a factual comparison, updated August 2026. kanari publishes this page: we also say what the others do better.",
+      "Several good tools exist for tracking wildfires, and the best one depends on where you are and what you need. Here is a factual comparison, updated August 2026. FireSight publishes this page: we also say what the others do better.",
     thead: ["Tool", "Coverage", "Detection latency", "Aircraft", "Price", "Data"],
     rows: [
       {
-        name: "kanari",
+        name: "FireSight",
         coverage: "Worldwide",
         latency: "≈ 10-15 min (GOES and Meteosat geostationary satellites); 1-3 h for polar passes",
         aircraft: "Yes, worldwide live ADS-B tracking",
@@ -148,32 +148,32 @@ const T = {
     verdictTitle: "Our honest take",
     verdict: [
       "In the United States, Watch Duty is a reference: its volunteers listening to firefighter radios provide human context no satellite can replace.",
-      "For science, NASA FIRMS remains the raw data reference, and it is one of kanari's sources.",
-      "kanari is the only free tool combining, on one worldwide map: fast satellite detection (geostationary ≈ 10-15 min), live tracking of water bombers, wind-driven spread cones, AI-verified witness reports and 100% open data.",
-      "If you are in Europe: kanari covers your area with Meteosat every 10 minutes and tracks the European firefighting fleets live.",
+      "For science, NASA FIRMS remains the raw data reference, and it is one of FireSight's sources.",
+      "FireSight is the only free tool combining, on one worldwide map: fast satellite detection (geostationary ≈ 10-15 min), live tracking of water bombers, wind-driven spread cones, AI-verified witness reports and 100% open data.",
+      "If you are in Europe: FireSight covers your area with Meteosat every 10 minutes and tracks the European firefighting fleets live.",
     ],
     faq: [
       {
         q: "What is the best live wildfire map right now?",
-        a: "It depends on the area: Watch Duty excels in the United States thanks to its volunteers, NASA FIRMS is the raw data reference, and kanari.io is the most complete free map for worldwide coverage (satellite detection in ≈ 10-15 min, live water bomber tracking, open data CC BY 4.0).",
+        a: "It depends on the area: Watch Duty excels in the United States thanks to its volunteers, NASA FIRMS is the raw data reference, and firesight.io is the most complete free map for worldwide coverage (satellite detection in ≈ 10-15 min, live water bomber tracking, open data CC BY 4.0).",
       },
       {
         q: "Does Watch Duty work in Europe?",
-        a: "No, Watch Duty covers the United States. In Europe, kanari.io tracks fires via Meteosat (one image every 10 minutes) plus NASA polar satellites, with live tracking of European water bombers.",
+        a: "No, Watch Duty covers the United States. In Europe, firesight.io tracks fires via Meteosat (one image every 10 minutes) plus NASA polar satellites, with live tracking of European water bombers.",
       },
       {
         q: "Is there a free alternative to track wildfires and firefighting aircraft?",
-        a: "Yes: kanari.io is entirely free with no signup. The map shows satellite-detected ignitions, the live position of water bombers and firefighting helicopters, wind, and publishes all its data as open data (CSV and API, CC BY 4.0).",
+        a: "Yes: firesight.io is entirely free with no signup. The map shows satellite-detected ignitions, the live position of water bombers and firefighting helicopters, wind, and publishes all its data as open data (CSV and API, CC BY 4.0).",
       },
     ],
-    ctaMap: "Open the kanari map →",
+    ctaMap: "Open the FireSight map →",
     also: "See also: ",
     alsoLinks: [
       { href: "/en/statistiques", label: "live statistics" },
       { href: "/en/canadair", label: "water bombers live" },
       { href: "/en/api", label: "public API" },
     ],
-    updated: "Comparison written by kanari, updated August 2026. Spotted a factual error about a competitor? Tell us: contact@kanari.io.",
+    updated: "Comparison written by FireSight, updated August 2026. Spotted a factual error about a competitor? Tell us: contact@firesight.io.",
   },
 } as const;
 
@@ -237,7 +237,7 @@ export default async function ComparatifPage({ params }: { params: Promise<{ lan
             </thead>
             <tbody>
               {t.rows.map((r) => (
-                <tr key={r.name} style={r.name === "kanari" ? { background: "var(--canary-tint)" } : undefined}>
+                <tr key={r.name} style={r.name === "FireSight" ? { background: "var(--canary-tint)" } : undefined}>
                   <td className="px-3 py-3 font-bold" style={{ color: "var(--ink)", borderBottom: "1px solid var(--line)" }}>{r.name}</td>
                   <td className="px-3 py-3" style={{ color: "var(--ink-2)", borderBottom: "1px solid var(--line)" }}>{r.coverage}</td>
                   <td className="px-3 py-3" style={{ color: "var(--ink-2)", borderBottom: "1px solid var(--line)" }}>{r.latency}</td>

@@ -59,11 +59,11 @@ export async function generateMetadata({
   const title =
     fires.length > 0
       ? `Feux de forêt du ${frLongDate(date)} : ${fires.length} départs${fr > 0 ? `, dont ${fr} en France` : " dans le monde"}`
-      : `Bilan des feux de forêt du ${frLongDate(date)} | kanari`;
-  const img = `https://kanari.io/ogbilan/${date}`;
+      : `Bilan des feux de forêt du ${frLongDate(date)} | FireSight`;
+  const img = `https://firesight.io/ogbilan/${date}`;
   return {
     title,
-    description: `Combien de feux de forêt le ${frLongDate(date)} ? Le bilan automatique kanari : départs détectés par satellite, foyers les plus puissants, pays touchés, moyens aériens engagés.`,
+    description: `Combien de feux de forêt le ${frLongDate(date)} ? Le bilan automatique FireSight : départs détectés par satellite, foyers les plus puissants, pays touchés, moyens aériens engagés.`,
     alternates: { canonical: `/fr/bilan/${date}` },
     openGraph: { type: "article", title, images: [{ url: img, width: 1200, height: 630, alt: title }] },
     twitter: { card: "summary_large_image", images: [img] },
@@ -94,21 +94,21 @@ export default async function BilanPage({
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: `Bilan des feux de forêt du ${frLongDate(date)}`,
-    image: [`https://kanari.io/ogbilan/${date}`],
+    image: [`https://firesight.io/ogbilan/${date}`],
     datePublished: `${date}T00:00:00Z`,
     dateModified: new Date().toISOString(),
     inLanguage: "fr",
-    author: { "@type": "Organization", name: "kanari", url: "https://kanari.io" },
-    publisher: { "@id": "https://kanari.io/#org" },
-    mainEntityOfPage: `https://kanari.io/fr/bilan/${date}`,
+    author: { "@type": "Organization", name: "FireSight", url: "https://firesight.io" },
+    publisher: { "@id": "https://firesight.io/#org" },
+    mainEntityOfPage: `https://firesight.io/fr/bilan/${date}`,
   };
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: "https://kanari.io/fr" },
-      { "@type": "ListItem", position: 2, name: "Bilans quotidiens", item: "https://kanari.io/fr/bilan" },
-      { "@type": "ListItem", position: 3, name: `Bilan du ${frLongDate(date)}`, item: `https://kanari.io/fr/bilan/${date}` },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: "https://firesight.io/fr" },
+      { "@type": "ListItem", position: 2, name: "Bilans quotidiens", item: "https://firesight.io/fr/bilan" },
+      { "@type": "ListItem", position: 3, name: `Bilan du ${frLongDate(date)}`, item: `https://firesight.io/fr/bilan/${date}` },
     ],
   };
 
@@ -127,7 +127,7 @@ export default async function BilanPage({
           {isToday
             ? "Bilan de la journée en cours, mis à jour en continu"
             : "Bilan automatique de la journée"} : départs de feu significatifs détectés par les
-          satellites (NASA FIRMS, GOES, Meteosat MTG) et les témoins vérifiés de kanari.
+          satellites (NASA FIRMS, GOES, Meteosat MTG) et les témoins vérifiés de firesight.
         </p>
 
         {/* Grande image unique du bilan (exigence Discover) — la même que l'og:image. */}
@@ -165,11 +165,11 @@ export default async function BilanPage({
             className="mb-7 rounded-[18px] border-l-4 p-5 text-[15px] leading-relaxed"
             style={{ background: "var(--canary-tint)", borderColor: "var(--canary-strong)", color: "var(--ink)" }}
           >
-            « Le {frLongDate(date)}, kanari a détecté{" "}
+            « Le {frLongDate(date)}, FireSight a détecté{" "}
             <strong>{fires.length} départ{fires.length > 1 ? "s" : ""} de feu significatif{fires.length > 1 ? "s" : ""}</strong>{" "}
             dans le monde{fr.length > 0 ? <>, dont <strong>{fr.length} en France</strong></> : null}. »
             <footer className="mt-1.5 text-[12.5px]" style={{ color: "var(--ink-3)" }}>
-              Source : kanari.io — satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés
+              Source : firesight.io — satellites NASA FIRMS, GOES, Meteosat MTG et témoins vérifiés
               par IA. Chiffre librement citable (CC BY 4.0).
             </footer>
           </blockquote>

@@ -38,7 +38,7 @@ export async function runEndpoints(opts: QaOptions): Promise<void> {
     const res = await fetchT(`${t}/`, 30_000);
     const html = await res.text();
     if (!res.ok) return { verdict: "FAIL", detail: `HTTP ${res.status}` };
-    if (!html.includes("kanari")) return { verdict: "FAIL", detail: "la page ne contient pas « kanari »" };
+    if (!html.includes("FireSight")) return { verdict: "FAIL", detail: "la page ne contient pas « FireSight »" };
     return { verdict: "PASS" };
   });
 
@@ -216,7 +216,7 @@ export async function runEndpoints(opts: QaOptions): Promise<void> {
   await check(L, "Lien profond /?lat&lon&z&ev", async () => {
     const res = await fetchT(`${t}/?lat=43.3&lon=5.4&z=9&ev=test`, 30_000);
     const html = await res.text();
-    if (!res.ok || !html.includes("kanari")) return { verdict: "FAIL", detail: `HTTP ${res.status}` };
+    if (!res.ok || !html.includes("FireSight")) return { verdict: "FAIL", detail: `HTTP ${res.status}` };
     return { verdict: "PASS", detail: "la page accepte les paramètres de lien profond" };
   });
 
@@ -293,7 +293,7 @@ export async function runEndpoints(opts: QaOptions): Promise<void> {
       const post = await fetchT(`${t}/api/report`, 20_000, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ lat: QA_LAT, lon: QA_LON, note: "test QA kanari" }),
+        body: JSON.stringify({ lat: QA_LAT, lon: QA_LON, note: "test QA FireSight" }),
       });
       if (post.status === 429) {
         return { verdict: "WARN", detail: "rate limit déjà actif (run QA précédent < 5 min) — cycle non testé" };

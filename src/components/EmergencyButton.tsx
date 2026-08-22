@@ -5,7 +5,7 @@ import { DICT, emergencyNumber, type Lang } from "@/lib/i18n";
 
 // Bouton d'urgence géolocalisé : 911 aux États-Unis/Canada, 999 au
 // Royaume-Uni, 000 en Australie, 112 en Europe… Le pays vient du cookie
-// kanari-geo (géo Vercel, posé par le middleware). Rendu SSR = repli par
+// firesight-geo (géo Vercel, posé par le middleware). Rendu SSR = repli par
 // langue, corrigé après montage pour éviter tout mismatch d'hydratation.
 export function EmergencyButton({ lang }: { lang: Lang }) {
   const t = DICT[lang];
@@ -13,7 +13,7 @@ export function EmergencyButton({ lang }: { lang: Lang }) {
 
   useEffect(() => {
     try {
-      const raw = document.cookie.match(/(?:^|;\s*)kanari-geo=([^;]+)/)?.[1];
+      const raw = document.cookie.match(/(?:^|;\s*)firesight-geo=([^;]+)/)?.[1];
       const country = raw ? decodeURIComponent(raw).split(",")[2] || null : null;
       setNumber(emergencyNumber(country, lang));
     } catch {

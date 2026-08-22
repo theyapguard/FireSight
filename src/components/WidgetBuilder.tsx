@@ -6,7 +6,7 @@ import { COUNTRIES } from "@/lib/countries";
 import { localize, type Lang } from "@/lib/i18n";
 
 // Générateur de widget : une rédaction girondine repart avec une carte
-// centrée sur la Gironde en 20 secondes — et kanari repart avec un backlink
+// centrée sur la Gironde en 20 secondes — et FireSight repart avec un backlink
 // d'ancre riche. Tout est côté client, le snippet est du HTML pur.
 
 const T = {
@@ -106,7 +106,7 @@ export function WidgetBuilder({ lang }: { lang: Lang }) {
       p.set("z", String(zone.z ?? 6));
     }
     const qs = p.toString();
-    return `https://kanari.io/embed${qs ? `?${qs}` : ""}`;
+    return `https://firesight.io/embed${qs ? `?${qs}` : ""}`;
   }, [wlang, zone]);
 
   const snippet = useMemo(() => {
@@ -114,9 +114,9 @@ export function WidgetBuilder({ lang }: { lang: Lang }) {
     return `<iframe
   src="${src}"
   width="100%" height="${height}" frameborder="0"
-  title="kanari.io"
+  title="firesight.io"
   loading="lazy" allow="geolocation"></iframe>
-<p>${anchor.caption} <a href="https://kanari.io/${wlang}">kanari.io — ${anchor.anchorText}</a></p>`;
+<p>${anchor.caption} <a href="https://firesight.io/${wlang}">firesight.io — ${anchor.anchorText}</a></p>`;
   }, [src, height, wlang]);
 
   const copy = async () => {
@@ -182,7 +182,7 @@ export function WidgetBuilder({ lang }: { lang: Lang }) {
         {t.preview}
       </h2>
       <div className="mb-6 overflow-hidden rounded-[18px]" style={{ boxShadow: "var(--shadow-m)" }}>
-        <iframe key={src} src={src} width="100%" height={Math.min(height, 420)} title="kanari widget" style={{ border: 0, display: "block" }} />
+        <iframe key={src} src={src} width="100%" height={Math.min(height, 420)} title="FireSight widget" style={{ border: 0, display: "block" }} />
       </div>
 
       <div className="mb-2 flex items-center justify-between gap-3">

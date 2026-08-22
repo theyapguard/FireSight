@@ -8,7 +8,7 @@ const fredoka = Fredoka({ subsets: ["latin"], weight: ["400", "500", "600"], var
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "Veille kanari",
+  title: "Veille FireSight",
   robots: { index: false, follow: false, nocache: true },
 };
 

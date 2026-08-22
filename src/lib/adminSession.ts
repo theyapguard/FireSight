@@ -6,7 +6,7 @@ import { createHmac, timingSafeEqual } from "crypto";
 import { cookies } from "next/headers";
 import { ADMIN_EMAIL, supabaseCreds } from "@/lib/analytics";
 
-export const SESSION_COOKIE = "kanari_veille";
+export const SESSION_COOKIE = "firesight_veille";
 export const SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 h d'inactivité (glissant)
 
 function secret(): string {

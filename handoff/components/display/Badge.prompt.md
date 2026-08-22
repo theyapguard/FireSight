@@ -1,4 +1,4 @@
-Badge d'état pill ; `dot pulse` pour les états live (« kanari écoute »).
+Badge d'état pill ; `dot pulse` pour les états live (« FireSight écoute »).
 
 ```jsx
 <Badge tone="safe" dot>Rien à signaler</Badge>

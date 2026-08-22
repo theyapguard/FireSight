@@ -22,7 +22,7 @@ export type SocialResult = {
   searchStatuses?: number[];
 };
 
-const NOMINATIM_UA = "Kanari/0.1 (https://kanari.io)";
+const NOMINATIM_UA = "FireSight/0.1 (https://firesight.io)";
 
 export const TERMS_BY_LANG: Record<string, string[]> = {
   fr: ["incendie", "feu", "fumée"],

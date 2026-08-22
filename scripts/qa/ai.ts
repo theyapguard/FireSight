@@ -18,7 +18,7 @@ const L = "4-ia";
 // luna suffit largement pour la relecture (terra coûtait 2,5× plus cher).
 const REVIEW_MODEL = process.env.QA_REVIEW_MODEL ?? "gpt-5.6-luna";
 
-const REVIEW_SYSTEM = `Tu es le relecteur qualité de Kanari, service d'alerte précoce des feux de forêt. On te montre des posts qui SONT AFFICHÉS sur la carte publique, chacun ancré à un lieu. Ton travail : trouver les erreurs qu'un utilisateur nous reprocherait.
+const REVIEW_SYSTEM = `Tu es le relecteur qualité de FireSight, service d'alerte précoce des feux de forêt. On te montre des posts qui SONT AFFICHÉS sur la carte publique, chacun ancré à un lieu. Ton travail : trouver les erreurs qu'un utilisateur nous reprocherait.
 
 Pour chaque item, réponds :
 - "feu_actuel" : true si le texte signale un feu de végétation en cours ou venant de démarrer (témoignage, alerte officielle, breaking news). false si humour/métaphore, feu passé ou daté d'un autre jour, feu de voiture/bâtiment sans végétation, prévention, statistiques, chronique où le feu n'est qu'une mention incidente.

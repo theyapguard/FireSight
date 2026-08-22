@@ -82,8 +82,8 @@ export async function fetchDayRpc(d: string): Promise<unknown | null> {
 
 // ---- Google Search Console ------------------------------------------------
 // GSC_SERVICE_ACCOUNT = JSON du service account ({client_email, private_key}),
-// ajouté comme utilisateur « accès complet » de la propriété https://kanari.io/.
-const GSC_SITE = "https://kanari.io/";
+// ajouté comme utilisateur « accès complet » de la propriété https://firesight.io/.
+const GSC_SITE = "https://firesight.io/";
 
 function b64url(input: Buffer | string): string {
   return Buffer.from(input).toString("base64url");
@@ -287,7 +287,7 @@ export async function fetchBing(): Promise<{ connected: boolean; data?: BingData
   try {
     const res = await fetch(
       `https://ssl.bing.com/webmaster/api.svc/json/GetRankAndTrafficStats?siteUrl=${encodeURIComponent(
-        "https://kanari.io/"
+        "https://firesight.io/"
       )}&apikey=${encodeURIComponent(key)}`,
       { cache: "no-store" }
     );
@@ -353,7 +353,7 @@ export async function fetchBingLinks(): Promise<{ connected: boolean; data?: Bin
   const key = process.env.BING_WEBMASTER_API_KEY;
   if (!key) return { connected: false };
   const base = "https://ssl.bing.com/webmaster/api.svc/json";
-  const site = encodeURIComponent("https://kanari.io/");
+  const site = encodeURIComponent("https://firesight.io/");
   try {
     const targets: { url: string; count: number }[] = [];
     for (let page = 0; page < 3; page++) {
@@ -392,7 +392,7 @@ export async function fetchBingLinks(): Promise<{ connected: boolean; data?: Bin
 
 // ---- Panel de citations IA ------------------------------------------------
 // Chaque semaine, on pose les mêmes questions à un moteur IA avec recherche
-// web et on note si kanari est cité dans les sources (« share of voice »).
+// web et on note si FireSight est cité dans les sources (« share of voice »).
 export const CITATION_QUESTIONS: string[] = [
   "Combien de feux de forêt sont en cours dans le monde aujourd'hui ?",
   "Combien de départs de feu ont été détectés aujourd'hui en France ?",
@@ -470,9 +470,9 @@ async function askWithSearch(question: string): Promise<CitationRow | null> {
         /* url invalide */
       }
     }
-    const idx = hosts.indexOf("kanari.io");
+    const idx = hosts.indexOf("firesight.io");
     const citedByLink = idx >= 0;
-    const citedByText = /\bkanari\b/i.test(text);
+    const citedByText = /\bfiresight\b/i.test(text);
     return {
       week: isoWeek(),
       engine: "chatgpt-search",

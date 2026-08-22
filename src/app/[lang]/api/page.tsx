@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title:
       l === "fr"
-        ? "API feux de forêt : détections satellite JSON + open data CSV | kanari"
-        : "Free wildfire API: satellite detections (JSON) + open data | kanari",
+        ? "API feux de forêt : détections satellite JSON + open data CSV | FireSight"
+        : "Free wildfire API: satellite detections (JSON) + open data | FireSight",
     description:
       l === "fr"
         ? "API gratuite des feux de forêt détectés dans le monde : foyers en temps réel (JSON), signalements vérifiés, archive complète en CSV (CC BY 4.0) et flux RSS. Sans clé, sans compte."
@@ -50,20 +50,20 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "kanari", item: `https://kanari.io/${lang}` },
-      { "@type": "ListItem", position: 2, name: fr ? "API publique" : "Public API", item: `https://kanari.io/${lang}/api` },
+      { "@type": "ListItem", position: 1, name: "FireSight", item: `https://firesight.io/${lang}` },
+      { "@type": "ListItem", position: 2, name: fr ? "API publique" : "Public API", item: `https://firesight.io/${lang}/api` },
     ],
   };
   const apiLd = {
     "@context": "https://schema.org",
     "@type": "WebAPI",
-    name: fr ? "API kanari — feux de forêt en temps réel" : "kanari API — real-time wildfires",
+    name: fr ? "API FireSight — feux de forêt en temps réel" : "FireSight API — real-time wildfires",
     description: fr
       ? "Foyers détectés par satellite dans le monde, signalements vérifiés et archive open data."
       : "Worldwide satellite-detected fire clusters, verified witness signals and open-data archive.",
-    documentation: `https://kanari.io/${lang}/api`,
-    termsOfService: `https://kanari.io/${lang}/api`,
-    provider: { "@id": "https://kanari.io/#org" },
+    documentation: `https://firesight.io/${lang}/api`,
+    termsOfService: `https://firesight.io/${lang}/api`,
+    provider: { "@id": "https://firesight.io/#org" },
   };
 
   return (
@@ -76,15 +76,15 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
         </h1>
         <p className="mb-6 text-[15px] leading-relaxed">
           {fr
-            ? "Toutes les données de kanari sont accessibles gratuitement, sans clé et sans compte : foyers détectés par satellite dans le monde entier, signalements citoyens vérifiés, archive historique et flux RSS. Seule condition : créditer « kanari.io » avec un lien."
-            : "All kanari data is freely accessible, no key, no account: worldwide satellite-detected fire clusters, verified witness signals, historical archive and RSS feed. Only requirement: credit “kanari.io” with a link."}
+            ? "Toutes les données de FireSight sont accessibles gratuitement, sans clé et sans compte : foyers détectés par satellite dans le monde entier, signalements citoyens vérifiés, archive historique et flux RSS. Seule condition : créditer « firesight.io » avec un lien."
+            : "All FireSight data is freely accessible, no key, no account: worldwide satellite-detected fire clusters, verified witness signals, historical archive and RSS feed. Only requirement: credit “firesight.io” with a link."}
         </p>
 
         <section className="mb-8 text-[14.5px] leading-relaxed">
           <h2 className="mb-2 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
             {fr ? "Foyers en temps réel" : "Real-time fire clusters"}
           </h2>
-          <pre style={CODE_STYLE}>GET https://kanari.io/api/events?hours=24</pre>
+          <pre style={CODE_STYLE}>GET https://firesight.io/api/events?hours=24</pre>
           <p className="mt-2 mb-2">
             {fr
               ? "Foyers agrégés (clusters de détections satellite VIIRS, GOES et Meteosat MTG) sur la fenêtre demandée. hours ∈ 6, 12, 24, 48, 72. Réponse : { events, meta }. Par défaut la réponse est allégée (les 2 000 foyers les plus pertinents, meta.truncated l'indique) ; ajoutez full=1 pour l'intégralité."
@@ -104,7 +104,7 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
           <h2 className="mb-2 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
             {fr ? "Signalements vérifiés" : "Verified witness signals"}
           </h2>
-          <pre style={CODE_STYLE}>GET https://kanari.io/api/signals?hours=24</pre>
+          <pre style={CODE_STYLE}>GET https://firesight.io/api/signals?hours=24</pre>
           <p className="mt-2 mb-2">
             {fr
               ? "Lieux où des témoignages publics de feu ont été vérifiés deux fois par IA (réseaux sociaux, presse). Réponse : { signals, meta }."
@@ -122,7 +122,7 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
           <h2 className="mb-2 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
             {fr ? "Archive complète (CSV)" : "Full archive (CSV)"}
           </h2>
-          <pre style={CODE_STYLE}>GET https://kanari.io/opendata/feux.csv</pre>
+          <pre style={CODE_STYLE}>GET https://firesight.io/opendata/feux.csv</pre>
           <p className="mt-2">
             {fr ? (
               <>
@@ -148,11 +148,11 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
           <h2 className="mb-2 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
             {fr ? "Serveur MCP pour les assistants IA" : "MCP server for AI assistants"}
           </h2>
-          <pre style={CODE_STYLE}>https://kanari.io/api/mcp</pre>
+          <pre style={CODE_STYLE}>https://firesight.io/api/mcp</pre>
           <p className="mt-2 mb-2">
             {fr
-              ? "kanari est aussi un serveur MCP (Model Context Protocol, Streamable HTTP, sans clé) : branchez cette URL dans Claude, ChatGPT, Cursor ou n'importe quel agent, et il pourra interroger les feux en direct, l'archive, les statistiques, les moyens aériens et la précocité mesurée — en citant kanari.io. Outils exposés :"
-              : "kanari is also an MCP server (Model Context Protocol, Streamable HTTP, no key): add this URL to Claude, ChatGPT, Cursor or any agent and it can query live fires, the archive, statistics, firefighting aircraft and measured earliness — citing kanari.io. Exposed tools:"}
+              ? "FireSight est aussi un serveur MCP (Model Context Protocol, Streamable HTTP, sans clé) : branchez cette URL dans Claude, ChatGPT, Cursor ou n'importe quel agent, et il pourra interroger les feux en direct, l'archive, les statistiques, les moyens aériens et la précocité mesurée — en citant firesight.io. Outils exposés :"
+              : "FireSight is also an MCP server (Model Context Protocol, Streamable HTTP, no key): add this URL to Claude, ChatGPT, Cursor or any agent and it can query live fires, the archive, statistics, firefighting aircraft and measured earliness — citing firesight.io. Exposed tools:"}
           </p>
           <ul className="list-disc space-y-1 pl-5 text-[13.5px]">
             <Field name="active_fires" desc={fr ? "foyers des 6 à 72 dernières heures, filtrables par pays, emprise ou rayon autour d'un point" : "clusters of the last 6 to 72 hours, filterable by country, bounding box or radius around a point"} />
@@ -162,11 +162,11 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
             <Field name="earliness_cases" desc={fr ? "cas mesurés d'avance sur la presse (72 h glissantes)" : "measured cases of lead over press coverage (rolling 72 h)"} />
           </ul>
           <p className="mt-2 mb-2">{fr ? "Exemple de configuration client :" : "Client configuration example:"}</p>
-          <pre style={CODE_STYLE}>{`{ "mcpServers": { "kanari": { "url": "https://kanari.io/api/mcp" } } }`}</pre>
+          <pre style={CODE_STYLE}>{`{ "mcpServers": { "FireSight": { "url": "https://firesight.io/api/mcp" } } }`}</pre>
           <p className="mt-2">
             {fr
-              ? "Clients stdio uniquement : npx -y mcp-remote https://kanari.io/api/mcp. Lecture seule, mêmes données que l'API REST, même licence (CC BY 4.0, citer « kanari.io »)."
-              : "Stdio-only clients: npx -y mcp-remote https://kanari.io/api/mcp. Read-only, same data as the REST API, same licence (CC BY 4.0, cite “kanari.io”)."}
+              ? "Clients stdio uniquement : npx -y mcp-remote https://firesight.io/api/mcp. Lecture seule, mêmes données que l'API REST, même licence (CC BY 4.0, citer « firesight.io »)."
+              : "Stdio-only clients: npx -y mcp-remote https://firesight.io/api/mcp. Read-only, same data as the REST API, same licence (CC BY 4.0, cite “firesight.io”)."}
           </p>
         </section>
 
@@ -177,8 +177,8 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
           <ul className="list-disc space-y-2 pl-5">
             <li>
               {fr
-                ? "Attribution obligatoire : « Source : kanari.io » avec un lien, sur toute réutilisation publique."
-                : "Attribution required: “Source: kanari.io” with a link, on any public reuse."}
+                ? "Attribution obligatoire : « Source : firesight.io » avec un lien, sur toute réutilisation publique."
+                : "Attribution required: “Source: firesight.io” with a link, on any public reuse."}
             </li>
             <li>
               {fr
@@ -187,8 +187,8 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
             </li>
             <li>
               {fr
-                ? "Les détections proviennent de la NASA (FIRMS), de la NOAA (GOES) et d'EUMETSAT (Meteosat MTG) ; les horodatages sont les leurs. kanari fournit l'agrégation, la vérification et l'archive."
-                : "Detections come from NASA (FIRMS), NOAA (GOES) and EUMETSAT (Meteosat MTG); timestamps are theirs. kanari provides aggregation, verification and archiving."}
+                ? "Les détections proviennent de la NASA (FIRMS), de la NOAA (GOES) et d'EUMETSAT (Meteosat MTG) ; les horodatages sont les leurs. FireSight fournit l'agrégation, la vérification et l'archive."
+                : "Detections come from NASA (FIRMS), NOAA (GOES) and EUMETSAT (Meteosat MTG); timestamps are theirs. FireSight provides aggregation, verification and archiving."}
             </li>
             <li>
               {fr
@@ -200,18 +200,18 @@ export default async function ApiPage({ params }: { params: Promise<{ lang: stri
             {fr ? (
               <>
                 Une question, un besoin (webhooks, formats, volumes) ? Écrivez à{" "}
-                <a href="mailto:contact@kanari.io" style={{ color: "var(--link)", fontWeight: 600 }}>contact@kanari.io</a>{" "}
+                <a href="mailto:contact@firesight.io" style={{ color: "var(--link)", fontWeight: 600 }}>contact@firesight.io</a>{" "}
                 ou ouvrez un ticket sur{" "}
-                <a href="https://github.com/vria-consulting/vria-fire-detect/issues" style={{ color: "var(--link)" }}>GitHub</a>.
+                <a href="https://github.com/theyapguard/FireSight/issues" style={{ color: "var(--link)" }}>GitHub</a>.
                 Pour intégrer la carte elle-même, le plus simple reste le{" "}
                 <Link href="/fr/widget" style={{ color: "var(--link)" }}>widget gratuit</Link>.
               </>
             ) : (
               <>
                 Questions or needs (webhooks, formats, volumes)? Write to{" "}
-                <a href="mailto:contact@kanari.io" style={{ color: "var(--link)", fontWeight: 600 }}>contact@kanari.io</a>{" "}
+                <a href="mailto:contact@firesight.io" style={{ color: "var(--link)", fontWeight: 600 }}>contact@firesight.io</a>{" "}
                 or open a ticket on{" "}
-                <a href="https://github.com/vria-consulting/vria-fire-detect/issues" style={{ color: "var(--link)" }}>GitHub</a>.
+                <a href="https://github.com/theyapguard/FireSight/issues" style={{ color: "var(--link)" }}>GitHub</a>.
                 To embed the map itself, use the free{" "}
                 <Link href="/fr/widget" style={{ color: "var(--link)" }}>widget</Link>.
               </>

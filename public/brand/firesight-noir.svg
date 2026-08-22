@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 100" role="img" aria-label="FireSight">
+  <defs>
+    <linearGradient id="flame" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#F6C83E"/>
+      <stop offset="55%" stop-color="#FF9E3D"/>
+      <stop offset="100%" stop-color="#E4572E"/>
+    </linearGradient>
+    <linearGradient id="word" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#F6C83E"/>
+      <stop offset="100%" stop-color="#E4572E"/>
+    </linearGradient>
+  </defs>
+  <path d="M10,50 C30,20 70,20 90,50 C70,80 30,80 10,50 Z" fill="none" stroke="#1B1C1E" stroke-width="6.5" stroke-linejoin="round"/>
+  <path d="M50,26 C55,35 63,40 63,52 A13,13 0 1 1 37,52 C37,45 40,41 42,36 C44,32 46,28 50,26 Z" fill="#1B1C1E"/>
+  
+  <text x="112" y="65" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="-1.5"><tspan fill="#1B1C1E">Fire</tspan><tspan fill="#1B1C1E">Sight</tspan></text>
+</svg>

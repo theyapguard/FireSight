@@ -1,4 +1,4 @@
-// Niveau 1 — CONNECTEURS : chaque source de données de Kanari est testée
+// Niveau 1 — CONNECTEURS : chaque source de données de FireSight est testée
 // directement (comme un opérateur qui vérifie ses instruments un par un).
 //   FIRMS (VIIRS N20/N21 + GOES), EUMETSAT MTG, Bluesky, GDELT, Telegram
 //   (worker GitHub Actions + endpoint d'ingestion), OpenAI, Open-Meteo.
@@ -121,7 +121,7 @@ export async function runConnectors(opts: QaOptions): Promise<void> {
       res = await fetchT(
         "https://api.gdeltproject.org/api/v2/doc/doc?query=wildfire&mode=artlist&maxrecords=5&format=json&timespan=6h",
         20_000,
-        { headers: { "User-Agent": "kanari-qa/1.0" } }
+        { headers: { "User-Agent": "firesight-qa/1.0" } }
       );
     } catch (e) {
       // GDELT limite à 1 req/5 s PAR IP et coupe brutalement : un échec réseau

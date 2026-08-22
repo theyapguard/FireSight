@@ -1,4 +1,4 @@
-/** Bouton Kanari — pill, 4 variantes, 3 tailles.
+/** Bouton FireSight — pill, 4 variantes, 3 tailles.
  * @startingPoint section="Composants" subtitle="Bouton pill — primary, dark, ghost, alert" viewport="700x220"
  */
 export interface ButtonProps {

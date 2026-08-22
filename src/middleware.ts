@@ -3,7 +3,7 @@ import { FRANCOPHONE, HISPANOPHONE, LUSOPHONE, isValidLang, type Lang } from "@/
 
 // Crawlers SEO + IA qu'on veut compter (onglet Visibilité de /veille).
 // ChatGPT-User / Perplexity-User / Claude-User = fetchs déclenchés par une
-// question d'utilisateur en direct : kanari consulté pour bâtir une réponse.
+// question d'utilisateur en direct : FireSight consulté pour bâtir une réponse.
 // L'ordre compte (GoogleOther avant Googlebot).
 const TRACKED_BOTS: [RegExp, string][] = [
   [/OAI-SearchBot/i, "OAI-SearchBot"],
@@ -54,7 +54,7 @@ function logBotHit(req: NextRequest, event: NextFetchEvent): void {
 // 2) pays du visiteur (géo Vercel) — français, espagnol ou portugais selon la
 // zone linguistique, anglais ailleurs, 3) Accept-Language, 4) anglais.
 function detectLang(req: NextRequest): Lang {
-  const cookie = req.cookies.get("kanari-lang")?.value;
+  const cookie = req.cookies.get("firesight-lang")?.value;
   if (isValidLang(cookie)) return cookie;
   const country = req.headers.get("x-vercel-ip-country")?.toUpperCase();
   const region = req.headers.get("x-vercel-ip-country-region")?.toUpperCase();
@@ -105,7 +105,7 @@ function attachGeo(req: NextRequest, res: NextResponse): void {
   const lon = req.headers.get("x-vercel-ip-longitude");
   const country = req.headers.get("x-vercel-ip-country") ?? "";
   if (lat && lon) {
-    res.cookies.set("kanari-geo", `${lat},${lon},${country}`, {
+    res.cookies.set("firesight-geo", `${lat},${lon},${country}`, {
       path: "/",
       maxAge: 3600,
       sameSite: "lax",

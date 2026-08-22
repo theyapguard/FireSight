@@ -7,7 +7,7 @@ import { listFiresByAircraft, type ArchivedFire } from "@/lib/firearchive";
 import { DEPT_BY_SLUG } from "@/lib/departements";
 
 // Page individuelle d'un appareil de la Sécurité Civile : suivi live +
-// historique des feux sur lesquels kanari l'a observé.
+// historique des feux sur lesquels FireSight l'a observé.
 export const dynamic = "force-dynamic";
 
 // immat slug (f-zbeg) -> { hex, reg, model }
@@ -24,8 +24,8 @@ export async function generateMetadata({
   const a = BY_REG.get(reg.toLowerCase());
   if (!a) return {};
   return {
-    title: `${a.reg} ${a.model} : suivi en direct | kanari`,
-    description: `Où est le ${a.model} ${a.reg} en ce moment ? Position en direct quand il vole, et historique des feux sur lesquels kanari l'a observé.`,
+    title: `${a.reg} ${a.model} : suivi en direct | FireSight`,
+    description: `Où est le ${a.model} ${a.reg} en ce moment ? Position en direct quand il vole, et historique des feux sur lesquels FireSight l'a observé.`,
     alternates: { canonical: `/fr/canadair/${a.reg.toLowerCase()}` },
   };
 }
@@ -84,7 +84,7 @@ export default async function AircraftPage({
 
         <section className="mb-7">
           <h2 className="mb-3 text-[19px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--ink)" }}>
-            Feux sur lesquels kanari l'a observé
+            Feux sur lesquels FireSight l'a observé
           </h2>
           {missions.length === 0 ? (
             <p className="text-[13.5px]" style={{ color: "var(--ink-3)" }}>
@@ -130,7 +130,7 @@ export default async function AircraftPage({
 
         <p className="mt-8 border-t pt-4 text-[12.5px]" style={{ borderColor: "var(--line)", color: "var(--ink-3)" }}>
           Suivi ADS-B (airplanes.live) — « observé » signifie détecté à moins de 40 km d'un foyer
-          archivé pendant son activité. kanari est un service indépendant. Urgence : 18 ou 112.
+          archivé pendant son activité. FireSight est un service indépendant. Urgence : 18 ou 112.
         </p>
       </div>
     </div>

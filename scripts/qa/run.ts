@@ -1,4 +1,4 @@
-// Programme de QA Kanari — à lancer avant chaque commit :
+// Programme de QA FireSight — à lancer avant chaque commit :
 //   npm run qa            (audite la production)
 //   npm run qa:local      (audite le serveur de dev sur :3100)
 //   npx tsx --env-file=.env.local scripts/qa/run.ts --target=<url> --ai-sample=30
@@ -26,7 +26,7 @@ import { runRetro } from "./retro";
 
 async function main() {
   const opts = parseOptions();
-  console.log(`\n🐤 QA Kanari — cible : ${opts.target}`);
+  console.log(`\n🐤 QA FireSight — cible : ${opts.target}`);
   console.log(`   échantillons : ${opts.eventSample} foyers vs FIRMS brut · ${opts.aiSample} posts max en IA\n`);
 
   console.log("── Niveau 0 · Tests unitaires (bugs passés) ───");

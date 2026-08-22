@@ -94,7 +94,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ country:
       <div style={{ width: 1200, height: 630, display: "flex", flexDirection: "column", background: "#FBF9F4", padding: "44px 54px" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", padding: "10px 26px", borderRadius: 999, background: "#FFC72E", color: "#1B1C1E", fontSize: 30, fontWeight: 700 }}>
-            kanari.io
+            firesight.io
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "#8A8880" }}>{isCurrent ? t.live : t.past}</div>
         </div>

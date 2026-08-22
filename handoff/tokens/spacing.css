@@ -34,7 +34,7 @@
 }
 
 /* Onde signature — pulsation des arcs du logo et des éléments "signal" */
-@keyframes kanari-wave {
+@keyframes firesight-wave {
   0% { opacity: 0.12; }
   25% { opacity: 1; }
   60% { opacity: 0.12; }

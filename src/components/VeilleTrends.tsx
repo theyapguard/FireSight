@@ -322,7 +322,7 @@ export function VeilleTrends({ reloadKey, onDay }: { reloadKey: number; onDay: (
                 </div>
               ))}
               <div style={{ fontSize: 11, color: "var(--ink-3)", marginTop: 2 }}>
-                Part des questions du panel où kanari est cité par ChatGPT.
+                Part des questions du panel où FireSight est cité par ChatGPT.
               </div>
             </div>
           )}

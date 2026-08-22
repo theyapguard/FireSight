@@ -1,5 +1,5 @@
 -- ============================================================================
--- kanari · table des contributions citoyennes (page /contribuer)
+-- FireSight · table des contributions citoyennes (page /contribuer)
 -- À coller tel quel dans Supabase → SQL Editor, puis exécuter.
 -- Ensuite, dans Vercel, définir :
 --   SUPABASE_URL=https://<projet>.supabase.co
