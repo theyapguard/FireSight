@@ -277,6 +277,16 @@ stateDiagram-v2
 
 </div>
 
+### 📈 By the numbers
+
+<div align="center">
+
+| 📄 TS/TSX files | 🧮 Lines of code | 🛰️ Satellite sources | 🗣️ Witness channels | 🌐 Languages | ⏱️ Refresh | 🔌 API routes | 💰 Price |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **124** | **~23 900** | **3 agencies · 5+ instruments** | **3** | **4** | **~10 min** | **15+** | **$0, forever** |
+
+</div>
+
 ---
 
 ## 🔌 API, Open Data & MCP
@@ -314,6 +324,19 @@ npm run dev
 🎉 Open **http://localhost:3000** — the map is live.
 
 > 💡 Archive, witness signals and aircraft need Supabase + a few provider keys — but **every page degrades gracefully without them**. Our CI builds and runs the full SEO guard with *zero* secrets.
+
+<details>
+<summary>🔧 <b>Optional environment variables</b> (click to expand)</summary>
+
+| Variable | 🔓 Unlocks |
+| --- | --- |
+| `FIRMS_MAP_KEY` | 🛰️ Live satellite map — the only required key |
+| `OPENAI_API_KEY` | 🤖 Double AI verification of witness reports |
+| `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` | 🗄️ Fire archive, witness signals, observatory |
+| `BLOB_READ_WRITE_TOKEN` | ☁️ Shared edge caches |
+| `CRON_SECRET` | ⏰ Protects the alert cron endpoint |
+
+</details>
 
 ---
 
@@ -372,10 +395,10 @@ FireSight/
 
 Ideas, data sources, bug reports — **all welcome!** 🙌
 
-1. 🍴 Fork the repo
+1. 📥 Clone the repo: `git clone https://github.com/theyapguard/FireSight.git`
 2. 🌿 Create a branch: `git checkout -b feat/my-idea`
 3. 💾 Commit: `git commit -m "feat: my idea"`
-4. 🚀 Push & open a PR — CI (types + build + SEO guard) must pass ✅
+4. 🚀 Open a PR — CI (types + build + SEO guard) must pass ✅
 
 ---
 
