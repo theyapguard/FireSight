@@ -27,7 +27,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/theyapguard/FireSight/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white)](https://github.com/theyapguard/FireSight/actions)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC_BY_4.0-2DA2BB?style=for-the-badge&logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by/4.0/)
 [![Languages](https://img.shields.io/badge/i18n-FR_·_EN_·_ES_·_PT-F6C83E?style=for-the-badge)](#-features)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](#-contributing)
 
 </div>
 
@@ -95,19 +95,19 @@ Wildfires are getting **bigger, faster and more frequent** — and the first hou
 
 <div align="center">
 
-<img src="./public/Screenshot%202026-08-23%201.58.24%20AM.png" alt="FireSight live globe — active fires across Africa, Europe and Asia" width="90%" />
+<img src="./docs/screenshots/live-globe-africa.png" alt="FireSight live globe — active fires across Africa, Europe and Asia" width="90%" />
 
 *🌍 Live 3D globe — every active ignition on Earth, updated every few minutes. 15 firefighting aircraft airborne. 116 active fires in Russia right now.*
 
 <br/><br/>
 
-<img src="./public/Screenshot%202026-08-23%201.58.41%20AM.png" alt="FireSight 24-hour view — the Americas burning" width="90%" />
+<img src="./docs/screenshots/live-globe-americas.png" alt="FireSight 24-hour view — the Americas burning" width="90%" />
 
 *🕐 24-hour window over the Americas — 254 active fires in Brazil, tracked in real time.*
 
 <br/><br/>
 
-<img src="./public/Screenshot%202026-08-23%201.58.55%20AM.png" alt="FireSight zoomed into South America — fire clusters over Brazil and Bolivia" width="90%" />
+<img src="./docs/screenshots/live-globe-amazon.png" alt="FireSight zoomed into South America — fire clusters over Brazil and Bolivia" width="90%" />
 
 *🔎 Zoom into South America — clustered fire events, per-country live counters, one-tap area alerts.*
 
